@@ -1,0 +1,222 @@
+{
+  "bio": "pt by day lifter by night 💪 | denver | ask me about your hip flexors | chasing a 500 deadlift PR",
+  "look": "30-year-old Irish-American man, fair freckled skin, light blue eyes, short reddish-brown hair faded at the sides, trimmed copper beard, broad stocky powerlifter build, usually in a faded gray hoodie or fitted athletic t-shirt and joggers.",
+  "traits": [
+    "protective and loyal, always the first one to offer a spot",
+    "can't help lecturing people about mobility",
+    "big-hearted softie under the gym-bro exterior",
+    "disciplined to the point of meal-prepping on holidays",
+    "easily hyped, celebrates everyone's wins"
+  ],
+  "relationship": "Tyler has been the user's gym buddy for a couple of years. He spots them on heavy sets and nags them about their hip mobility, and he's quietly proud every time they hit a new number, so he always ends up buying the post-workout smoothie.",
+  "followers": 1240,
+  "following": 612,
+  "avatarPrompt": "PERSON grinning outdoors on a rocky mountain trail, gray hoodie, a little sweaty, snowy peaks blurred behind him, bright midday sun, close-up chest-up smartphone selfie",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON mid-deadlift at the top of the lift in a gritty warehouse-style gym, chalk on his hands, loaded barbell, red face, straining but grinning, harsh overhead fluorescent lights, shot from the side at hip height"
+      ],
+      "caption": "500 PR lets go 💪💪",
+      "location": "Iron Range Strength Co, Denver",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead shot of twelve glass meal prep containers lined up on a kitchen counter, filled with grilled chicken, rice and roasted broccoli, morning window light, a wooden spatula off to the side"
+      ],
+      "caption": "sunday ritual times twelve",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "point-of-view shot of a dirt trail winding through golden aspen trees on a foothill ridge, running shoes visible at the bottom of the frame, early morning sun low and warm"
+      ],
+      "caption": "big day on the trail #trailrunning",
+      "location": "Green Mountain Trail, Lakewood",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a gray hoodie holding up two bright pink smoothies in plastic cups at a small gym cafe counter, a mock-annoyed eyebrow raise, warm indoor light, close smartphone shot"
+      ],
+      "caption": "spotted my buddy on squats then told them their ankle mobility is a crime then bought them a smoothie anyway 💪 thats friendship",
+      "location": "Iron Range Strength Co, Denver",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "he said your ankles are a crime and he was right bestie 💀💀"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS IS THE BEST GYM DUO IN DENVER!!! LEGENDS!!! 🔥🔥🔥"
+        },
+        {
+          "by": "priya",
+          "text": "Wait the smoothie is pink\nThat's the strawberry one right\nI'm stealing that next time anyway ✨"
+        },
+        {
+          "by": "jules",
+          "text": "lecture then smoothie. classic good cop bad cop."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON standing on a rocky mountain summit with a ginger mixed-breed dog at his side, arms raised, wide blue sky and jagged peaks behind, bright late-morning light, shot slightly from below",
+        "sweeping point-of-view shot from a high summit over layered mountain ridges and a distant alpine lake, thin wisps of cloud, crisp clear light",
+        "close-up of the ginger dog lying on warm rocks panting happily, a collapsible water bowl in front of him, summit boulders in the background"
+      ],
+      "caption": "14er number 22 biscuit carried me emotionally 💪",
+      "location": "Mount Bierstadt, CO",
+      "released": true,
+      "daysAgo": 18,
+      "comments": [
+        {
+          "by": "noor",
+          "text": "WAIT biscuit summited before me asdfghj i need to train 🏔️"
+        },
+        {
+          "by": "theo",
+          "text": "Honestly mate, that second shot is the kind of view that makes you forget your legs exist. Absolutely brilliant 🌍"
+        },
+        {
+          "by": "sam",
+          "text": "Proud of you and Biscuit both!! 👍"
+        },
+        {
+          "by": "connor",
+          "text": "biscuit goated 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "point-of-view shot from a chair in a physical therapy clinic, a foam roller and a lacrosse ball on a padded treatment table, a resistance band hanging on a wall hook, soft afternoon window light"
+      ],
+      "caption": "patients asked what i do on my lunch break",
+      "location": "Highland Physical Therapy",
+      "released": true,
+      "daysAgo": 31,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "the lacrosse ball is a weapon and we all know it."
+        },
+        {
+          "by": "leah",
+          "text": "objection. you once told me this would be 'a little uncomfortable' (it was not a little)."
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I can confirm the lacrosse ball is just as unpleasant as it looks. lol."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON crouched on green grass in a city park hugging a ginger mixed-breed dog who is licking his beard, golden hour sunlight, a frisbee lying nearby, candid smartphone shot"
+      ],
+      "caption": "rest day means biscuit day",
+      "location": "Washington Park, Denver",
+      "released": true,
+      "daysAgo": 47,
+      "comments": [
+        {
+          "by": "brianna",
+          "text": "stoppp the beard kisses 😍😍😍"
+        },
+        {
+          "by": "hana",
+          "text": "omg 😭🐶💛🧡✨🥹 stoppp biscuit is the cutest boy in colorado 🌳"
+        },
+        {
+          "by": "emma",
+          "text": "The way he's leaning into the hug 💗 this made my day"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "point-of-view shot of a tall stack of pancakes with blueberries and a side of scrambled eggs on a diner table, a medal ribbon draped beside the plate, morning sun through the window"
+      ],
+      "caption": "25k done earned these",
+      "location": "Golden, CO",
+      "released": true,
+      "daysAgo": 70,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mijo, you deserve every bite of those pancakes. Eat slowly ❤️🫔"
+        },
+        {
+          "by": "rafi",
+          "text": "bro ran 25k and then ate a whole stack ong thats balance 😂"
+        },
+        {
+          "by": "andre",
+          "text": "nah because he ran 25k\n\njust to get to the pancakes\n\nthats commitment 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a fitted t-shirt laughing next to his older gray-bearded father at a backyard grill, both holding tongs, burgers on the grate, warm early-evening summer light, a slightly tilted candid shot"
+      ],
+      "caption": "pop still thinks squats are bad for your knees we are working on it #fathersday",
+      "location": "Arvada, CO",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "marcus",
+          "text": "Your father has clearly been carrying a lot of misinformation. Some arguments just need the right catalyst. - M"
+        },
+        {
+          "by": "dani",
+          "text": "get pop on the rack!! STRONG KNEES AT EVERY AGE 💪❤️ let's goooo"
+        },
+        {
+          "by": "gabriel",
+          "text": "This is the sweetest photo!!! You two have the exact same laugh!!! ☀️"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "close vertical shot of a chalk-covered hand reaching into a chalk bucket at a gym, barbell blurred in the background, harsh overhead light",
+      "text": "leg day dont talk to me"
+    },
+    {
+      "imagePrompt": "vertical shot of a ginger mixed-breed dog sprawled belly-up on a gray couch, sunlight across the cushions",
+      "text": "he did not do leg day"
+    },
+    {
+      "imagePrompt": "vertical point-of-view shot of a pink and orange sunrise over the foothills from a trailhead parking lot, a water bottle on a car hood",
+      "text": "6am club 💪"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "vertical shot of a phone alarm going off on a nightstand in a dark bedroom with a ginger dog asleep on the bed, faint blue predawn light",
+        "vertical overhead shot of a blender full of banana, oats and berries on a kitchen counter, a hand pressing the lid down, warm kitchen light",
+        "vertical shot of PERSON jogging up a dirt foothill trail away from the camera, the sun rising over the ridge ahead, golden haze"
+      ],
+      "caption": "5am wake up oats in the blender then trail big day every day 💪",
+      "audio": "Copper Lungs - Altitude",
+      "released": true,
+      "daysAgo": 12
+    }
+  ]
+}

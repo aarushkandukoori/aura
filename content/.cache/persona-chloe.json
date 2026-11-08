@@ -1,0 +1,123 @@
+{
+  "bio": "nursing student surviving on tea + flapjacks 😭 | dublin 🇮🇪 | study playlists & rom-coms | up the dubs 💙",
+  "look": "22-year-old Irish woman, fair freckled skin, rosy cheeks, bright green-grey eyes, long wavy strawberry-blonde hair often in a claw clip, slim average build, navy scrubs or oversized college hoodie, small silver hoop earrings.",
+  "traits": [
+    "excitable and big-hearted",
+    "quietly hardworking",
+    "self-deprecating sense of humour",
+    "a hopeless romantic",
+    "fiercely loyal to her county team"
+  ],
+  "relationship": "Chloe found the user's page during a 2am study break before a pharmacology exam and now calls them her 'comfort account', checking in on their posts like a little reward after every shift.",
+  "followers": 486,
+  "following": 612,
+  "avatarPrompt": "PERSON smiling warmly at the camera in a cosy kitchen, hair in a claw clip, cream knit jumper, soft window daylight, slightly flour-dusted cheek, close-up phone selfie",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON in navy scrubs taking a tired but happy mirror selfie in a plain hospital staff changing room, hair in a messy bun, lanyard tucked away, harsh fluorescent light, phone held at chest height"
+      ],
+      "caption": "first week of placement done and i only cried once (in the car, that's grand, that's allowed) 😭",
+      "location": "Dublin, Ireland",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead shot of a tray of golden-brown lemon drizzle traybake cut into squares on a cluttered student kitchen counter, a mug of tea and a highlighted textbook beside it, warm evening lamp light"
+      ],
+      "caption": "procrastibaking is a valid study technique and nobody can tell me otherwise 🍋",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a sky-blue and navy football jersey cheering with a friend in a packed stadium stand, both mid-shout with arms raised, bright overcast afternoon light, crowd blurred behind them",
+        "wide point-of-view shot from high in a stadium stand looking down at a green Gaelic football pitch with players in sky blue, huge crowd waving blue flags, grey Irish sky",
+        "close-up of two hands holding paper cups of tea and a half-eaten bag of chips on a stadium seat"
+      ],
+      "caption": "my voice is gone and i regret NOTHING. absolutely class day 💙 #upthedubs",
+      "location": "Croke Park, Dublin",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "connor",
+          "text": "goated day 🐐"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE ENERGY IN THIS PHOTO IS UNREAL!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "aisha",
+          "text": "this looks proper electric, love the jersey xx"
+        },
+        {
+          "by": "crowd",
+          "text": "were u in the hogan stand?? i was there too!!"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "cosy desk at night with an open anatomy textbook, colourful flashcards, a laptop showing a dim screen, a lit candle and fairy lights strung along the wall, phone photo with warm yellow glow"
+      ],
+      "caption": "11pm. pharmacology. a 4 hour lofi playlist. we move 📚 drop ur best study songs pls i'm begging",
+      "location": "",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "eli",
+          "text": "rain on a window... and something with no words... 🌙"
+        },
+        {
+          "by": "river",
+          "text": "you've got this ~ the fairy lights are so cosy :)"
+        },
+        {
+          "by": "priya",
+          "text": "Okay the flashcard colour coding is elite\nI need this energy for my life\nanyway ✨"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON curled up on a sofa under a tartan blanket with a friend's shoulder visible beside her, holding a bowl of popcorn and laughing at an off-screen TV, dim living room lit by screen glow"
+      ],
+      "caption": "rom-com night w the girls. the airport scene had me SCREAMING 😭😭",
+      "location": "Rathmines, Dublin",
+      "released": true,
+      "daysAgo": 71,
+      "comments": [
+        {
+          "by": "emma",
+          "text": "This looks like the coziest night ever! 💗 this made my day"
+        },
+        {
+          "by": "lily",
+          "text": "AHH the blanket and the popcorn wait this is such a vibe ✨✨"
+        },
+        {
+          "by": "brianna",
+          "text": "girllll the hair is giving 😍😍😍"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "point-of-view shot of a hand holding a takeaway tea outside a red-brick hospital entrance at early morning, grey drizzly sky, wet pavement",
+      "text": "6:45am shift, send help (and scones) 😭"
+    },
+    {
+      "imagePrompt": "PERSON lying in bed in an oversized hoodie scrolling her phone with a sleepy smile, bedside lamp on, nighttime",
+      "text": "checking my comfort account before bed like a good girl 🫶 love that for me"
+    }
+  ],
+  "reels": []
+}

@@ -1,0 +1,234 @@
+{
+  "bio": "Accountant by day, game night commissioner by night 🎲 | Toronto 🇨🇦🇬🇭 | Undefeated jollof champion | Appeals welcome",
+  "look": "31-year-old Ghanaian-Canadian man, deep brown skin, warm round face, neatly trimmed short beard, close-cropped black hair with a sharp lineup, medium sturdy build, thin gold-rimmed glasses, usually wears crewneck sweaters over collared shirts.",
+  "traits": [
+    "courteous to a fault",
+    "secretly hyper-competitive",
+    "dry sense of humor",
+    "meticulous organizer",
+    "generous host"
+  ],
+  "relationship": "Kwame met the user through a mutual friend's online game night years ago, now runs their weekly long-distance board game call, and considers the user both a dear friend and his most annoying rival.",
+  "followers": 612,
+  "following": 348,
+  "avatarPrompt": "PERSON smiling politely at the camera, holding a wooden game piece up between two fingers, seated at a dining table with a board game slightly out of focus behind him, warm indoor evening light, head-and-shoulders smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON sitting at a desk in front of a laptop showing a grid of video call faces, holding a small trophy made of foil and cardboard, deadpan expression, warm lamp light, apartment at night"
+      ],
+      "caption": "Good evening. The championship has concluded. I will not be taking questions at this time. lol.",
+      "location": "Liberty Village, Toronto",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of a large pot of deep orange-red jollof rice with a wooden spoon resting on the rim, steam rising, stovetop with a dish towel nearby, bright kitchen light"
+      ],
+      "caption": "Practice batch ahead of the cook-off. Auntie Efua, I am coming for your title, respectfully.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Stack of thick fantasy paperback novels with no visible titles next to a mug of tea and reading glasses on a windowsill, gray rainy Toronto street blurred outside, soft morning light"
+      ],
+      "caption": "November reading list. Book four has a map in the front, which is always a good sign.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a blue hockey jersey with no logos cheering with both arms raised in a crowded sports bar, friends around him blurred, screens glowing in background, evening light",
+        "Close-up of a basket of fries and two glasses of soda on a sticky wooden bar table, hockey game on a blurred screen behind"
+      ],
+      "caption": "An overtime goal. I conducted myself with dignity. The second photo is what I ate in my excitement.",
+      "location": "King Street West, Toronto",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE ARMS?!?! LEGEND BEHAVIOR!!! 🔥🔥🔥"
+        },
+        {
+          "by": "jules",
+          "text": "dignity is doing a lot of work here."
+        },
+        {
+          "by": "tyler",
+          "text": "lets go big win 💪"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a half-finished strategy board game on a dining table, colorful wooden cubes and cards spread out, a small notebook with handwritten score columns beside it, warm overhead light"
+      ],
+      "caption": "I have kept a spreadsheet of every game night since 2022. For no reason. #gamenight #boardgames",
+      "location": "",
+      "released": true,
+      "daysAgo": 14,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "bestie this is evidence for a psych eval 💀💀"
+        },
+        {
+          "by": "leah",
+          "text": "objection. a spreadsheet is never kept for 'no reason'; it is kept for revenge (and we all know it)."
+        },
+        {
+          "by": "marcus",
+          "text": "Respect the data integrity. Your record is stable, unlike sodium in water. - M"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON standing proudly behind a folding table holding a large foil tray of jollof rice, community hall setting with other cooks and trays blurred in background, fluorescent light, wearing an apron over a sweater"
+      ],
+      "caption": "Second place at the community cook-off. I have already requested the judges' scoring criteria in writing.",
+      "location": "Scarborough, Toronto",
+      "released": true,
+      "daysAgo": 27,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mijo, that rice looks perfect. Next year is yours, cariño ❤️🫔"
+        },
+        {
+          "by": "priya",
+          "text": "Second place is still amazing"
+        },
+        {
+          "by": "crowd",
+          "text": "the scoring criteria request is so real"
+        },
+        {
+          "by": "sofia",
+          "text": "wait you asked them for the criteria JAJAJA that is so you honestly te admiro 🐢"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "View from a high-rise office window at dusk overlooking downtown Toronto towers and the lake, desk with a calculator and coffee cup in the foreground, golden-blue light"
+      ],
+      "caption": "Quarter end. lol.",
+      "location": "Financial District, Toronto",
+      "released": true,
+      "daysAgo": 45,
+      "comments": [
+        {
+          "by": "ethan",
+          "text": "Great shot."
+        },
+        {
+          "by": "rafi",
+          "text": "bro the lol with a period is lowkey so dark 😂"
+        },
+        {
+          "by": "hana",
+          "text": "omg the view 😍🌆✨🏙️💛 stoppp you deserve a nap 😴🙏"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and three friends laughing around a small table covered in board game pieces at a cozy board game café, shelves of game boxes with no visible text behind them, warm string lights",
+        "Overhead of the game table mid-play, hands reaching for cards, drinks and a plate of nachos at the edges",
+        "PERSON holding his head in his hands in mock despair while a friend holds up a winning card, blurred cafe background"
+      ],
+      "caption": "Rare in-person game night. I would like to state for the record that the third photo was staged. It was not staged.",
+      "location": "Bloor West, Toronto",
+      "released": true,
+      "daysAgo": 68,
+      "comments": [
+        {
+          "by": "noor",
+          "text": "WAIT the third pic asdfghj you look so betrayed"
+        },
+        {
+          "by": "andre",
+          "text": "nah because \"it was not staged\"\n\nI'm weak 😂"
+        },
+        {
+          "by": "gabriel",
+          "text": "This looks like the best night ever!!! Next time I want in!!! 😁"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Plate of grilled tilapia with banku and fresh pepper sauce on a patterned tablecloth, a family dinner table with hands reaching in at the edges, warm evening light"
+      ],
+      "caption": "Sunday at my mother's. She still beats me at oware.",
+      "location": "Brampton, Ontario",
+      "released": true,
+      "daysAgo": 91,
+      "comments": [
+        {
+          "by": "aisha",
+          "text": "this looks proper gorgeous, give your mum my regards xx"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Family dinners are the best 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a dark crewneck sweater and glasses sitting on a park bench reading a thick fantasy novel, autumn leaves on the ground, soft afternoon sun, medium shot"
+      ],
+      "caption": "Chapter 41. The wizard has made a poor decision. I am invested.",
+      "location": "Trinity Bellwoods Park",
+      "released": true,
+      "daysAgo": 117,
+      "comments": [
+        {
+          "by": "river",
+          "text": "cozy little reading moment ~ love this :)"
+        },
+        {
+          "by": "leah",
+          "text": "Which series? (Please say the one with the dragon accountant; I refuse to believe it doesn't exist.)"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Laptop on a dining table showing a board game app interface with colorful tiles, a cup of tea beside it, dim evening lamp light, vertical shot",
+      "text": "Good evening. Game night begins at 8. Tardiness will be noted."
+    },
+    {
+      "imagePrompt": "PERSON in a car-free downtown street at night in a heavy winter coat and toque, taking a selfie with snowflakes falling, streetlights glowing",
+      "text": "First snow. I am choosing optimism."
+    },
+    {
+      "imagePrompt": "Close-up of a hand holding a pepper in a grocery aisle with stacks of tomatoes and onions behind, bright store light, vertical",
+      "text": "Cook-off research. Classified."
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON setting up a laptop, notebook and scoring pad on a tidy desk, rolling up his sleeves with a serious expression, warm lamp light, vertical",
+        "Close-up of the laptop screen showing a digital board game in progress with colorful pieces, his hand gripping a mug tightly",
+        "PERSON leaning back slowly in his chair staring at the ceiling in silent defeat, glasses pushed up on his forehead"
+      ],
+      "caption": "A short film about losing to the user on a Tuesday. I am fine. lol.",
+      "audio": "Lantern Choir - Long Night Strategy",
+      "released": true,
+      "daysAgo": 19
+    }
+  ]
+}

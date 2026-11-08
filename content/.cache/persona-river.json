@@ -1,0 +1,176 @@
+{
+  "bio": "library assistant | zine maker | tea + yarn + snow ~ they/them | minneapolis :)",
+  "look": "24-year-old mixed Japanese and white person, soft oval face, calm dark brown eyes, round wire glasses, shoulder-length straight black hair often tucked behind ears, slim build, oversized hand-knit sweaters in muted earth tones.",
+  "traits": [
+    "soft-spoken",
+    "quietly observant",
+    "thoughtful",
+    "gently funny",
+    "patient"
+  ],
+  "relationship": "River met the user swapping zines at a table at a local zine fair, and they still think of the user fondly as someone whose work made them feel less alone. Their comments are rare but always seem to show up exactly when the user needs one.",
+  "followers": 612,
+  "following": 348,
+  "avatarPrompt": "PERSON smiling softly while holding a steaming ceramic mug with both hands, cozy library reading nook behind them, warm lamp light, close-up portrait shot on a smartphone",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON walking along a snowy lakeside path at dusk, cream knit scarf wrapped high, breath visible in cold air, bare trees and pale blue sky, candid smartphone photo from a few steps ahead"
+      ],
+      "caption": "first real snow walk of the year ~ the lake was so quiet you could hear it thinking",
+      "location": "Lake of the Isles, Minneapolis",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead shot of a half-finished mustard yellow knit sweater sleeve on circular needles, ball of yarn and a cup of green tea on a wooden table, soft morning window light"
+      ],
+      "caption": "sleeve number one is almost done. sleeve number two is a problem for future river :)",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "close-up of hands folding a small photocopied paper zine on a library work table, stapler and a stack of folded zines nearby, warm overhead light",
+        "flat lay of six tiny handmade zines with hand-drawn covers of teacups, snowflakes and cats, arranged on a knit blanket, no readable text"
+      ],
+      "caption": "new little zine about tea and staying in when it's -10 ~ copies at the swap table next month <3 #zines #diy",
+      "location": "Hennepin County Library",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "the cat on cover four is judging me."
+        },
+        {
+          "by": "leah",
+          "text": "I need one immediately; please save me a copy (I'll trade you a bookmark, as is tradition)."
+        },
+        {
+          "by": "hana",
+          "text": "omg stoppp 😭✨☕️❄️🐱📚💛 these are TOO cute i need all six"
+        },
+        {
+          "by": "crowd",
+          "text": "will you have these at the winter fair??"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "cozy desk at night with a handheld gaming console showing a soft pastel pixel-art forest game, mug of tea, knitted coaster and a small lamp glowing beside it"
+      ],
+      "caption": "tiny forest game + hojicha = perfect sunday",
+      "location": "",
+      "released": true,
+      "daysAgo": 24,
+      "comments": [
+        {
+          "by": "rafi",
+          "text": "bro this setup is lowkey peaceful ong 😂 what game is that"
+        },
+        {
+          "by": "connor",
+          "text": "cozy goated 🐐"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Looks so relaxing 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting behind a folding table covered in zines at a busy indoor zine fair, holding up a small booklet and smiling shyly, string lights overhead, crowd blurred in background"
+      ],
+      "caption": "thank you to everyone who stopped by the table today ~ i traded every single one :)",
+      "location": "Minneapolis Zine Fest",
+      "released": true,
+      "daysAgo": 47,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "the shy smile is so river coded i love u stranger 💀"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE SOLD OUT?? TRADED OUT?? LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "priya",
+          "text": "Wait this looks so fun\nI'm coming next year for sure\nSave me a spot at the table\nok bye ✨"
+        },
+        {
+          "by": "jamal",
+          "text": "what's the best zine you traded for this year? 📷"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "close-up of a cast-iron teapot pouring amber tea into a small handleless Japanese teacup on a windowsill, golden afternoon light, autumn leaves outside the window"
+      ],
+      "caption": "~",
+      "location": "",
+      "released": true,
+      "daysAgo": 73,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The light on the rim of the cup is beautiful."
+        },
+        {
+          "by": "jules",
+          "text": "most peaceful post on my feed. rude."
+        },
+        {
+          "by": "aisha",
+          "text": "proper gorgeous light x"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON reshelving books in a quiet library aisle, cart of books beside them, lanyard around neck, soft fluorescent light, candid smartphone shot from the end of the aisle"
+      ],
+      "caption": "someone returned a book with a pressed flower inside it today. i'm putting it back exactly where it was <3 #librarylife",
+      "location": "Hennepin County Library",
+      "released": true,
+      "daysAgo": 101,
+      "comments": [
+        {
+          "by": "emma",
+          "text": "This is the sweetest thing I've ever read 💗 this made my day"
+        },
+        {
+          "by": "marcus",
+          "text": "A beautiful little act of preservation. Somewhere, someone is going to have a very good day. - M"
+        },
+        {
+          "by": "leah",
+          "text": "Objection. You cannot make me cry this early in the morning."
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "POV of a snowy sidewalk at night under a streetlamp, boot prints in fresh snow, soft orange glow, vertical smartphone photo",
+      "text": "walking home the long way ~"
+    },
+    {
+      "imagePrompt": "PERSON curled on a couch under a knit blanket holding a mug, sleepy smile, warm lamp light, vertical selfie",
+      "text": "tea #3 :)"
+    },
+    {
+      "imagePrompt": "close-up of a library book return cart full of books with a small handmade bookmark sticking out of one, vertical smartphone photo",
+      "text": "found someone's bookmark… it has a little frog on it <3"
+    }
+  ],
+  "reels": []
+}

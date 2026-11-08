@@ -1,0 +1,279 @@
+{
+  "bio": "Stand-up comic 🎤 | Chicago | My mom has the password to this account | 400 sq ft of pure luxury | Tour dates below ⬇️",
+  "look": "32-year-old Black man, warm brown skin, round expressive face with a gap-toothed grin and raised eyebrow, short twists with a tight fade, neat full beard, stocky build, oversized crewneck sweatshirts, gold chain, beat-up white sneakers.",
+  "traits": [
+    "quick-witted and observational",
+    "loving roaster who never punches down",
+    "mama's boy who'll deny it",
+    "secretly a hopeless homebody",
+    "fiercely loyal to Chicago"
+  ],
+  "relationship": "Andre first clocked the user as the person who left a comment so funny he stole it for a bit (with credit), and now he roasts them in his comments like a little cousin he's quietly proud of.",
+  "followers": 1340000,
+  "following": 612,
+  "avatarPrompt": "PERSON grinning with one eyebrow raised, holding a vintage microphone near his chin, warm amber stage light behind him, dark brick wall background, tight head-and-shoulders portrait, shallow depth of field",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON standing center stage in a small packed comedy club, mid-gesture with one hand out and mouth open mid-punchline, single warm spotlight, crowd silhouettes in the foreground laughing, shot from the back of the room"
+      ],
+      "caption": "Taped the hour last night.\n\nMy mom was in the front row.\n\nShe heckled me.\n\nIt's going in the special.",
+      "location": "Wicker Park, Chicago",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a tiny apartment kitchen counter where a full-size deep-dish pizza box barely fits, hanging off both edges, warm overhead light, a single fork resting on top, slightly cluttered tiled backsplash"
+      ],
+      "caption": "The pizza is bigger than my kitchen.\n\nThis is not a metaphor. I measured.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting on a narrow twin bed in a cramped studio apartment, knees nearly touching a radiator, holding a phone up and looking at it with exaggerated disbelief, soft afternoon window light, clothes rack squeezed beside him"
+      ],
+      "caption": "Mom group chat update: she has added three aunties and a pastor.\n\nI am no longer safe in my own phone.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "View from upper-level seats of an indoor basketball arena during a game, court glowing under bright lights, blurred players mid-play, a paper tray of nachos balanced on a knee in the foreground"
+      ],
+      "caption": "nah because these seats are so high I could see my apartment from here\n\nand it's STILL small",
+      "location": "West Loop, Chicago",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON and an older Black woman in a church hat and bright cardigan posing in a cozy living room, she is pinching his cheek while he pretends to be annoyed, framed family photos on the wall, warm lamp light",
+        "Close-up of a dinner table loaded with homemade mac and cheese, greens and cornbread on mismatched plates, overhead shot, soft evening light",
+        "PERSON asleep on a floral couch under a crocheted blanket, mouth slightly open, TV glow on his face, taken from across the room"
+      ],
+      "caption": "Sunday dinner with the headliner.\n\nShe took 11 photos of me sleeping. She's posting them to the chat. I've been informed. #MomsHouse",
+      "location": "Chatham, Chicago",
+      "released": true,
+      "daysAgo": 3,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "slide 3 is your new headshot bestie im not asking 💀💀"
+        },
+        {
+          "by": "rosa",
+          "text": "Your mama's mac and cheese looks like love, mijo. Tell her I said she is the real star ❤️🫔"
+        },
+        {
+          "by": "rafi",
+          "text": "bro the cheek pinch is undefeated ong 😂"
+        },
+        {
+          "by": "leah",
+          "text": "objection. you are clearly not annoyed; you are thriving (and so is that cornbread)."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Neon-lit late-night street corner in Chicago after rain, reflections of warm storefront lights on wet pavement, an elevated train passing overhead in motion blur, shot at street level"
+      ],
+      "caption": "2am after the late set. Best city in the world, don't argue with me.",
+      "location": "Logan Square, Chicago",
+      "released": true,
+      "daysAgo": 11,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The wet pavement doubles the light beautifully."
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS CITY AND THIS MAN??? LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "crowd",
+          "text": "not arguing, just commenting from a suburb respectfully"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a hooded sweatshirt mid-jumpshot on an outdoor neighborhood basketball court at golden hour, chain-link fence behind him, ball leaving his hands, low angle"
+      ],
+      "caption": "Shot went in.\n\nYou'll have to trust me.\n\nThere is no video and that's on purpose.",
+      "location": "Washington Park, Chicago",
+      "released": true,
+      "daysAgo": 24,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "form looks clean lets go 💪"
+        },
+        {
+          "by": "connor",
+          "text": "no shot 🐐"
+        },
+        {
+          "by": "jules",
+          "text": "the absence of video is the punchline."
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Getting those shots up 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of a deep-dish pizza slice being pulled from the pan, long strings of melted cheese stretching, chunky tomato sauce on top, dim moody restaurant lighting, red checkered napkin at the edge"
+      ],
+      "caption": "🍕\n\n😮‍💨",
+      "location": "River North, Chicago",
+      "released": true,
+      "daysAgo": 38,
+      "comments": [
+        {
+          "by": "priya",
+          "text": "Why would you post this at 11pm\nI'm starving now\nRude honestly\nanyway ✨"
+        },
+        {
+          "by": "hana",
+          "text": "omg STOPPP the cheese pull 😭🍕🧀🔥😍✨🤤"
+        },
+        {
+          "by": "theo",
+          "text": "Honestly mate, I flew through Chicago once and still think about this exact slice ✈️🌍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A cramped studio apartment shot wide from the doorway: bed, mini fridge, desk and tiny stove all within arm's reach, string lights along the ceiling, a framed comedy poster with no text, cozy evening light",
+        "Close-up of a shower curtain directly beside a stovetop in a tiny apartment, comically close together, bright overhead light"
+      ],
+      "caption": "Apartment tour.\n\nThat's it. That was the tour.\n\nYes, I can make eggs while I shower. No, I won't be taking questions. #TinyApartment",
+      "location": "",
+      "released": true,
+      "daysAgo": 57,
+      "comments": [
+        {
+          "by": "noor",
+          "text": "WAIT the stove is IN the bathroom asdfghjkl"
+        },
+        {
+          "by": "marcus",
+          "text": "Structurally, this is a fascinating reaction vessel. Please keep a fire extinguisher nearby. - M"
+        },
+        {
+          "by": "aisha",
+          "text": "proper bijou, love the string lights though xx"
+        },
+        {
+          "by": "crowd",
+          "text": "you could reach everything from the bed that's honestly efficient"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I have seen larger closets, but none with this much character. lol."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON backstage in a narrow green room, sitting on a beat-up leather couch with a notebook on his knee, pen in mouth, mirror bulbs glowing behind him, candid moody shot"
+      ],
+      "caption": "Writing new stuff.\n\nIt's about my mom.\n\nIt's always about my mom.",
+      "location": "Lakeview, Chicago",
+      "released": true,
+      "daysAgo": 82,
+      "comments": [
+        {
+          "by": "jamal",
+          "text": "the mirror bulbs framing you is so good, do you write before every set? 📷"
+        },
+        {
+          "by": "lily",
+          "text": "AHH the green room photo is so cool wait ✨✨✨"
+        },
+        {
+          "by": "gabriel",
+          "text": "Your mom deserves a writing credit at this point!!! Royalties!!! ☀️"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A sold-out theater seen from the stage, rows of audience members cheering under warm house lights, a lone microphone stand silhouetted in the foreground"
+      ],
+      "caption": "Sold out hometown show. I'm weak. Thank you, Chicago. 🫶\n\nMy mom says she 'knew it'. She did not know it. She told me to be a dentist.",
+      "location": "Chicago Theatre District",
+      "released": true,
+      "daysAgo": 115,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE SOLD OUT??? LEGEND BEHAVIOR!!!!! 🔥🔥🔥🔥"
+        },
+        {
+          "by": "emma",
+          "text": "This is so well deserved, congratulations! This made my day 🩷"
+        },
+        {
+          "by": "zara",
+          "text": "main character energy."
+        },
+        {
+          "by": "maya",
+          "text": "dentist andre would have been so much worse for society 💀"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Phone screen-free shot of PERSON's hand holding a phone that is buzzing nonstop on a kitchen counter, blurred motion, morning light",
+      "text": "mom group chat: 147 new messages\n\nit's 7am"
+    },
+    {
+      "imagePrompt": "PERSON taking a mirror selfie in a tiny bathroom where the mirror only fits half his face, fluorescent light, deadpan expression",
+      "text": "getting ready for the show. the mirror only does one cheek at a time"
+    },
+    {
+      "imagePrompt": "View of Lake Michigan shoreline at sunrise from a lakefront path, calm water, skyline faint in the distance, vertical frame",
+      "text": "ok fine. it's pretty."
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON standing in his tiny studio holding his arms out and touching both walls at once, deadpan face, warm lamp light",
+        "PERSON trying to do a push-up and his feet hit the fridge, ring light glow, vertical frame",
+        "PERSON giving up and lying on the floor staring at the ceiling while string lights twinkle above"
+      ],
+      "caption": "Home workout in a 400 sq ft apartment.\n\nI did one push-up.\n\nThe fridge did the rest.",
+      "audio": "original audio",
+      "released": true,
+      "daysAgo": 19
+    },
+    {
+      "framePrompts": [
+        "PERSON in his mom's kitchen nervously watching an older woman in a cardigan peer at his phone screen with reading glasses, warm afternoon light",
+        "The older woman typing furiously on the phone with both thumbs while PERSON covers his face behind her",
+        "PERSON alone on the back porch at dusk, holding his phone, mouth open in horror, lights from the house behind him"
+      ],
+      "caption": "I let my mom use my phone for 'one second'.\n\nShe replied to 40 comments.\n\nShe roasted y'all better than me 😂",
+      "audio": "Velvet Static - Neon Hours",
+      "released": false,
+      "daysAgo": 0
+    }
+  ]
+}

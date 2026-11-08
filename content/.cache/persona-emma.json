@@ -1,0 +1,126 @@
+{
+  "bio": "Kindergarten TA 🍎 | Swedish-American in Austin 🇸🇪 | picture books, glue guns & sunflowers 🌻 | farmers market regular 💗",
+  "look": "23-year-old Swedish-American woman, fair rosy skin, light freckles, wide gap-toothed smile, blue-gray eyes, long wavy honey-blonde hair often in a braid, slim build, cardigans, gingham dresses, small gold hoops.",
+  "traits": [
+    "endlessly encouraging",
+    "crafty and resourceful",
+    "earnest to a fault",
+    "patient",
+    "quietly homesick for midsummer traditions"
+  ],
+  "relationship": "Emma found the user through a friend-of-a-friend's repost and now checks the user's posts every lunch break between nap-time prep and recess duty, cheering them on like a proud fan.",
+  "followers": 412,
+  "following": 538,
+  "avatarPrompt": "PERSON smiling wide with her gap-toothed grin, honey-blonde braid over one shoulder, cream cardigan, standing in front of tall sunflowers in warm golden-hour light, close-up smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Overhead smartphone photo of a classroom craft table covered in paper-plate sunflowers, yellow tissue paper petals, glue sticks and child-safety scissors, soft fluorescent light mixed with window daylight"
+      ],
+      "caption": "Twenty-two paper plate sunflowers and only one of them is purple, because \"sunflowers can be any color, Miss Emma.\" Honestly, fair point 🌻💗",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting cross-legged on a cozy reading rug in her apartment holding up a stack of colorful picture books, fairy lights on the wall behind her, warm evening lamp light, smiling with gap-toothed grin"
+      ],
+      "caption": "Library haul for next week's story time! Already crying at two of them 📚",
+      "location": "Austin, Texas",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Smartphone photo of a wooden farmers market table piled with heirloom tomatoes, peaches and a bundle of sunflowers wrapped in brown paper, bright Saturday morning sun, shallow depth of field",
+        "PERSON holding a paper cup of iced lemonade and a sunflower bouquet at an outdoor farmers market, white canvas tents blurred behind her, sunny morning, gingham sundress"
+      ],
+      "caption": "Saturday mornings are for peaches and flowers I don't have enough vases for 🍑🌻 #farmersmarket #saturdaymornings",
+      "location": "Mueller Farmers Market",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Those peaches are begging for a cobbler, mija. Come by and I'll show you my recipe ❤️🫔"
+        },
+        {
+          "by": "river",
+          "text": "the sunflowers in brown paper ~ so lovely :)"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Saturday done right 👍"
+        },
+        {
+          "by": "crowd",
+          "text": "what stand were the peaches from?? they look perfect"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up smartphone photo of hands threading a needle with pale blue embroidery floss over a wooden hoop showing a half-stitched Dala horse pattern, warm afternoon light on a kitchen table, mug of tea in the corner"
+      ],
+      "caption": "Mormor's old pattern, my shaky stitches. She'd say it's perfect anyway 🧵💙",
+      "location": "",
+      "released": true,
+      "daysAgo": 31,
+      "comments": [
+        {
+          "by": "ines",
+          "text": "Your stitches are magnifique, not shaky at all! The little horse is so charming 🖌️🥐"
+        },
+        {
+          "by": "leah",
+          "text": "This is so tender (and the tea in the corner is the perfect supporting character)."
+        },
+        {
+          "by": "aisha",
+          "text": "proper gorgeous, she'd be so chuffed xx"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Wide smartphone photo of an endless sunflower field at sunset, rows of tall sunflowers facing the camera, orange and pink sky, slight lens flare from the low sun"
+      ],
+      "caption": "🌻🌻🌻",
+      "location": "Sunflower field outside Austin, TX",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The low sun gives every flower its own halo."
+        },
+        {
+          "by": "hana",
+          "text": "🌻😭💛✨🌅🥹 omg stoppp this is literally a painting"
+        },
+        {
+          "by": "gabriel",
+          "text": "This is SO beautiful!!! I need to go before the season ends!!! ☀️"
+        },
+        {
+          "by": "lily",
+          "text": "AHH this is so dreamy ✨✨ wait your photos are always so pretty ✨"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical smartphone photo of a packed lunch on a small classroom table: turkey sandwich, apple slices, a juice box, and a phone propped against a crayon bin, midday window light",
+      "text": "Lunch break = catching up on your posts 💗 this made my day"
+    },
+    {
+      "imagePrompt": "PERSON taking a mirror selfie in her apartment hallway wearing a mustard cardigan with tiny felt sunflower pins, braid over shoulder, gap-toothed smile, warm morning light",
+      "text": "Picture day outfit, the kids voted 🌻"
+    }
+  ],
+  "reels": []
+}

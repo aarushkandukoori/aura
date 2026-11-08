@@ -1,0 +1,181 @@
+{
+  "bio": "columbus 📍 | finance szn (pray for me) | fantasy league commish 🏆 | gym > sleep 🐐",
+  "look": "22-year-old white Irish-American man, heavy freckles across nose and cheeks, short messy copper-red hair, light blue eyes, wide goofy grin, athletic stocky build, usually in a backwards cap, scarlet hoodie or gray athletic tee.",
+  "traits": [
+    "loyal like a golden retriever",
+    "competitive about literally everything",
+    "secretly a hard worker",
+    "easily hyped",
+    "a little bit of a menace"
+  ],
+  "relationship": "Connor is Tyler's younger cousin who met the user at a family cookout and has looked up to them like the cool older sibling he never had ever since, hyping every post and DMing them for life advice before job interviews.",
+  "followers": 1140,
+  "following": 892,
+  "avatarPrompt": "PERSON grinning at the camera in a backwards cap and scarlet hoodie, standing in a packed stadium crowd on a sunny fall afternoon, slightly tilted selfie, warm golden light on his freckles",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON in a borrowed navy suit that's slightly too big in the shoulders, standing awkwardly in a college apartment hallway, holding a leather padfolio, flash photo, hair actually combed for once"
+      ],
+      "caption": "final round tmrw. suit is my roommate's. confidence is my own 🐐",
+      "location": "Columbus, Ohio",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead shot of a messy coffee table covered in two laptops showing spreadsheets, an energy drink can with no label, a half-eaten bag of pretzels and a game controller, warm lamp light at night"
+      ],
+      "caption": "fantasy waiver wire research > corporate finance homework. priorities",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "huge crowd of fans in scarlet and gray filling stadium stands on a bright fall afternoon, shot from high up in the upper deck, field visible below, people with arms raised",
+        "PERSON and three college buddies with red face paint stripes on their cheeks, screaming at the camera in the stands, slightly blurry from excitement"
+      ],
+      "caption": "no shot that just happened. lost my voice. worth it 🐐🐐",
+      "location": "Columbus, Ohio",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "lets go cuz big day"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE FACE PAINT IS ELITE!!! LEGEND BEHAVIOR 🔥🔥🔥"
+        },
+        {
+          "by": "maya",
+          "text": "connor ur gonna be hoarse for ur interview bestie 💀"
+        },
+        {
+          "by": "rafi",
+          "text": "bro the energy in that second pic ong 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON mid-rep on a bench press in a crowded campus gym, spotter's hands hovering, harsh overhead fluorescent light, gray sleeveless shirt over a tee, phone propped on a water bottle"
+      ],
+      "caption": "new PR. tyler said i couldn't. tyler was wrong 💪",
+      "location": "Campus Rec Center",
+      "released": true,
+      "daysAgo": 24,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "ok fine PR is PR proud of u 💪"
+        },
+        {
+          "by": "dani",
+          "text": "YOU DID THAT!! let's goooo 💪❤️"
+        },
+        {
+          "by": "sam",
+          "text": "Proud of you, keep that form clean! 👍"
+        },
+        {
+          "by": "marcus",
+          "text": "Impressive work, Connor. That bar clearly had no chance against your reaction force. - M"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "a paper tray of loaded fries with pulled pork, jalapeños and cheese sauce on a sticky wooden bar table, two cups of soda in the background, dim warm lighting, game playing out of focus on a TV"
+      ],
+      "caption": "goated",
+      "location": "Short North, Columbus",
+      "released": true,
+      "daysAgo": 41,
+      "comments": [
+        {
+          "by": "rafi",
+          "text": "lowkey need this rn bro"
+        },
+        {
+          "by": "jules",
+          "text": "that's a whole cardiologist appointment."
+        },
+        {
+          "by": "rosa",
+          "text": "Mijo, please eat a vegetable this week too ❤️🫔"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and an older friend laughing in a backyard at a family cookout, holding paper plates of burgers, string lights and a cornhole board behind them, late golden-hour summer light",
+        "close-up of a cornhole board with three bags in the hole, grass and sneakers at the edge of the frame"
+      ],
+      "caption": "family cookout. went undefeated in cornhole. the cool cousin (not mine, i stole them) was my partner 🐐 #undefeated",
+      "location": "German Village, Columbus",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "stole them from me actually"
+        },
+        {
+          "by": "priya",
+          "text": "Wait this is so cute\nConnor adopted a whole new sibling\nWe love that for him\nanyway ✨"
+        },
+        {
+          "by": "brianna",
+          "text": "stoppp the string lights babe 😍😍😍"
+        },
+        {
+          "by": "gabriel",
+          "text": "Undefeated?! That's incredible!!! Cornhole royalty right here!!! ☀️"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "a gaming setup in a dim dorm-style bedroom glowing with blue LED strip lights, a headset resting on a controller, a small fantasy football trophy shaped like a cup sitting next to the monitor"
+      ],
+      "caption": "defending champ. come get it boys 🏆 #fantasyfootball",
+      "location": "",
+      "released": true,
+      "daysAgo": 115,
+      "comments": [
+        {
+          "by": "andre",
+          "text": "nah because\n\nthat trophy is the size of a shot glass\n\nI'm weak 😂"
+        },
+        {
+          "by": "ethan",
+          "text": "Solid."
+        },
+        {
+          "by": "crowd",
+          "text": "bro you got lucky in week 14 and you know it"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON doing a mirror selfie in a cramped college bathroom wearing a too-big navy suit jacket over a gray tee, backwards cap still on",
+      "text": "suit check. cap stays on until the last second"
+    },
+    {
+      "imagePrompt": "a laptop on a library desk showing a phone-sized draft spreadsheet blurred out, iced coffee sweating next to it, late night, empty library tables behind",
+      "text": "3am finance grind 🐐"
+    },
+    {
+      "imagePrompt": "view from a car passenger seat of a quiet Columbus street at sunset, leaves turning orange, dashboard edge in frame",
+      "text": "real"
+    }
+  ],
+  "reels": []
+}

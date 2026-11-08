@@ -1,0 +1,222 @@
+{
+  "bio": "Public defender; book club's snack chair (reading status: chapter 4) | challah on Fridays | Philly | 🐶 Bagel's mom",
+  "look": "27-year-old Ashkenazi Jewish woman, warm olive-fair skin, big voluminous dark brown curls, brown eyes, light freckles, soft round face, average build; oversized cardigans, blazers over tees, gold Star of David necklace, tortoiseshell glasses.",
+  "traits": [
+    "fiercely argumentative (lovingly)",
+    "generous host",
+    "chronically over-committed",
+    "big-hearted advocate",
+    "theatrical"
+  ],
+  "relationship": "Leah met the user at book club, where she always sits next to them to whisper hot takes about chapters she hasn't read; she thinks of the user as her favorite co-conspirator and the one person whose book opinions she actually trusts.",
+  "followers": 1140,
+  "following": 687,
+  "avatarPrompt": "PERSON smiling warmly on a Philadelphia rowhouse stoop in autumn, curls catching golden afternoon light, holding a paperback against her chest, wearing a cream cardigan, casual smartphone portrait, shallow depth of field",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Overhead shot of a coffee table set for book club: a board of cheeses, figs, honey, a braided challah, a bowl of clementines and a paperback lying face-down with a bookmark sticking out barely a quarter of the way in, warm lamp light"
+      ],
+      "caption": "Book club tonight. The snacks are finished; the book is not (and we will not be discussing that).",
+      "location": "Fishtown, Philadelphia",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a navy blazer and glasses walking down stone courthouse steps on a crisp morning, coffee in hand, mid-laugh, shot from a few steps below"
+      ],
+      "caption": "Two acquittals this week. I'm going to go lie down for approximately one business day.",
+      "location": "Center City, Philadelphia",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "A beagle curled asleep on a knitted blanket on a couch, one ear flipped inside out, soft late afternoon window light"
+      ],
+      "caption": "Bagel has had a very demanding day (he sniffed three hydrants).",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a golden six-strand braided challah fresh from the oven on a cooling rack, sesame seeds glistening, flour dusted on a wooden counter",
+        "PERSON holding the challah up proudly in a small kitchen, flour on her cheek, curls tied up in a scarf",
+        "Torn-open challah showing the fluffy interior, steam visible, a dish of honey beside it"
+      ],
+      "caption": "Six-strand braid, finally. Shabbat shalom; I am insufferable now. #challah #shabbat",
+      "location": "",
+      "released": true,
+      "daysAgo": 5,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mija, this braid is perfect! Your bubbe would be so proud ❤️🫓"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS IS BAKERY LEVEL!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "jules",
+          "text": "save me the end piece."
+        },
+        {
+          "by": "hana",
+          "text": "😍🍞✨🙌😭💛 omg stoppp the braid is so pretty"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and book club friends crowded on a couch laughing, wine glasses and paperbacks in hand, string lights behind, slightly blurry candid group shot"
+      ],
+      "caption": "Objection. I did read the ending; I just read it first.",
+      "location": "Fishtown, Philadelphia",
+      "released": true,
+      "daysAgo": 16,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "bestie you read the summary in the bathroom 💀"
+        },
+        {
+          "by": "river",
+          "text": "spoiling it for yourself is a valid reading style ~ :)"
+        },
+        {
+          "by": "priya",
+          "text": "She defended the villain for 40 minutes\nWith snacks as evidence\nIconic anyway ✨"
+        },
+        {
+          "by": "marcus",
+          "text": "Leah's arguments have a remarkably high activation energy, but they always react. - M"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot from a theater balcony looking down at a glowing stage with red velvet seats below, warm stage lights, audience silhouettes"
+      ],
+      "caption": "Cried at the overture. Cried at intermission. Cried in the lobby. Normal evening.",
+      "location": "Avenue of the Arts, Philadelphia",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "sofia",
+          "text": "JAJAJA the lobby tho i would have cried in the car also no te creas yo lloro con todo 🐢"
+        },
+        {
+          "by": "gabriel",
+          "text": "This looks magical!!! Which show was it?!! ☀️"
+        },
+        {
+          "by": "lily",
+          "text": "AHH your life is so cool ✨✨"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A beagle on a leash trotting along a leafy path by the river at golden hour, autumn leaves on the ground, shot from behind at dog height"
+      ],
+      "caption": "🍂🐶",
+      "location": "Schuylkill River Trail",
+      "released": true,
+      "daysAgo": 52,
+      "comments": [
+        {
+          "by": "sam",
+          "text": "Love this!! Bagel is living his best life 👍"
+        },
+        {
+          "by": "noor",
+          "text": "WAIT the little tail asdfghj"
+        },
+        {
+          "by": "emma",
+          "text": "His little ears! 💗 this made my day"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON mirror selfie in a hallway wearing an oversized camel blazer over a striped tee and jeans, gold necklace visible, case files tucked under one arm"
+      ],
+      "caption": "Court-appropriate; snack-appropriate. The blazer has pockets (crucial for granola bars).",
+      "location": "",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "zara",
+          "text": "the blazer. 🤍"
+        },
+        {
+          "by": "brianna",
+          "text": "girl the curls are curlinggg today 😍😍😍"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. A very persuasive outfit; the jury never stood a chance."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Stack of half-read library books on a nightstand beside a mug of tea and reading glasses, each with a bookmark poking out near the first few chapters, soft bedside lamp light"
+      ],
+      "caption": "My 'currently reading' pile (emphasis on currently; it has been currently since March). #tbr",
+      "location": "",
+      "released": true,
+      "daysAgo": 110,
+      "comments": [
+        {
+          "by": "rafi",
+          "text": "bro the bookmarks all on page 30 ong 😂"
+        },
+        {
+          "by": "connor",
+          "text": "real 🐐"
+        },
+        {
+          "by": "aisha",
+          "text": "proper relatable, mine's the same xx"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a counter covered in flour with a bowl of rising challah dough under a towel, early morning kitchen light",
+      "text": "Dough is rising; so is my anxiety about tonight's discussion"
+    },
+    {
+      "imagePrompt": "PERSON in a parked car with earbuds in, singing dramatically, eyes closed, morning light through the windshield",
+      "text": "Commute playlist: entire cast album, no skips"
+    },
+    {
+      "imagePrompt": "A beagle staring up at the camera pleadingly next to an empty food bowl on a kitchen floor",
+      "text": "He has been fed. Do not believe him."
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "Vertical shot of hands mixing flour, eggs and honey in a large bowl on a wooden counter, morning light",
+        "PERSON braiding long strands of dough on a floured counter, curls tied up, concentrating",
+        "Finished golden challah on a table set with candles, a beagle's nose peeking into the frame from below"
+      ],
+      "caption": "Friday challah, start to finish (Bagel supervised; quality control was rigorous).",
+      "audio": "original audio",
+      "released": true,
+      "daysAgo": 19
+    }
+  ]
+}

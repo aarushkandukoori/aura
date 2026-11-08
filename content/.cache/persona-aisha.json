@@ -1,0 +1,181 @@
+{
+  "bio": "junior architect @ a tiny east london studio ✏️ | sketching buildings that don't love me back | chai > coffee | rainy walks x",
+  "look": "26-year-old British-Bangladeshi woman, warm brown skin, oval face, dark brown eyes, thick straight eyebrows, long dark hair usually in a low bun with loose strands, slim build, oversized camel coat, black turtlenecks, thin gold hoops, round tortoiseshell glasses.",
+  "traits": [
+    "observant and dreamy, always noticing the light",
+    "dry self-deprecating humour",
+    "quietly ambitious",
+    "sentimental about people she meets on trips",
+    "happily nerdy about concrete and staircases"
+  ],
+  "relationship": "Aisha met the user on a trip abroad when they both got lost looking for the same gallery, and now she stays close from five time zones away by commenting on the light and the buildings in the background of every post, half joking that she's waiting for the user to come visit London.",
+  "followers": 864,
+  "following": 512,
+  "avatarPrompt": "PERSON smiling softly with her head tilted, standing under a concrete overhang on a grey drizzly London day, damp strands of hair around her face, camel coat collar turned up, natural overcast light, close-up smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Point-of-view shot of an open sketchbook on a wooden café table, a loose ink drawing of a Georgian terrace with rain-streaked window behind it, a glass of milky chai beside it, soft grey afternoon light"
+      ],
+      "caption": "drew the same terrace three times today and it's still wonky. the chai was proper good though x",
+      "location": "Stoke Newington, London",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON standing on a wet pavement in a long camel coat holding a clear umbrella, red brick mansion blocks behind her, puddles reflecting streetlights at dusk, candid smartphone photo from a few metres away"
+      ],
+      "caption": "rainy walk season is officially open 🌧️",
+      "location": "Bloomsbury, London",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view looking up the inside of a brutalist concrete stairwell spiralling upward, a skylight at the top pouring in pale morning light, strong geometric shadows",
+        "PERSON sitting on the edge of a raised concrete walkway sketching in a small notebook, tower blocks behind her, overcast sky, shot from slightly below"
+      ],
+      "caption": "spent my saturday staring at concrete and honestly no regrets. that stairwell is gorgeous #brutalism #architecturesketch",
+      "location": "Barbican, London",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The skylight does all the work in the first frame. Beautiful restraint."
+        },
+        {
+          "by": "jules",
+          "text": "a woman who's in love with a stairwell."
+        },
+        {
+          "by": "ines",
+          "text": "Your little sketch is magnifique, I love how loose the lines are 🎨🥐"
+        },
+        {
+          "by": "river",
+          "text": "this feels like a quiet saturday ~ love it :)"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view of a cluttered architecture studio desk at night, a white foam-board building model under a desk lamp, cutting mat, scalpel, scraps of card and a mug of tea, warm lamp light against a dark window"
+      ],
+      "caption": "11pm model making. the scalpel and i have reached an understanding x",
+      "location": "Hackney Wick, London",
+      "released": true,
+      "daysAgo": 19,
+      "comments": [
+        {
+          "by": "marcus",
+          "text": "Impressive precision. I'd say you have excellent bonding skills with that glue. - M"
+        },
+        {
+          "by": "sam",
+          "text": "This is so cool, all those tiny details!! Proud of you 👍"
+        },
+        {
+          "by": "connor",
+          "text": "goated desk setup 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and two friends laughing around a small table in a family kitchen, plates of rice, dal, fish curry and shingara in steel bowls, warm yellow overhead light, slightly blurry candid shot",
+        "Close-up point-of-view shot of a pot of chai bubbling on a gas hob, cardamom pods and a ladle beside it, steam rising"
+      ],
+      "caption": "sunday at ammu's. she made enough for twelve people and there were four of us 🫖",
+      "location": "Whitechapel, London",
+      "released": true,
+      "daysAgo": 41,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Your mamá is feeding you with love, cariño. That curry looks perfect ❤️🫔"
+        },
+        {
+          "by": "priya",
+          "text": "The chai on the hob\nI can smell it through the screen\nTell your mum I'm coming next time ok bye ✨"
+        },
+        {
+          "by": "brianna",
+          "text": "girl this table is everything 😍😍😍"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS FOOD LOOKS INCREDIBLE!!! FAMILY DINNER LEGEND 🔥🔥🔥"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view inside a grand museum hall with a vaulted glass and iron roof, soft diffused daylight filling the space, a few small blurred visitors on the stone floor below"
+      ],
+      "caption": "came for one exhibit, stayed four hours for the ceiling",
+      "location": "South Kensington, London",
+      "released": true,
+      "daysAgo": 73,
+      "comments": [
+        {
+          "by": "theo",
+          "text": "Honestly mate, that roof is worth the trip alone. One of my favourite spots in the city 🌍✈️"
+        },
+        {
+          "by": "jamal",
+          "text": "the light in here is so even, did you shoot this midday? 📷"
+        },
+        {
+          "by": "leah",
+          "text": "Four hours for a ceiling; I completely respect this (and would do the same)."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON on a hostel rooftop abroad at golden hour holding a paper cup of tea, terracotta rooftops and a church dome behind her, wind catching loose strands of hair, warm low sunlight, casual smartphone photo"
+      ],
+      "caption": "last evening of the trip. got lost looking for a gallery and found a new friend instead, which is a much better deal tbh xx",
+      "location": "",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "wait is this the trip where u met our friend bestie 💀"
+        },
+        {
+          "by": "gabriel",
+          "text": "This golden hour is unreal!!! What a perfect last night!!! ☀️"
+        },
+        {
+          "by": "emma",
+          "text": "What a lovely way to end a trip, this made my day 🩷"
+        },
+        {
+          "by": "crowd",
+          "text": "those rooftops are stunning"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Point-of-view of a rainy London bus window at dusk, droplets on the glass blurring red tail lights and terraced houses outside",
+      "text": "the 73 in the rain is basically a moving gallery x"
+    },
+    {
+      "imagePrompt": "PERSON taking a mirror selfie in a narrow studio bathroom, black turtleneck and gold hoops, tired smile, glasses slightly pushed up, warm bulb lighting",
+      "text": "deadline face"
+    },
+    {
+      "imagePrompt": "Close-up of a hand holding a mug of chai in front of an open sketchbook with a half-finished pencil drawing of a window arch, soft morning light",
+      "text": "chai first, facades later"
+    }
+  ],
+  "reels": []
+}

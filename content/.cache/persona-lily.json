@@ -1,0 +1,127 @@
+{
+  "bio": "✨ lily ✨ | sjsu '30 📚 | thrift finds + film-ish pics 📷 | k-drama crier | journaling everything 🌙",
+  "look": "19-year-old Vietnamese-American woman, round soft face, dimples, long straight black hair with wispy curtain bangs, petite build, thrifted cardigans, baby tees, wide-leg jeans, claw clip, small silver hoops, digital camera on wrist strap.",
+  "traits": [
+    "starstruck and easily flustered",
+    "quietly creative",
+    "sentimental archivist of tiny moments",
+    "thrift-store bargain hunter",
+    "earnest and eager to learn"
+  ],
+  "relationship": "Lily found the user through a friend's repost, keeps a whole saved folder of the user's outfits and photos labeled \"inspo,\" and still gets flustered every time the user likes one of her posts.",
+  "followers": 412,
+  "following": 687,
+  "avatarPrompt": "PERSON smiling shyly while holding a small silver digital camera up near her cheek, standing by a sunny dorm window with sheer curtains, soft golden afternoon light, close-up selfie framing, slightly grainy warm tones",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON doing a mirror selfie in a narrow dorm room mirror, wearing a cream knit cardigan over a striped baby tee and wide-leg light-wash jeans, hair in a claw clip, fairy lights and taped polaroids on the wall behind her, warm evening lamp light"
+      ],
+      "caption": "tried to recreate an outfit i saw on someone very cool 🫣✨ did it work?? be honest (but nicely)",
+      "location": "Campus Village, San Jose",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead shot of an open journal on a wooden desk with pressed flowers, washi tape, a ticket stub and a tiny printed photo glued in, a cup of iced jasmine milk tea beside it, soft morning window light",
+        "close-up of hands holding a gel pen writing in the journal margin, a highlighter and scattered stickers nearby, shallow focus"
+      ],
+      "caption": "sunday spread 🌙✨📓",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON holding up a vintage brown suede jacket on a hanger between crowded thrift store racks, grinning with wide eyes, fluorescent store lighting, slightly tilted candid framing",
+        "close-up of a faded floral button-up shirt and a pair of chunky loafers laid out on a bedspread, natural daylight"
+      ],
+      "caption": "AHH the suede jacket was $9 i'm actually shaking ✨✨ thrift gods were with me today #thrifthaul #thriftedfit",
+      "location": "Thrift store, Willow Glen",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "zara",
+          "text": "the jacket?? obsessed."
+        },
+        {
+          "by": "hana",
+          "text": "🤯😭✨🧥💸🙌 omg $9???? stoppp that's literally stealing"
+        },
+        {
+          "by": "brianna",
+          "text": "girl yesssss that suede is everythinggg 😍😍😍"
+        },
+        {
+          "by": "chloe",
+          "text": "screaming at nine dollars, that's pure class 😭"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "point-of-view shot of a laptop on a bed paused on a blurry romantic drama scene, a box of tissues, an empty bowl of instant noodles and a plush bunny beside it, dark room lit only by the screen glow"
+      ],
+      "caption": "3am. episode 14. i am not okay 😭✨",
+      "location": "",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "leah",
+          "text": "Episode 14 is where they get you; I warned the whole group chat (nobody listened)."
+        },
+        {
+          "by": "andre",
+          "text": "nah because the noodles are empty\nthe tissues are full\nthat's the whole review 😂"
+        },
+        {
+          "by": "emma",
+          "text": "The plush bunny keeping you company is so sweet 💗 this made my day"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "golden hour view looking down a palm-lined street in downtown San Jose, long shadows across the sidewalk, warm hazy light, slightly grainy digital camera look, no signs visible"
+      ],
+      "caption": "first week in the city and the light here is unreal ✨📷",
+      "location": "Downtown San Jose",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The low sun separates the palms from the sky nicely."
+        },
+        {
+          "by": "jamal",
+          "text": "love the grain on this, what camera are you shooting on? 📷"
+        },
+        {
+          "by": "river",
+          "text": "such a soft little welcome from the city ~ :)"
+        },
+        {
+          "by": "crowd",
+          "text": "this looks like a movie still"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "phone screen-style view of a pinboard above a dorm desk covered in printed outfit photos, polaroids and magazine-style cutouts, fairy lights, warm night lighting, no readable text",
+      "text": "my inspo wall is getting out of hand ✨🫣"
+    },
+    {
+      "imagePrompt": "PERSON taking a quick selfie in a campus library study nook with a stack of textbooks and an iced coffee, tired but smiling, flat overhead lighting",
+      "text": "midterm brain rn 😵‍💫✨"
+    }
+  ],
+  "reels": []
+}

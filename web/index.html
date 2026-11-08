@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="description" content="Aura - share your moments. Everyone's happy to see you." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Aura" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Aura</title>
+    <script>
+      // Pick light or dark before the first paint, so dark-mode users never see a white flash.
+      // lib/theme.ts does the same thing (and keeps it updated) once the app is running.
+      try {
+        var saved = localStorage.getItem('aura-theme')
+        var dark = saved === 'dark' || (saved !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', dark)
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0B0B0F' : '#FFFFFF')
+      } catch (error) {}
+    </script>
+    <style>
+      /* A tiny splash shown until the app's own splash takes over. */
+      html { background: #ffffff; }
+      html.dark { background: #0b0b0f; }
+      #boot { position: fixed; inset: 0; display: grid; place-items: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="boot">
+        <img src="/favicon.svg" width="88" height="88" alt="" />
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

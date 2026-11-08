@@ -1,0 +1,271 @@
+{
+  "bio": "illustratrice 🖌️ | cozy rooms & the cats who own them | Montréal 🥐 | pet sketch Sundays, sometimes",
+  "look": "33-year-old French-Canadian woman, fair skin with light freckles, soft oval face, hazel eyes behind round tortoiseshell glasses, wavy chestnut bob with bangs, slim build, oversized knit cardigans, ink-stained fingertips, small gold hoops.",
+  "traits": [
+    "gentle and whimsical",
+    "quietly observant",
+    "generous with her time",
+    "a little scatterbrained",
+    "devoted to pastry"
+  ],
+  "relationship": "Inès noticed the user after they commented on one of her pet-sketch Sundays and now thinks of them as one of her favorite regulars; she always smiles when their name pops up and once drew their mug from a photo just because.",
+  "followers": 486000,
+  "following": 612,
+  "avatarPrompt": "PERSON smiling softly at the camera, holding a watercolor brush near her cheek, sitting by a sunny window with plants behind her, warm afternoon light, shallow depth of field, cozy and soft colors",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Overhead shot of a finished watercolor painting of a tiny snowy-window apartment kitchen with a cat on the sill, lying on a wooden desk beside a paint palette, a ceramic mug and scattered brushes, soft morning light"
+      ],
+      "caption": "First snow painting of the season. The cat insisted on being included, as cats do 🖌️",
+      "location": "Le Plateau-Mont-Royal, Montréal",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a cream cardigan sitting cross-legged on a rug with an open sketchbook, a gray tabby cat curled against her knee, string lights and bookshelves behind, warm evening lamp light"
+      ],
+      "caption": "Sunday pet sketches are open! Leave me your little ones below and I'll draw a few. Merci for always sharing them with me 🖌️",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a flaky croissant and a café au lait in a bowl on a marble bakery counter, a small sketchbook open beside them with a pencil drawing of the croissant, soft window light"
+      ],
+      "caption": "🥐🖌️",
+      "location": "Mile End, Montréal",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Hands with ink-stained fingertips holding a tiny pocket sketchbook open to a drawing of a cluttered reading nook, blurred cozy café interior in the background"
+      ],
+      "caption": "Small book, small rooms, big feelings.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Gray tabby cat sleeping inside an open cardboard box on a wooden drafting table surrounded by watercolor tubes and paper, golden afternoon light from a window",
+        "Close-up watercolor sketch of the same gray tabby sleeping in a box, paint still wet, brush resting beside it"
+      ],
+      "caption": "Meet my studio manager, Brioche. She has approved zero deadlines this month. Magnifique work as always, ma chérie 🥐 #catsofmontreal",
+      "location": "Le Plateau-Mont-Royal, Montréal",
+      "released": true,
+      "daysAgo": 4,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "brioche has the right idea about deadlines."
+        },
+        {
+          "by": "emma",
+          "text": "She looks like a little loaf in there! This made my day 💗"
+        },
+        {
+          "by": "maya",
+          "text": "brioche is the real artist and we all know it 💀"
+        },
+        {
+          "by": "lily",
+          "text": "AHH the painting AND the real cat?? i can't handle this ✨✨✨"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON standing in a narrow Montreal street with colorful outdoor spiral staircases behind her, wearing a mustard scarf and long coat, holding a sketchbook, autumn leaves on the sidewalk, overcast soft light"
+      ],
+      "caption": "These staircases are my favorite thing about this city. I could draw them forever, et probablement je vais.",
+      "location": "Rue Saint-Hubert, Montréal",
+      "released": true,
+      "daysAgo": 11,
+      "comments": [
+        {
+          "by": "theo",
+          "text": "Honestly mate, those staircases were the first thing I noticed when I visited Montreal. You've captured the whole vibe in one frame 🌍"
+        },
+        {
+          "by": "kenji",
+          "text": "The overcast light flatters the colors of the stairs."
+        },
+        {
+          "by": "aisha",
+          "text": "gorgeous scarf and even better street, proper autumn x"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Watercolor illustration of a cozy studio apartment with a green velvet sofa, potted plants, a record player and a sleeping cat, propped on an easel by a window, natural daylight"
+      ],
+      "caption": "Commission for a lovely couple who just moved into their first home. They asked for 'the feeling of Sunday morning.' I hope I found it 🖌️ #watercolor #cozyinteriors",
+      "location": "",
+      "released": true,
+      "daysAgo": 19,
+      "comments": [
+        {
+          "by": "hana",
+          "text": "omg 😭💚🛋️🌿🎶🐈✨ stoppp the velvet sofa I need to live inside this"
+        },
+        {
+          "by": "leah",
+          "text": "This is exactly what Sunday morning looks like (minus my pile of unread library books, which I'm choosing not to discuss)."
+        },
+        {
+          "by": "omar",
+          "text": "Hey! Hope you're doing well. Do you have commissions open for the holidays? No worries if not!"
+        },
+        {
+          "by": "zara",
+          "text": "the green?? 🤍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Assortment of pastries — pain au chocolat, kouign-amann and a fruit tart — on a small café table by a frosted window, a watercolor palette tin open beside the plate, warm morning light"
+      ],
+      "caption": "Research day. Purely professional. 🥐",
+      "location": "Mile End, Montréal",
+      "released": true,
+      "daysAgo": 28,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mija, you must eat a real breakfast too! But this looks delicious ❤️🫔"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE KOUIGN-AMANN?!?! LEGEND BEHAVIOR!!! 🔥🔥🔥"
+        },
+        {
+          "by": "crowd",
+          "text": "which bakery is this?? need to go"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON laughing at a long wooden table covered in watercolor paper and jars of water, small group of adults painting around her in a bright workshop space with big windows",
+        "Close-up of several hands painting tiny watercolor windows on paper, cups of tea scattered around",
+        "Finished student paintings of little cozy windows pinned to a corkboard wall"
+      ],
+      "caption": "Our little window-painting workshop! Everyone was so nervous at the start and so proud at the end. Merci à tous, vraiment.",
+      "location": "Atelier du Canal, Montréal",
+      "released": true,
+      "daysAgo": 41,
+      "comments": [
+        {
+          "by": "sam",
+          "text": "Love this!! Teaching is such a gift 👍"
+        },
+        {
+          "by": "marcus",
+          "text": "What a wonderful thing to share. Watching students go from nervous to proud never gets old. - M"
+        },
+        {
+          "by": "chloe",
+          "text": "screaming at the corkboard, they all did class 😭"
+        },
+        {
+          "by": "jamal",
+          "text": "do you think you'll run one in the spring too? 📷"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Watercolor sketch of a fluffy orange cat with one ear folded, painted on a page in an open sketchbook, surrounded by small doodles of paw prints, on a wooden table"
+      ],
+      "caption": "From last Sunday: this is Pumpkin, who belongs to one of you and is clearly the boss of the house. Magnifique 🖌️",
+      "location": "",
+      "released": true,
+      "daysAgo": 63,
+      "comments": [
+        {
+          "by": "brianna",
+          "text": "girl stoppp the folded ear 😍😍😍"
+        },
+        {
+          "by": "river",
+          "text": "pumpkin looks like he has opinions ~ <3"
+        },
+        {
+          "by": "gabriel",
+          "text": "This is the sweetest thing!!! Pumpkin is so lucky!!! You're the best!!! ☀️"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON reading on a window seat with a mug of tea, rain on the window behind her, knit blanket over her lap, warm lamp glow inside, cool blue light outside"
+      ],
+      "caption": "Rainy day. Nowhere to be. 🥐",
+      "location": "",
+      "released": true,
+      "daysAgo": 97,
+      "comments": [
+        {
+          "by": "priya",
+          "text": "This is the dream\nThe blanket\nThe window seat\nAnyway ✨"
+        },
+        {
+          "by": "eli",
+          "text": "rain on glass... the best kind of quiet 🌙"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. This looks like the most restorative afternoon imaginable."
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a messy desk with a half-finished watercolor of a bookshop interior, coffee mug and Brioche the gray tabby lying across the paper",
+      "text": "she has chosen violence (and my painting) 🐈"
+    },
+    {
+      "imagePrompt": "PERSON holding a paper bakery bag up near her face on a snowy sidewalk, soft gray morning light",
+      "text": "croissant run before the studio 🥐"
+    },
+    {
+      "imagePrompt": "Vertical close-up of ink-stained fingertips next to a jar of murky paint water and brushes",
+      "text": "occupational hazard 🖌️"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "Vertical overhead shot of a blank sheet of watercolor paper taped to a desk with a pencil sketch of a tiny kitchen",
+        "Vertical overhead shot of hands painting soft washes of color into the sketched kitchen, palette beside",
+        "Vertical shot of the finished watercolor kitchen held up against a real sunny window, cat tail visible in the corner"
+      ],
+      "caption": "A tiny kitchen, start to finish. Merci for watching 🖌️",
+      "audio": "Paper Lanterns - Slow Morning Waltz",
+      "released": true,
+      "daysAgo": 16
+    },
+    {
+      "framePrompts": [
+        "Vertical shot of PERSON putting on a mustard scarf and round glasses by her front door, morning light",
+        "Vertical shot inside a warm bakery, a hand pointing at croissants behind glass",
+        "Vertical shot of PERSON sketching the bakery interior at a corner table, croissant and coffee beside her sketchbook"
+      ],
+      "caption": "A little morning in my life 🥐",
+      "audio": "original audio",
+      "released": false,
+      "daysAgo": 0
+    }
+  ]
+}

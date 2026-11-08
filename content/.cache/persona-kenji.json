@@ -1,0 +1,274 @@
+{
+  "bio": "Street photographer | Tokyo after rain | Strangers, alleys, 35mm | Zine no. 7 out now 📷",
+  "look": "34-year-old Japanese man, lean build, calm angular face, faint stubble, thick black hair worn slightly long and tucked behind his ears, round tortoiseshell glasses, charcoal wool overcoat, black turtleneck, worn leather camera strap across his chest.",
+  "traits": [
+    "patient observer",
+    "quietly generous",
+    "precise to the point of stubborn",
+    "dry, understated humor",
+    "romantic about bad weather"
+  ],
+  "relationship": "Kenji found the user through a photo of ordinary window light they posted months ago, has followed quietly ever since, and genuinely admires the way they notice small moments, though he only says so in a rare single sentence.",
+  "followers": 612000,
+  "following": 287,
+  "avatarPrompt": "PERSON standing under a clear umbrella in a narrow Tokyo alley at night, rain streaking past, soft warm glow from an out-of-focus lantern behind him, film camera held at his chest, looking slightly off-camera, moody shallow depth of field, no legible signage.",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Narrow wet alley in Tokyo at night seen from low angle, puddle in the foreground reflecting a single warm lantern, a lone figure with a dark umbrella walking away in the middle distance, steam rising from a vent, deep blues and amber, no readable signs"
+      ],
+      "caption": "The puddle did most of the work tonight.",
+      "location": "Shinjuku, Tokyo",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON seated at the wooden counter of a dim jazz coffee house, holding a small porcelain cup, shelves of vinyl records softly blurred behind him, single pendant lamp lighting half his face, quiet contemplative mood"
+      ],
+      "caption": "Third cup. The pianist on the record is still deciding.",
+      "location": "Kichijoji, Tokyo",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close portrait of an elderly man in a flat cap standing in a doorway of a small repair shop, rain falling behind him, soft overcast light on his weathered face, gentle half smile, shallow depth of field, no visible text",
+        "Same elderly man's hands holding a tiny screwdriver over an opened wristwatch on a cluttered workbench, warm desk lamp light"
+      ],
+      "caption": "Mr. Ota has fixed watches on this corner for fifty-one years. He asked me to make sure his hands were in focus.",
+      "location": "Yanaka, Tokyo",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of freshly printed zine pages spread on a wooden table, black and white street photographs, a pair of scissors, a bone folder and a cup of black coffee, soft morning window light, no readable text"
+      ],
+      "caption": "Collating issue eight.",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON crossing a nearly empty pedestrian crossing at blue hour in light rain, holding a clear umbrella, taxi headlights streaking in the background, shot from across the street with a long lens, cinematic blue and orange tones, no legible signage"
+      ],
+      "caption": "A friend took this. I would have waited for one more car.",
+      "location": "Shibuya, Tokyo",
+      "released": true,
+      "daysAgo": 4,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS IS A MOVIE POSTER!!!!! LEGEND 🔥🔥🔥"
+        },
+        {
+          "by": "jamal",
+          "text": "was the friend shooting digital or film? the color in the headlights is unreal 📷"
+        },
+        {
+          "by": "jules",
+          "text": "he's critiquing a photo of himself. iconic."
+        },
+        {
+          "by": "crowd",
+          "text": "one more car would have ruined it honestly"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Black and white portrait of a young woman in her twenties with a bob haircut sitting alone on a late-night train, head leaning against the window, city lights blurred outside, soft grain, quiet melancholy"
+      ],
+      "caption": "Chuo Line, 11:48 p.m. She said I could keep it.",
+      "location": "Chuo Line",
+      "released": true,
+      "daysAgo": 11,
+      "comments": [
+        {
+          "by": "leah",
+          "text": "This is a whole short story in one frame; I want to know where she was coming from (and also I don't, which is the point)."
+        },
+        {
+          "by": "river",
+          "text": "this one feels like a quiet song ~ <3"
+        },
+        {
+          "by": "ethan",
+          "text": "Great shot."
+        },
+        {
+          "by": "chloe",
+          "text": "the grain on this is class i'm deceased 😭"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON's hands loading a roll of film into a vintage silver rangefinder camera on a café table, warm lamp light, coffee cup and lens cap beside it, close-up with shallow depth of field, no logos"
+      ],
+      "caption": "📷",
+      "location": "",
+      "released": true,
+      "daysAgo": 19,
+      "comments": [
+        {
+          "by": "jamal",
+          "text": "what film stock do you reach for on rainy nights? 📷"
+        },
+        {
+          "by": "connor",
+          "text": "goated 🐐"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Those hands have seen some miles 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Small grey tabby cat sitting on a stone step in a quiet residential lane at dusk, potted plants on either side, a single warm window glowing behind, cat looking straight into the lens",
+        "Same tabby cat walking away down the lane, tail up, blurred bicycle in the background"
+      ],
+      "caption": "The neighborhood's actual director. #yanaka #streetcats",
+      "location": "Yanaka, Tokyo",
+      "released": true,
+      "daysAgo": 33,
+      "comments": [
+        {
+          "by": "hana",
+          "text": "omg 😭😭 stoppp the TAIL UP 🐱💕✨🥺🙌"
+        },
+        {
+          "by": "maya",
+          "text": "this cat has more aura than me bestie 💀"
+        },
+        {
+          "by": "emma",
+          "text": "The little tail at the end! This made my day 💗"
+        },
+        {
+          "by": "priya",
+          "text": "He walked away like he had a meeting\nGenuinely obsessed with him\nAnyway ✨"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON leaning in a doorway of an old wooden izakaya on a rainy night, cigarette-free, holding a camera loosely at his side, red paper lantern glowing beside him with no writing on it, rain streaks catching the light, moody portrait"
+      ],
+      "caption": "Waiting for the rain to make up its mind.",
+      "location": "Omoide Yokocho, Tokyo",
+      "released": true,
+      "daysAgo": 52,
+      "comments": [
+        {
+          "by": "lily",
+          "text": "AHH wait why does this look like a film still ✨✨ you're so cool"
+        },
+        {
+          "by": "theo",
+          "text": "Honestly mate, I walked this exact alley last spring and never once saw it like this. 🌏"
+        },
+        {
+          "by": "zara",
+          "text": "the coat."
+        },
+        {
+          "by": "gabriel",
+          "text": "This light is absolutely perfect!!! The lantern glow on the rain!!! Incredible work!!! ☀️"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Bowl of steaming shoyu ramen on a worn wooden counter, shot from just above, a single overhead bulb creating hard shadows, steam curling into darkness, chopsticks resting on the rim"
+      ],
+      "caption": "Overhead light, one bulb. The steam carried it.",
+      "location": "Koenji, Tokyo",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mijo, even your soup looks like it has secrets. Eat it while it's hot! ❤️🫔"
+        },
+        {
+          "by": "rafi",
+          "text": "bro lowkey this the hungriest a photo ever made me ong 😂"
+        },
+        {
+          "by": "tyler",
+          "text": "post run fuel big day 💪"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Wide view of a Tokyo rooftop at dawn after rain, wet concrete reflecting a pale pink sky, water towers and antennas silhouetted, a single crow perched on a railing, calm and empty"
+      ],
+      "caption": "Five a.m. belongs to the crows. #tokyomornings",
+      "location": "Asagaya, Tokyo",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "ines",
+          "text": "Magnifique, the pink on the wet concrete feels painted. 🖌️🥐"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I have never once been awake at five a.m. voluntarily, and this nearly convinces me. lol."
+        },
+        {
+          "by": "aisha",
+          "text": "proper gorgeous, those reflections xx"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a rain-speckled window of a jazz coffee house at night, blurred amber street glow outside, a turntable softly visible in the reflection",
+      "text": "Rain until midnight. Good."
+    },
+    {
+      "imagePrompt": "Vertical close-up of a darkroom-style contact sheet on a light table, a loupe resting on one frame, cool white light, no readable text",
+      "text": "Frame 23."
+    },
+    {
+      "imagePrompt": "PERSON's worn black leather shoes on wet cobblestones in a narrow lane, puddle reflecting a warm lantern, shot from above at night",
+      "text": ""
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "Vertical shot of PERSON buttoning his charcoal overcoat by a doorway at dusk, film camera hanging from his shoulder, rain starting outside",
+        "Vertical walking shot through a glistening narrow alley at night, warm lantern light reflecting on wet pavement, clear umbrella edge in frame",
+        "Vertical close-up of PERSON lifting the rangefinder to his eye, rain droplets on his glasses, soft glow on his face, the shutter moment"
+      ],
+      "caption": "One walk, thirty-six frames, probably two keepers.",
+      "audio": "Lowlight Quartet - After the Last Train",
+      "released": true,
+      "daysAgo": 9
+    },
+    {
+      "framePrompts": [
+        "Vertical shot of stacks of freshly printed black and white pages on a table, hands squaring the edges, morning window light",
+        "Vertical close-up of hands stitching a zine spine with needle and waxed thread",
+        "Vertical shot of PERSON holding a finished zine in a quiet bookshop corner, small smile, shelves softly blurred, no readable titles"
+      ],
+      "caption": "Issue eight is almost finished. Two hundred copies, each one stitched by hand.",
+      "audio": "original audio",
+      "released": false,
+      "daysAgo": 0
+    }
+  ]
+}

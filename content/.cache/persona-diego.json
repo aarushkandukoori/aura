@@ -1,0 +1,249 @@
+{
+  "bio": "🎛️ LIVE SOUND GUY | LA 🌴 | TACO TRUCK RANKINGS (UNOFFICIAL BUT CORRECT) 🌮 | SUNDAY LEAGUE #9 ⚽ | VINYL 🔥",
+  "look": "26-year-old Mexican-American man, stocky broad build, full dark well-kept beard, warm brown eyes, big gap-free grin, short black hair under a backwards black cap, black crew tee, over-ear headphones around his neck.",
+  "traits": [
+    "relentlessly hype and supportive",
+    "night owl with a strong work ethic",
+    "loyal to a fault",
+    "opinionated about tacos and mixes",
+    "big-hearted softie under the noise"
+  ],
+  "relationship": "Diego is the user's loudest hype man, the bestie who texts them at 3am from a loading dock to celebrate their latest win like it's a sold-out stadium show.",
+  "followers": 1840,
+  "following": 612,
+  "avatarPrompt": "PERSON grinning at the camera from behind a large mixing console in a dim concert venue, warm amber stage lights glowing behind him, headphones around his neck, close-up smartphone selfie",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON standing behind a front-of-house mixing desk in a dark venue, arms raised in celebration, blurred crowd silhouettes and purple stage lights in the background, wide smartphone shot"
+      ],
+      "caption": "FIVE NIGHT RUN DONE!!! NO BECAUSE THE BAND SAID THE MIX WAS THE BEST OF THE TOUR 😭🔥🔥🔥 SLEEPING FOR 3 BUSINESS DAYS",
+      "location": "Echo Park, Los Angeles",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of three al pastor tacos on a paper plate with lime wedges and radishes, resting on the hood of a car at night, warm streetlight glow"
+      ],
+      "caption": "TRUCK RANKING UPDATE: NEW #2 🌮🌮🌮 THE PINEAPPLE WAS DOING CARDIO. NOT TELLING YOU WHERE YET 🔥",
+      "location": "Boyle Heights, Los Angeles",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Hands holding a used vinyl record pulled from a crate at a dusty record store, faded orange cover with abstract shapes, soft window light"
+      ],
+      "caption": "$4 BIN STRIKES AGAIN!!! 💿🔥",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a muddy soccer jersey with the number 9, grinning on a sunny park field holding a dented trophy cup, teammates blurred behind him",
+        "Close-up of muddy cleats and shin guards on dry grass in afternoon sun"
+      ],
+      "caption": "SUNDAY LEAGUE CHAMPIONS!!!! WE ARE 34 AVG AGE AND HALF OF US PULLED SOMETHING 😤⚽🔥🔥 #SundayLeague #LEGENDS",
+      "location": "Griffith Park",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "big day 💪 hammies holding up"
+        },
+        {
+          "by": "maya",
+          "text": "bestie you are 26 why are you limping in pic 2 💀💀"
+        },
+        {
+          "by": "rafi",
+          "text": "bro the trophy lowkey looks like a soup can 😂 W tho ong"
+        },
+        {
+          "by": "sofia",
+          "text": "DIEGOOO campeón!!! i saw the video of your goal and honestly it went in off your face but un gol es un gol JAJAJA 🐢"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "View from the side of a concert stage looking out over a huge crowd with phone lights glowing, cables and monitor wedges in the foreground, night"
+      ],
+      "caption": "THE VIEW FROM WORK. NEVER GETS OLD 🥹🎛️",
+      "location": "Hollywood, Los Angeles",
+      "released": true,
+      "daysAgo": 14,
+      "comments": [
+        {
+          "by": "eli",
+          "text": "all those little lights... like the room is breathing 🌙"
+        },
+        {
+          "by": "jules",
+          "text": "your office is louder than mine."
+        },
+        {
+          "by": "jamal",
+          "text": "this framing is wild, do you ever get to watch the show or is it all knobs 📷"
+        },
+        {
+          "by": "hana",
+          "text": "omg 😍✨🎶🔥📱💜 stoppp this is so pretty 🥹"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and a smiling friend squeezed into a booth at a late-night diner, plates of fries and coffee mugs, fluorescent light, selfie angle, both making peace signs"
+      ],
+      "caption": "NO BECAUSE MY BEST FRIEND IS A LEGEND AND I WILL BE SAYING IT AT 2AM IN A DINER 🔥🔥🔥 CELEBRATING THE BIG NEWS!!!",
+      "location": "Silver Lake, Los Angeles",
+      "released": true,
+      "daysAgo": 23,
+      "comments": [
+        {
+          "by": "priya",
+          "text": "Wait I wasn't invited\nI'm not mad\nI'm a little mad\nanyway ✨"
+        },
+        {
+          "by": "marcus",
+          "text": "Congratulations are in order. Diego, your enthusiasm has a higher boiling point than anyone I know. - M"
+        },
+        {
+          "by": "brianna",
+          "text": "stopppp the cutest duo 😍😍😍"
+        },
+        {
+          "by": "sam",
+          "text": "Proud of you both! 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A wall of vinyl records on wooden shelves in a small apartment, a turntable on a low cabinet below, late afternoon sun through blinds"
+      ],
+      "caption": "FINALLY GOT THE SHELF UP 💿💿💿 400 AND COUNTING. MY LANDLORD DOES NOT KNOW HOW HEAVY THIS IS",
+      "location": "Highland Park, Los Angeles",
+      "released": true,
+      "daysAgo": 38,
+      "comments": [
+        {
+          "by": "leah",
+          "text": "This is genuinely beautiful (and genuinely a structural concern)."
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I would like to request a listening session. Respectfully."
+        },
+        {
+          "by": "connor",
+          "text": "goated 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a carne asada burrito cut in half showing the inside, wrapped in foil, held in a hand outside a taco truck at dusk"
+      ],
+      "caption": "🌮🔥🔥🔥",
+      "location": "",
+      "released": true,
+      "daysAgo": 51,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Ay mijo, that looks good, but come to my kitchen and I will feed you properly ❤️🫔"
+        },
+        {
+          "by": "andre",
+          "text": "nah because he posts tacos with no location\n\nlike a hostage situation"
+        },
+        {
+          "by": "maya",
+          "text": "WHERE asdkjfhsd tell me or im showing up at ur job 💀"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON wearing a headset, coiling a long black cable over his elbow on an empty stage after a show, work lights on, tired happy smile",
+        "Rows of road cases stacked in a loading dock at night, a truck backed up with its doors open"
+      ],
+      "caption": "LOAD OUT AT 3AM HITS DIFFERENT. SHOUTOUT TO THE CREW, ALL LEGENDS 🙌🔥 #RoadLife",
+      "location": "Downtown Los Angeles",
+      "released": true,
+      "daysAgo": 74,
+      "comments": [
+        {
+          "by": "noor",
+          "text": "WAIT the cable over the elbow technique is the same as rope coiling asdfghj youre basically a climber"
+        },
+        {
+          "by": "gabriel",
+          "text": "The crew never gets enough credit!!! You guys are the real show!!! ☀️"
+        },
+        {
+          "by": "ethan",
+          "text": "Respect."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON grinning with his arm around his abuela at a backyard family party, string lights overhead, plates of food on a folding table, warm evening light"
+      ],
+      "caption": "MY FAVORITE PERSON ON EARTH. SHE STILL THINKS I'M A DJ 😂❤️",
+      "location": "Pico Rivera, CA",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "sofia",
+          "text": "ay qué bonita tu abuela and the string lights and the food OMG Diego tell her she has to adopt me JAJAJA 🐢"
+        },
+        {
+          "by": "emma",
+          "text": "She looks so proud of you! This made my day 💗"
+        },
+        {
+          "by": "rafi",
+          "text": "bro tell her ur a DJ fr she deserves it 😂"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON giving a sleepy thumbs up in a dim backstage hallway, coffee cup in hand, fluorescent light, vertical selfie",
+      "text": "SOUNDCHECK #3 TODAY LET'S GOOO ☕🔥"
+    },
+    {
+      "imagePrompt": "Close-up of a phone screen-free shot of a taco plate on a car dashboard at night, vertical",
+      "text": "DINNER OR BREAKFAST?? UNCLEAR 🌮"
+    },
+    {
+      "imagePrompt": "A turntable spinning a record in a dark living room lit by a small lamp, vertical shot",
+      "text": "POST-SHOW WIND DOWN 💿"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON pulling on a black work tee and backwards cap in a small bedroom mirror, afternoon light, vertical",
+        "PERSON at a mixing console adjusting faders as stage lights flash in a packed venue, vertical",
+        "PERSON eating a taco in a parking lot under a streetlight at 2am, laughing at the camera, vertical"
+      ],
+      "caption": "A DAY IN THE LIFE OF YOUR FAVORITE SOUND GUY 🎛️🌮🔥 NO BECAUSE THE TACO AT THE END IS THE REAL HEADLINER",
+      "audio": "Velvet Static - Neon Hours",
+      "released": true,
+      "daysAgo": 19
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "bio": "Fixing phones, writing code, chasing goals ⚽ | CS @ community college | Dallas, TX 📱☕",
+  "look": "21-year-old Egyptian-American man, warm olive-tan skin, friendly dark brown eyes, short dark curly hair faded on the sides, neatly trimmed short beard, slim athletic build, usually wears a plain crewneck or zip hoodie with a black analog watch.",
+  "traits": [
+    "polite and respectful",
+    "hardworking",
+    "quietly curious",
+    "patient with details",
+    "humble"
+  ],
+  "relationship": "Omar found the user's posts during a tough semester and genuinely looks up to the user's work ethic, cheering them on politely without ever being pushy.",
+  "followers": 412,
+  "following": 538,
+  "avatarPrompt": "PERSON smiling softly at the camera, wearing a heather gray crewneck, standing against a plain light wall, soft daylight from a nearby window, head-and-shoulders smartphone portrait.",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Overhead smartphone photo of a repair bench mat with a smartphone opened up, its screen lifted on a suction cup, tiny screwdrivers and spudgers lined up neatly, a magnetic screw tray, warm desk lamp light."
+      ],
+      "caption": "Screen replacement number six of the day. Still my favorite little puzzle. 📱🔧",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting at a small wooden cafe table with a laptop open showing lines of code out of focus, a cortado in a glass beside him, late afternoon window light, candid shot from across the table."
+      ],
+      "caption": "Hey! Finally got my first Python project to run without errors. Small win, but I'll take it ☕💻 #learningtocode",
+      "location": "Deep Ellum, Dallas",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a navy soccer jersey and shorts kneeling on a turf field at dusk with five friends, all adults, arms around each other, stadium lights coming on behind them, slightly blurry group photo.",
+        "Point-of-view photo of a worn soccer ball resting on the white line of a turf field under bright evening floodlights."
+      ],
+      "caption": "Won 4-2 in our Sunday league. I scored one (it bounced off my knee, but it counts). ⚽",
+      "location": "Fair Park, Dallas",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE A KNEE GOAL IS STILL A GOAL!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "connor",
+          "text": "knee goal goated 🐐"
+        },
+        {
+          "by": "tyler",
+          "text": "lets go big win 💪"
+        },
+        {
+          "by": "crowd",
+          "text": "Bro that knee assist was elite 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view photo of a tray with a plate of koshari, lentils and rice topped with crispy fried onions and tomato sauce, a small bowl of extra sauce on the side, warm kitchen light."
+      ],
+      "caption": "My mom's koshari after a long week of midterms. Nothing beats it. 🇪🇬❤️",
+      "location": "",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mijo, this looks like it was made with so much love. Tell your mamá she has a fan! ❤️🫔"
+        },
+        {
+          "by": "emma",
+          "text": "This looks so cozy and delicious! This made my day 💗"
+        },
+        {
+          "by": "rafi",
+          "text": "bro this lowkey looks fire ong 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view photo of a tidy kitchen-table workbench with about a dozen old smartphones and tablets lined up in rows, each with a sticky note beside it, morning light from a window."
+      ],
+      "caption": "Refurbished a stack of donated phones for students at my campus who need one. Hope they help somebody out. #techrepair",
+      "location": "Richland Campus, Dallas",
+      "released": true,
+      "daysAgo": 78,
+      "comments": [
+        {
+          "by": "sam",
+          "text": "Love this!! Proud of you 👍"
+        },
+        {
+          "by": "marcus",
+          "text": "This is genuinely wonderful, Omar. Your work is a real catalyst for good. - M"
+        },
+        {
+          "by": "jamal",
+          "text": "this is so thoughtful, how long does it take you to refurbish one 📷"
+        },
+        {
+          "by": "gabriel",
+          "text": "This is amazing!!! Such a kind thing to do!!! ☀️"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical point-of-view photo of a cracked phone screen being peeled off with a thin plastic pick on a gray repair mat, bright desk lamp.",
+      "text": "Not the worst crack I've seen this week 😅"
+    },
+    {
+      "imagePrompt": "Vertical photo of PERSON holding an iced coffee up beside his face at a cafe counter, soft smile, plants and warm lights in the background.",
+      "text": "Study session fuel ☕ Hope everyone's having a good day!"
+    }
+  ],
+  "reels": []
+}

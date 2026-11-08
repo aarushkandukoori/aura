@@ -1,0 +1,225 @@
+{
+  "bio": "🐢 sea turtle girlie @ UM marine bio | salsa los jueves 💃 | café con leche > personality | sí, todavía te debo $20 JAJAJA",
+  "look": "24-year-old Cuban-American woman, warm olive skin with sun-kissed freckles across her nose, big dark brown eyes, wide gap-free grin, long curly dark brown hair usually in a messy claw clip, petite athletic build, faded field-research sun shirts and gold hoop earrings.",
+  "traits": [
+    "chaotically warm",
+    "obsessively passionate about turtles",
+    "talks before thinking",
+    "fiercely loyal",
+    "shameless reality TV commentator"
+  ],
+  "relationship": "Sofía was the user's roommate back in 2022 and still considers them family; she owes the user twenty dollars from that year and brings it up constantly as a bit she has absolutely no plans to retire.",
+  "followers": 1340,
+  "following": 892,
+  "avatarPrompt": "PERSON grinning on the deck of a small research boat, wind blowing curls out of a claw clip, bright midday sun, turquoise water behind her, close-up smartphone selfie, gold hoops catching the light",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON holding a tiny loggerhead hatchling in gloved cupped hands on a dark beach at dawn, soft blue pre-sunrise light, she's beaming at the camera, close framing"
+      ],
+      "caption": "este bebé tiene más ambición que yo honestly he made it to the water in like 40 seconds and I can't even make it to my 8am 🐢🐢🐢",
+      "location": "Hobe Sound, FL",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of a café con leche in a chipped white mug next to a stack of printed research papers covered in highlighter and a half-eaten tostada on wax paper, morning window light on a cluttered desk"
+      ],
+      "caption": "thesis fuel ☕️ si me ves llorando en el lab no me hables JAJAJA",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON mid-spin on a crowded dance floor in a flowy red skirt and black top, partner's arm blurred in motion, warm amber string lights overhead, slightly motion-blurred smartphone shot from the side of the floor"
+      ],
+      "caption": "jueves = salsa no negotiation 💃",
+      "location": "Little Havana, Miami",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Underwater point-of-view photo of a green sea turtle gliding over seagrass, sunbeams cutting through clear turquoise water, a gloved hand with a measuring tape barely in the corner of the frame",
+        "PERSON sitting on the edge of a small research boat in a long-sleeve sun shirt and leggings, snorkel mask pushed up on her head, wet curls, laughing, bright afternoon sun"
+      ],
+      "caption": "field day!!! we tagged three greens today and one of them literally side-eyed me the whole time like ella sabe que le debo plata a alguien también 🐢 #fieldwork #seaturtles",
+      "location": "Biscayne Bay",
+      "released": true,
+      "daysAgo": 5,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE TURTLE IS GIVING MAIN CHARACTER!!!! 🔥🔥🔥 LEGEND BEHAVIOR SOFI!!!"
+        },
+        {
+          "by": "maya",
+          "text": "the turtle knows about the 20 bucks 💀💀"
+        },
+        {
+          "by": "jamal",
+          "text": "what kind of camera housing do you use underwater? the light in that first one is unreal 📷"
+        },
+        {
+          "by": "sam",
+          "text": "Proud of you, this is such important work! 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a laptop on a couch showing a blurry paused dating-show scene, a bowl of popcorn and a plate of pastelitos on the cushion beside it, dim living room lit by the screen glow"
+      ],
+      "caption": "BRO WHY DID HE PICK HER nadie en esta casa tiene sentido común mi abuela could do better JAJAJA",
+      "location": "",
+      "released": true,
+      "daysAgo": 14,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "your abuela should host the show."
+        },
+        {
+          "by": "hana",
+          "text": "omg 😭😭 STOPPP 🍿💔🙄😤📺 i screamed at the same part"
+        },
+        {
+          "by": "rafi",
+          "text": "bro he fumbled ong 😂 lowkey she was the only real one"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and an older Cuban woman with short silver hair laughing together in a small kitchen, frying croquetas in a pan, warm yellow overhead light, candid shot from the doorway"
+      ],
+      "caption": "domingo con abuela 🥹 she said my turtle job is 'muy bonito pero cuándo te casas' so that's where we're at",
+      "location": "Hialeah, FL",
+      "released": true,
+      "daysAgo": 27,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Ay mija, those croquetas look perfect. Tell your abuela she is doing everything right ❤️🫔"
+        },
+        {
+          "by": "priya",
+          "text": "Abuela is iconic\nI need her on my side in every argument\nOk bye ✨"
+        },
+        {
+          "by": "leah",
+          "text": "Objection. The turtles ARE the marriage; she simply doesn't understand the commitment."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view sunset over calm water from a dock, sky streaked pink and orange, two bare feet dangling over the edge next to a plastic cup of guarapo, silhouettes of mangroves in the distance"
+      ],
+      "caption": "🌅🐢",
+      "location": "Key Largo, FL",
+      "released": true,
+      "daysAgo": 46,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The horizon sits beautifully on the lower third."
+        },
+        {
+          "by": "eli",
+          "text": "water that still... the sky doing all the talking 🌙"
+        },
+        {
+          "by": "aisha",
+          "text": "absolutely gorgeous, proper jealous xx"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON holding up a crumpled twenty-dollar-shaped piece of paper drawn in marker as a fake bill, wearing a grad school hoodie, mock-serious face, bright dorm-style hallway, mirror selfie angle"
+      ],
+      "caption": "update on the $20 from 2022: sigo trabajando en eso 🙏 interest is now paid in love and memes, se aceptan reclamos en los comentarios JAJAJA",
+      "location": "",
+      "released": true,
+      "daysAgo": 71,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "bestie. pay up. bestie 💀"
+        },
+        {
+          "by": "andre",
+          "text": "nah because\n\nshe drew the money\n\nI'm weak 😂"
+        },
+        {
+          "by": "marcus",
+          "text": "At this rate the debt has undergone complete decomposition. Consider it a noble gas: inert, and never reacting. - M"
+        },
+        {
+          "by": "crowd",
+          "text": "the commitment to this bit is unmatched"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Wide point-of-view shot of a marine lab with a large blue holding tank, a juvenile sea turtle swimming near the glass, clipboards and a thermometer on the tank rim, cool fluorescent light"
+      ],
+      "caption": "first day in the new lab y ya me enamoré de este señor, his name is Pepito and he is the reason I chose grad school #marinebiology",
+      "location": "Rosenstiel School, Virginia Key",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "emma",
+          "text": "Pepito is the cutest little guy, this made my day 💗"
+        },
+        {
+          "by": "tyler",
+          "text": "big day lets go 💪"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. Congratulations on the new lab; Pepito appears to be an excellent colleague."
+        },
+        {
+          "by": "noor",
+          "text": "WAIT pepito asdfghj i love him"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON in the driver's seat of a beat-up car at 5am, hood up, holding a café con leche in a foam cup, dark sky through the windshield, dashboard glow",
+      "text": "nest patrol a las 5am pray for me 🐢"
+    },
+    {
+      "imagePrompt": "Close-up of a sandy pair of field boots next to a bucket of measuring tools on a beach at sunrise, soft pink light",
+      "text": "oficina de hoy"
+    },
+    {
+      "imagePrompt": "Pair of red salsa heels on a wooden apartment floor next to a gym bag, warm lamp light, vertical phone shot",
+      "text": "jueves ya llegó JAJAJA 💃"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON in a long-sleeve sun shirt loading snorkel gear and a cooler onto a small boat at a sunny marina, squinting and waving at the camera",
+        "Underwater shot of a hawksbill sea turtle munching on a sponge near a reef, bright blue water and dappled light",
+        "PERSON back on the boat at golden hour, wet curls, mask on her head, holding up a thumbs-up and laughing, ocean behind her"
+      ],
+      "caption": "un día en la vida de una turtle girl 🐢 spoiler: the turtle was the main character and I was background JAJAJA",
+      "audio": "Marea Alta - Coral Static",
+      "released": true,
+      "daysAgo": 19
+    }
+  ]
+}

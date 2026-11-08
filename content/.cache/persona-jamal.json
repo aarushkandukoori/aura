@@ -1,0 +1,128 @@
+{
+  "bio": "baltimore 📍 | learning light one roll at a time | warehouse by day, night walks after | saving for the next camera 📷",
+  "look": "20-year-old Black man, slim lanky build, warm dark-brown skin, short twists with a neat lineup, soft serious eyes, faint mustache, usually in an olive work jacket, gray hoodie, black beanie, old film camera strap around neck.",
+  "traits": [
+    "quiet and observant",
+    "patient learner",
+    "humble and respectful",
+    "quietly determined",
+    "a night owl"
+  ],
+  "relationship": "Jamal found the user's photos a few months ago, studies every post like a lesson, and gets genuinely excited when the user answers one of his careful questions about how a shot was made.",
+  "followers": 214,
+  "following": 389,
+  "avatarPrompt": "PERSON holding a worn silver film camera at chest height and looking just off-camera with a small half smile, standing on a Baltimore rowhouse stoop at golden hour, warm side light across his face, shallow depth of field, vertical smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Point-of-view shot of an empty outdoor basketball court at night under a single sodium streetlight, orange glow on cracked asphalt, a lone ball resting by the free-throw line, chain-link fence in soft shadow, grainy film look"
+      ],
+      "caption": "tried what you said about exposing for the highlights. kept the shadows heavy on purpose this time 📷",
+      "location": "Patterson Park, Baltimore",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting on an overturned milk crate in a warehouse break room, holding a film canister up to the fluorescent light and squinting at it, lunch bag beside him, olive work jacket, candid smartphone photo"
+      ],
+      "caption": "lunch break = reading the light meter manual again",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot of a small dim jazz club stage, an older upright bass player mid-note under a warm amber spotlight, blurred heads of the crowd in the foreground, smoky soft haze, no signs visible",
+        "Close-up of a half-finished ginger ale and a folded paper ticket stub with no visible writing on a dark wooden bar top, warm low light, grainy"
+      ],
+      "caption": "thursday night jazz on north ave. the bass player didn't open his eyes once. #filmisnotdead #baltimore",
+      "location": "North Avenue, Baltimore",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The amber spotlight isolates him well. Good restraint with the crowd."
+        },
+        {
+          "by": "eli",
+          "text": "eyes closed the whole set... that's when you know it's real 🌙"
+        },
+        {
+          "by": "omar",
+          "text": "Hey! Hope you're doing well. Was this shot on film or digital? No worries if not!"
+        },
+        {
+          "by": "crowd",
+          "text": "that place is a baltimore treasure fr"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON mid-jumpshot on a neighborhood outdoor court in late afternoon, gray hoodie, friends blurred in the background, low angle from the baseline, long shadows, warm golden light"
+      ],
+      "caption": "my cousin took this one. he says i owe him photo credit and a rematch",
+      "location": "Druid Hill Park",
+      "released": true,
+      "daysAgo": 37,
+      "comments": [
+        {
+          "by": "connor",
+          "text": "form is goated 🐐"
+        },
+        {
+          "by": "lily",
+          "text": "wait the lighting on this is so good?? ✨✨"
+        },
+        {
+          "by": "rafi",
+          "text": "bro cousin got a whole eye lowkey 😂 give him credit ong"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view night shot down a quiet Baltimore rowhouse street after rain, wet pavement reflecting warm porch lights and a single traffic light glow, marble steps lining the sidewalk, nobody around, moody film grain",
+        "Close-up of hands holding an old secondhand film camera with a scratched body, rain droplets on the lens cap, under a streetlamp",
+        "Point-of-view shot of a small cash jar on a bedroom dresser half full of folded bills next to two film rolls, soft lamp light"
+      ],
+      "caption": "night walk. roll 3. the jar is getting there 📷",
+      "location": "Fells Point, Baltimore",
+      "released": true,
+      "daysAgo": 74,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "Wet streets are generous with light. You used them well."
+        },
+        {
+          "by": "emma",
+          "text": "The jar is the best part, you're going to get there! This made my day 💗"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Proud of you for saving up 👍"
+        },
+        {
+          "by": "theo",
+          "text": "Honestly mate, that first frame feels like a film still. Keep walking those streets 🌍"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical point-of-view shot of a row of film rolls lined up on a windowsill next to a small potted plant, soft morning light, Baltimore rowhouse rooftops blurred outside",
+      "text": "three rolls left to develop. scared and excited"
+    },
+    {
+      "imagePrompt": "Vertical PERSON taking a mirror-free selfie under a streetlight at night, black beanie, film camera strap around neck, calm half smile, city glow behind him",
+      "text": "night walk check-in 📷"
+    }
+  ],
+  "reels": []
+}

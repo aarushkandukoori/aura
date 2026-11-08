@@ -1,0 +1,13 @@
+{
+  "name": "Aura",
+  "short_name": "Aura",
+  "description": "Share your moments. Everyone's happy to see you.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0F",
+  "theme_color": "#0B0B0F",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

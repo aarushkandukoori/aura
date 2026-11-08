@@ -1,0 +1,277 @@
+{
+  "bio": "er nurse who runs on spite and jollof 💀 | brooklyn | tripod is the boss not me | ask me about the podcast i will not stop",
+  "look": "27-year-old tall Nigerian-American woman, deep brown skin, wide expressive smile, high cheekbones, shoulder-length box braids often tied up, broad-shouldered athletic build, navy scrubs or thrifted oversized vintage jackets, gold hoop earrings.",
+  "traits": [
+    "loud and fiercely loyal",
+    "unflappable in a crisis, chaotic everywhere else",
+    "gremlin humor with a soft heart",
+    "competitive about spice and karaoke",
+    "protective big-sister energy"
+  ],
+  "relationship": "Maya is the user's ride-or-die bestie who texts them voice-memo-length rants at 4am from the break room, would fight anyone who wronged them, and considers them Tripod's second-favorite human.",
+  "followers": 1840,
+  "following": 612,
+  "avatarPrompt": "PERSON laughing mid-sentence on a Brooklyn brownstone stoop at golden hour, braids up in a bun, gold hoops, oversized thrifted denim jacket, close-up smartphone portrait with warm soft light",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON in navy scrubs sitting in a dim hospital break room at night, holding a paper cup of coffee up to the camera, tired but grinning, fluorescent light, front-camera selfie"
+      ],
+      "caption": "4am check in why is everyone in the gc asleep cowards 💀",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "A fluffy orange three-legged cat sitting upright on a kitchen counter next to a stack of mail, staring directly into the camera with judgment, morning window light"
+      ],
+      "caption": "tripod has called a meeting attendance is mandatory bestie",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of a plate of fiery red chicken wings with a glass of milk and a pile of crumpled napkins on a dark wood bar table, warm dim lighting"
+      ],
+      "caption": "level 10 wings i cannot feel my face ASDKJFHSKDJ",
+      "location": "Flatbush Wing Spot",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON belting into a microphone on a small karaoke stage with purple and pink lights, eyes closed, one arm thrown dramatically in the air, slightly blurry action shot",
+        "Group of friends at a karaoke bar booth laughing and cheering with raised drinks, colorful stage lights in background, candid wide shot"
+      ],
+      "caption": "i did not choose the power ballad the power ballad chose me 💀 #karaoke",
+      "location": "Koreatown, Manhattan",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "diegoramirez.wav",
+          "text": "NO BECAUSE THAT HIGH NOTE?!?! LEGEND!!! 🔥🔥🔥🔥"
+        },
+        {
+          "by": "jules.makes.mugs",
+          "text": "the bartender asked if you were okay."
+        },
+        {
+          "by": "priya.natarajan",
+          "text": "I'm still hearing it in my sleep\nIn a good way\nMostly\nok bye ✨"
+        },
+        {
+          "by": "rafisantos_",
+          "text": "bro took the mic and didnt give it back for 40 min ong 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a thrift store aisle holding up a giant 1980s purple windbreaker against herself, mock-serious face, racks of colorful clothes behind, bright overhead light"
+      ],
+      "caption": "8 dollars and it has shoulder pads im unstoppable",
+      "location": "Greenpoint Thrift",
+      "released": true,
+      "daysAgo": 13,
+      "comments": [
+        {
+          "by": "zaramalik.style",
+          "text": "the shoulders??"
+        },
+        {
+          "by": "brianna.does.hair",
+          "text": "girllll yesssss 😍😍😍"
+        },
+        {
+          "by": "hanasato.design",
+          "text": "omg STOPPP 😭💜🛍️✨🔥👏 the color!!!"
+        },
+        {
+          "by": "leahgoldberg.reads",
+          "text": "Objection. You said you were 'just browsing' (you were not just browsing)."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Smartphone and white earbuds resting on a rumpled bed next to a sleeping orange three-legged cat, late afternoon light through blinds"
+      ],
+      "caption": "post shift ritual murder pod and a cat on my legs",
+      "location": "",
+      "released": true,
+      "daysAgo": 21,
+      "comments": [
+        {
+          "by": "jules.makes.mugs",
+          "text": "wild way to fall asleep."
+        },
+        {
+          "by": "river.reads.slowly",
+          "text": "tripod looks so peaceful ~ rest well :)"
+        },
+        {
+          "by": "marcus",
+          "text": "Recommend the episode once you finish; I will listen on my commute. - M"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A steaming pot of bright orange jollof rice on a stovetop in a small Brooklyn kitchen, wooden spoon resting on top, warm evening light"
+      ],
+      "caption": "mama sent the recipe on whatsapp with zero measurements just vibes",
+      "location": "",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "cocinaconrosa",
+          "text": "Mija, this looks perfect. Your mama taught you well ❤️🫔"
+        },
+        {
+          "by": "kwame.asante",
+          "text": "Good evening. I must respectfully inform you that Ghanaian jollof remains superior. lol."
+        },
+        {
+          "by": "diegoramirez.wav",
+          "text": "NO BECAUSE SAVE ME A PLATE!!!! 🔥🔥🔥"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and a group of friends crowded together on a rooftop at sunset, Manhattan skyline behind them, everyone squinting and laughing, arm-length selfie"
+      ],
+      "caption": "my idiots 🫶 tripod couldnt make it he sends his regards",
+      "location": "Bushwick Rooftop",
+      "released": true,
+      "daysAgo": 47,
+      "comments": [
+        {
+          "by": "priya.natarajan",
+          "text": "Best night\nWe look unhinged\nI love us\nanyway ✨"
+        },
+        {
+          "by": "sofi.castellanos",
+          "text": "ayyy this night was everything we stayed way too late and then the pizza at 2am JAJAJA los quiero 🐢"
+        },
+        {
+          "by": "tylerbrennan_pt",
+          "text": "big night 💪"
+        },
+        {
+          "by": "sam.fixes.bikes",
+          "text": "Love this crew!! 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a pair of worn white nursing clogs on a tiled floor next to a locker, early morning light"
+      ],
+      "caption": "12 hours these shoes have seen things",
+      "location": "",
+      "released": true,
+      "daysAgo": 63,
+      "comments": [
+        {
+          "by": "gabe.moreno.smiles",
+          "text": "Thank you for everything you do!!! Heroes in clogs!!! ☀️"
+        },
+        {
+          "by": "emma.lindqvist",
+          "text": "Nurses are the best people on earth 💗 this made my day"
+        },
+        {
+          "by": "connor.murph22",
+          "text": "goated 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "An orange three-legged cat wearing a tiny knitted crown, lounging on a velvet thrift-store armchair, soft lamp light",
+        "Same orange cat yawning widely on the armchair, crown slightly crooked",
+        "Orange cat walking away from the camera across a rug, crown left behind on the cushion"
+      ],
+      "caption": "the coronation went great until it didnt 💀💀",
+      "location": "",
+      "released": true,
+      "daysAgo": 88,
+      "comments": [
+        {
+          "by": "hanasato.design",
+          "text": "omg 😭😭👑🐱💀✨😂 the walk away!!!"
+        },
+        {
+          "by": "lilytran.jpg",
+          "text": "AHH tripod is so cute wait ✨✨✨"
+        },
+        {
+          "by": "noor.climbs",
+          "text": "WAIT the third pic asdfghjkl"
+        },
+        {
+          "by": "crowd",
+          "text": "king behavior honestly"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON eating a ghost-pepper taco at a street fair, tears in her eyes, fist raised in victory, string lights and food stalls blurred behind, candid evening shot"
+      ],
+      "caption": "i won i think im also dying",
+      "location": "Smorgasburg, Brooklyn",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "andrethompsonjokes",
+          "text": "nah because the fist says victory\n\nthe eyes say call my mother 😂"
+        },
+        {
+          "by": "rafisantos_",
+          "text": "lowkey proud of u bro 😂"
+        },
+        {
+          "by": "strongwithdani",
+          "text": "YOU DID THAT let's goooo 💪❤️"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a hospital vending machine glowing in a dark empty corridor at night",
+      "text": "dinner is served 💀"
+    },
+    {
+      "imagePrompt": "PERSON lying on a couch with an orange three-legged cat sitting on her chest, both staring at the camera, soft afternoon light, vertical selfie",
+      "text": "pinned by the boss send help"
+    },
+    {
+      "imagePrompt": "Vertical photo of a takeout container of spicy noodles with chili flakes on a subway seat lap, phone-light glow",
+      "text": "rating these a 7 on the pain scale"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON in a Brooklyn apartment pulling navy scrubs over her head, braids up, golden evening light, vertical shot",
+        "An orange three-legged cat blocking the apartment doorway, staring up at the camera",
+        "PERSON kneeling to kiss the cat's head before heading out the door, keys in hand, vertical"
+      ],
+      "caption": "getting ready for night shift but tripod has to approve the fit first",
+      "audio": "original audio",
+      "released": true,
+      "daysAgo": 18
+    }
+  ]
+}

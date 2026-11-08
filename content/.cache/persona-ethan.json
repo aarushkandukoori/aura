@@ -1,0 +1,173 @@
+{
+  "bio": "Data analyst. | Inner Sunset. | Keyboards, bikes, ramen. | Opinions are my own. ⌨️🚲🍜",
+  "look": "29-year-old Korean-American man, lean cyclist build, short neat black hair with a tidy side part, rectangular black-framed glasses, calm closed-mouth smile, usually in a plain navy crewneck or a gray quarter-zip.",
+  "traits": [
+    "Methodical and detail-obsessed",
+    "Quietly loyal",
+    "Deadpan without meaning to be",
+    "Reliable to a fault",
+    "Secretly sentimental"
+  ],
+  "relationship": "Ethan met the user once at a mutual friend's birthday in the Mission, talked about ramen for twenty minutes, and has since become the user's most dependable audience, liking every post within ten minutes and leaving short, sincere reviews.",
+  "followers": 412,
+  "following": 287,
+  "avatarPrompt": "PERSON standing on a foggy hillside path in San Francisco, slight closed-mouth smile, wearing a navy crewneck, soft overcast light, head-and-shoulders framing, shallow depth of field, casual smartphone portrait.",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Overhead shot of a newly built mechanical keyboard on a wooden desk, cream and sage green keycaps, a coiled cable, a small mug of tea beside it, warm desk lamp light at night, tidy minimal setup."
+      ],
+      "caption": "Build #6. Linear switches. Lubed by hand. Four hours. Worth it.",
+      "location": "Inner Sunset, San Francisco",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a gray quarter-zip and cycling cap standing next to a road bike at a scenic overlook, the red suspension bridge partly hidden in fog behind him, cool morning light, mid-shot, slight smile."
+      ],
+      "caption": "Hawk Hill. 6:40 a.m. Fog: present.",
+      "location": "Marin Headlands",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a steaming bowl of tonkotsu ramen with chashu, soft-boiled egg halved, scallions and nori, on a dark wooden counter, warm restaurant lighting, chopsticks resting on the bowl edge.",
+        "Close-up of a phone-free notebook page on the counter beside the bowl, a hand holding a pen next to small hand-drawn star ratings, no readable text, warm light."
+      ],
+      "caption": "Broth: 9/10. Egg: 10/10. Wait time: 47 minutes. Recommended. #ramenreview",
+      "location": "Japantown, San Francisco",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "you rated the egg separately. of course you did."
+        },
+        {
+          "by": "rafi",
+          "text": "bro has a ramen spreadsheet ong 😂 lowkey need access"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Adding it to my list 👍"
+        },
+        {
+          "by": "connor",
+          "text": "goated egg 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and two friends sitting at an outdoor table at a brewery, Ethan in a navy crewneck holding a glass of soda, friends laughing mid-conversation, golden late-afternoon light, string lights overhead, candid shot."
+      ],
+      "caption": "Good people.",
+      "location": "Dogpatch, San Francisco",
+      "released": true,
+      "daysAgo": 23,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE ETHAN SMILING WITH TEETH?!?! LEGEND BEHAVIOR 🔥🔥🔥"
+        },
+        {
+          "by": "gabriel",
+          "text": "Love seeing this!!! Such a fun crew!!! ☀️"
+        },
+        {
+          "by": "brianna",
+          "text": "babe this lighting is everythinggg 😍😍😍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot of a road bike's handlebars with a small bike computer, the long flat Great Highway and ocean stretching ahead, misty gray morning, sand drifting at the road edge."
+      ],
+      "caption": "52 miles. Average 18.3 mph. Headwind both ways somehow.",
+      "location": "Great Highway, San Francisco",
+      "released": true,
+      "daysAgo": 41,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "big day 💪 thats a PR pace"
+        },
+        {
+          "by": "sam",
+          "text": "Proud of you! Bike looking clean too 👍"
+        },
+        {
+          "by": "noor",
+          "text": "WAIT both ways?? asdfgh the ocean is bullying you"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a hand holding a single translucent keycap up to a window, soft afternoon light glowing through it, blurred houses and trees outside, shallow depth of field."
+      ],
+      "caption": "Small things.",
+      "location": "",
+      "released": true,
+      "daysAgo": 66,
+      "comments": [
+        {
+          "by": "river",
+          "text": "this is so peaceful ~ :)"
+        },
+        {
+          "by": "leah",
+          "text": "Genuinely poetic; I didn't know a keycap could have a moment (but here we are)."
+        },
+        {
+          "by": "kenji",
+          "text": "The backlight does all the work here. Well seen."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting at a home desk wearing over-ear headphones, a podcast microphone-free setup with a laptop showing a waveform, a mechanical keyboard and a plant nearby, evening lamp light, side-angle shot, focused expression.",
+        "Close-up of a cozy windowsill with a pair of headphones resting on a stack of notebooks, fog outside, soft gray light."
+      ],
+      "caption": "Three-hour episode on transit data. Finished it. Recommended. #podcasts",
+      "location": "Inner Sunset, San Francisco",
+      "released": true,
+      "daysAgo": 104,
+      "comments": [
+        {
+          "by": "kwame",
+          "text": "Good evening. Three hours on transit data is a serious commitment. Respect. lol."
+        },
+        {
+          "by": "maya",
+          "text": "three hours ethan bestie are you ok 💀"
+        },
+        {
+          "by": "marcus",
+          "text": "I admire your stamina. Clearly you have excellent bonding with the subject matter. - M"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical photo of a phone-free desk with a keyboard half disassembled, tiny switches sorted into a parts tray, tweezers and a brush, bright desk lamp at night.",
+      "text": "Sorting. 90 switches."
+    },
+    {
+      "imagePrompt": "Vertical photo of a road bike leaning against a fence at Ocean Beach, gray waves and fog in the background, early morning light.",
+      "text": "Cold. Good."
+    },
+    {
+      "imagePrompt": "Vertical selfie of PERSON in a navy crewneck waiting in line outside a small ramen shop at dusk, warm light from the shop window, calm half-smile.",
+      "text": "Minute 22."
+    }
+  ],
+  "reels": []
+}

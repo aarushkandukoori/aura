@@ -1,0 +1,245 @@
+{
+  "bio": "pharmacist by day, chalk goblin by night 🏔️ | detroit | arabic coffee supremacy | WAIT u can't finish a puzzle box in a day?",
+  "look": "28-year-old Lebanese-American woman, small and wiry, olive skin, dark expressive eyes, thick dark brows, curly black hair usually in a high messy bun, chalky hands, wears tank tops, climbing pants and a beanie.",
+  "traits": [
+    "loud encourager",
+    "clumsy but fearless",
+    "methodical at work, chaotic off the clock",
+    "generous host",
+    "stubborn problem-solver"
+  ],
+  "relationship": "Noor met the user at the climbing gym when she yelled \"LEFT FOOT HIGHER\" at them from the mat, and now she counts them as her favorite belay-and-bagels buddy who she'll defend to anyone.",
+  "followers": 1140,
+  "following": 612,
+  "avatarPrompt": "PERSON grinning at the camera in a bouldering gym, chalk smudged on her cheek, colorful climbing holds blurred behind her, bright overhead light, close-up smartphone selfie",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON hanging from a steep overhang wall in a bouldering gym, mid-reach for a pink hold, a cloud of chalk drifting below her, shot from the mat looking up, bright fluorescent light"
+      ],
+      "caption": "WAIT i actually sent the pink one. after 11 sessions. asdfghjkl 🏔️",
+      "location": "Detroit Bouldering Co-op",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Small brass Arabic coffee pot and two tiny handleless cups on a wooden kitchen table, cardamom pods scattered beside them, soft morning window light, overhead shot"
+      ],
+      "caption": "sunday ahweh before the pharmacy eats my soul",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Hands holding a half-opened wooden puzzle box with a sliding panel pulled out, on a cluttered coffee table with a mug and a phone, warm lamp light, close-up"
+      ],
+      "caption": "day 4. the box is winning. the box knows it is winning",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting on a large boulder at a forested campsite wearing a beanie and fleece, holding a camping mug, autumn orange leaves around her, golden late-afternoon light, medium shot",
+        "A small tent and a crackling campfire at dusk among tall pine trees, a cast-iron pan on a grate, wide shot",
+        "Misty lake at sunrise seen from a rocky shoreline, pine silhouettes, calm water, wide view"
+      ],
+      "caption": "up north for the weekend. zero cell service, maximum marshmallows 🏔️ #puremichigan #campinglife",
+      "location": "Pictured Rocks, MI",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "you burned one marshmallow per minute. i was counting."
+        },
+        {
+          "by": "sofia",
+          "text": "ok wait this is so pretty i need you to take me next time porque i have never camped in my life and i think i would die but in a fun way JAJAJA 🐢"
+        },
+        {
+          "by": "tyler",
+          "text": "lake looks cold lets go 💪"
+        },
+        {
+          "by": "river",
+          "text": "that sunrise~ so peaceful :)"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A huge white chalk spill splattered across a blue padded gym floor next to a tipped-over chalk bucket, a climbing shoe at the edge of the frame, overhead fluorescent light, top-down shot"
+      ],
+      "caption": "record #47. the staff have stopped asking 🏔️",
+      "location": "Detroit Bouldering Co-op",
+      "released": true,
+      "daysAgo": 18,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "bestie this is a crime scene 💀💀"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE CONSISTENCY!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "andre",
+          "text": "nah because the bucket looks like it tried to escape\n\nand failed 😂"
+        },
+        {
+          "by": "connor",
+          "text": "goated 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a white pharmacist coat over a sweater, holding a paper coffee cup and smiling tiredly in a parked car, overcast daylight through the windshield, selfie angle"
+      ],
+      "caption": "12 hr shift survivor. pls take ur meds with food i am begging",
+      "location": "",
+      "released": true,
+      "daysAgo": 30,
+      "comments": [
+        {
+          "by": "marcus",
+          "text": "Thank you for your service. I hope your shift had good chemistry, at least. - M"
+        },
+        {
+          "by": "priya",
+          "text": "You look so tired\nBut cute tired\nGo nap anyway ✨"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I will now take my vitamins with breakfast as instructed. lol."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A big table spread of Lebanese food: hummus, tabbouleh, stuffed grape leaves, warm pita, and a plate of kibbeh, family hands reaching in, warm indoor dinner light, overhead shot"
+      ],
+      "caption": "teta said 'just a small lunch' 😭",
+      "location": "Dearborn, MI",
+      "released": true,
+      "daysAgo": 45,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mija, your teta is a woman after my own heart. Eat everything! ❤️🫔"
+        },
+        {
+          "by": "hana",
+          "text": "😍😍🤤🙏✨🫶 omg stoppp the grape leaves are SO perfect"
+        },
+        {
+          "by": "rafi",
+          "text": "bro that is not small ong 😂 lowkey invite me"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and a group of friends sitting on the gym mat after climbing, chalky hands raised in cheers with water bottles, laughing, warm evening gym lighting, wide group shot"
+      ],
+      "caption": "the mat gremlins 🏔️ WAIT who took my left shoe",
+      "location": "Detroit Bouldering Co-op",
+      "released": true,
+      "daysAgo": 61,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE WE LOOK LIKE A BAND!!! 🔥🔥"
+        },
+        {
+          "by": "leah",
+          "text": "Objection. Your shoe was on your foot the entire time (I have photographic evidence)."
+        },
+        {
+          "by": "sam",
+          "text": "Love this crew!! 👍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "View from the top of a sandstone climbing route looking down at a green valley in summer, a chalk bag and rope in the foreground, bright midday sun"
+      ],
+      "caption": "red river gorge u have my heart 🏔️🏔️🏔️ #climbing",
+      "location": "Red River Gorge, KY",
+      "released": true,
+      "daysAgo": 88,
+      "comments": [
+        {
+          "by": "theo",
+          "text": "Honestly mate, that view is worth every forearm pump. Adding it to the list ✈️🌍"
+        },
+        {
+          "by": "jamal",
+          "text": "what time of day did you shoot this, the light is so even? 📷"
+        },
+        {
+          "by": "emma",
+          "text": "So beautiful and so brave! This made my day 🩷"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON laughing in a sunny Detroit park, holding up a finished wooden puzzle box triumphantly, summer greenery behind, casual t-shirt, medium shot"
+      ],
+      "caption": "SOLVED IT asdfghj it took 3 weeks and my dignity",
+      "location": "Belle Isle",
+      "released": true,
+      "daysAgo": 117,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "three weeks. for a box."
+        },
+        {
+          "by": "gabriel",
+          "text": "This is amazing!!! Your patience is inspiring!!! So proud!!! ☀️"
+        },
+        {
+          "by": "lily",
+          "text": "AHH wait you're so smart and cool ✨✨"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON's chalky palms held up to the camera in a bouldering gym, colorful holds blurred behind, bright light, vertical close-up",
+      "text": "hands of a champion (of spilling)"
+    },
+    {
+      "imagePrompt": "Tiny cup of Arabic coffee on a pharmacy break room counter next to a clipboard, fluorescent light, vertical shot",
+      "text": "ahweh fuel ☕ 6 hrs to go"
+    },
+    {
+      "imagePrompt": "A pile of wooden puzzle boxes stacked on a bookshelf at home, warm lamp light, vertical shot",
+      "text": "WAIT which one should i start next"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "PERSON tying climbing shoes on a gym bench and dunking her hands into a chalk bag, vertical shot",
+        "PERSON slipping off a purple hold and dropping onto the mat in a puff of chalk, laughing, vertical shot",
+        "PERSON topping out the same boulder with arms raised while friends cheer below, vertical shot"
+      ],
+      "caption": "attempt 1 vs attempt 9 🏔️ WAIT the chalk at 0:04 asdfghj",
+      "audio": "Copper Lanterns - Climb Again",
+      "released": true,
+      "daysAgo": 24
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "bio": "🦷 Dental hygienist | Phoenix ☀️ | Salsa maker | Dad to Frijol & Chispa | Floss daily!!!",
+  "look": "30-year-old Mexican-American man with a round friendly face, huge bright white smile, warm brown skin, short wavy black hair with a neat fade, trimmed stubble, medium sturdy build, usually in teal scrubs or a faded baseball cap.",
+  "traits": [
+    "relentlessly positive",
+    "warm and chatty",
+    "proud dog dad",
+    "a little corny",
+    "loyal to a fault"
+  ],
+  "relationship": "Gabriel cleaned the user's teeth during one dental visit, chatted the whole time about hiking and salsa, followed them that same night, and now cheers on every single thing the user posts like they're old friends.",
+  "followers": 864,
+  "following": 712,
+  "avatarPrompt": "PERSON in teal scrubs smiling wide with teeth showing, standing against a bright desert backdrop with saguaro cacti, warm afternoon sun, chest-up smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Two small chihuahuas, one tan and one black-and-white, wearing tiny knitted orange sweaters, sitting side by side on a gray couch, soft living-room lamplight, close-up phone photo from above"
+      ],
+      "caption": "Sweater season has officially arrived in Phoenix (it's 72 degrees)!!! Frijol is thrilled! Chispa is filing a complaint!!! ☀️",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a faded baseball cap and gray hoodie, holding up a tray of nachos in a sunny ballpark seat, green field blurred behind, bright afternoon light, arm's-length selfie"
+      ],
+      "caption": "Fall ball, nachos, and zero cavities this week!!! Life is good!!!",
+      "location": "Phoenix, Arizona",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of a stone molcajete filled with chunky red salsa, surrounded by charred tomatoes, roasted chiles, halved limes and a bunch of cilantro on a wooden cutting board, warm kitchen window light",
+        "Close-up of a tortilla chip scooping thick roasted salsa, shallow focus, kitchen counter in background"
+      ],
+      "caption": "Batch #47 of the roasted chile de árbol salsa!!! Mom says it's finally better than hers!!! (She has never said this!!!) #salsasunday #homemade",
+      "location": "",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mijo, that char on the tomatoes is perfect. Tell your mamá she raised you right ❤️🫔"
+        },
+        {
+          "by": "sofia",
+          "text": "ok wait this looks increíble i need the recipe like YESTERDAY porque my salsa always ends up tasting like sad tomato water JAJAJA 🐢"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS SALSA LOOKS ILLEGAL!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "jules",
+          "text": "batch 47 is a commitment level i respect."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a sweaty gray t-shirt and baseball cap grinning on a rocky desert summit at sunrise, valley and distant mountains glowing orange behind him, saguaros dotting the slope, selfie angle"
+      ],
+      "caption": "Summit by 6:12am!!! Sunrise was worth every single switchback!!! ☀️☀️",
+      "location": "Piestewa Peak",
+      "released": true,
+      "daysAgo": 23,
+      "comments": [
+        {
+          "by": "noor",
+          "text": "WAIT the light on those ridges asdfghj ⛰️"
+        },
+        {
+          "by": "tyler",
+          "text": "early summit lets go 💪"
+        },
+        {
+          "by": "sam",
+          "text": "Love this!! Early hikes are the best 👍"
+        },
+        {
+          "by": "ethan",
+          "text": "Great shot."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Neat dental hygienist workstation with a reclined teal dental chair, tray of polished instruments, a small potted succulent and a smiling ceramic tooth figurine on the counter, bright clinic lighting"
+      ],
+      "caption": "Five years cleaning teeth today!!! Thank you to every patient who let me talk their ear off while they couldn't answer!!! 🦷",
+      "location": "",
+      "released": true,
+      "daysAgo": 41,
+      "comments": [
+        {
+          "by": "marcus",
+          "text": "Congratulations, Gabe. Five years of fighting plaque is no small feat; I assume you have great chemistry with your patients. - M"
+        },
+        {
+          "by": "brianna",
+          "text": "yesssss five years babe!! 😍😍😍"
+        },
+        {
+          "by": "andre",
+          "text": "nah because the dentist asking questions with both hands in your mouth\n\nis the original podcast"
+        },
+        {
+          "by": "crowd",
+          "text": "Best cleaning I've ever had, no joke!"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Tan chihuahua napping inside a hiking backpack's open top pocket on a dusty trail, tiny head poking out, desert scrub and blue sky behind, bright midday light",
+        "Black-and-white chihuahua in a tiny red harness standing proudly on a flat rock, saguaro in the background, low angle phone shot"
+      ],
+      "caption": "Frijol hiked 0.3 miles and then demanded a ride!!! Chispa did the whole loop and wants you to know it!!! #chihuahuasofinstagram",
+      "location": "South Mountain Park",
+      "released": true,
+      "daysAgo": 67,
+      "comments": [
+        {
+          "by": "hana",
+          "text": "omg STOPPP the backpack 😭🐶💛🎒🌵✨"
+        },
+        {
+          "by": "maya",
+          "text": "frijol is literally me on any hike 💀"
+        },
+        {
+          "by": "river",
+          "text": "chispa is a little athlete ~ :)"
+        },
+        {
+          "by": "emma",
+          "text": "Frijol in the backpack is everything 💗 this made my day"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "View from upper deck stands of a baseball diamond at dusk, stadium lights just turning on, pink and purple sky over the field, crowd silhouettes in foreground"
+      ],
+      "caption": "⚾☀️⚾",
+      "location": "Phoenix, Arizona",
+      "released": true,
+      "daysAgo": 104,
+      "comments": [
+        {
+          "by": "connor",
+          "text": "goated 🐐"
+        },
+        {
+          "by": "rafi",
+          "text": "bro that sky lowkey insane ong 😂"
+        },
+        {
+          "by": "kenji",
+          "text": "The sky and the field lights balance beautifully here."
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON in teal scrubs giving a thumbs-up in a clinic hallway mirror, bright fluorescent light, vertical selfie",
+      "text": "Monday!!! Let's go!!! Floss tonight!!! 🦷"
+    },
+    {
+      "imagePrompt": "Two chihuahuas curled up together on a striped blanket in a sunbeam on a tile floor, vertical phone photo",
+      "text": "Professional nappers!!!"
+    },
+    {
+      "imagePrompt": "Cutting board with diced onions, jalapeños and tomatoes beside a molcajete, kitchen counter, warm evening light, vertical shot",
+      "text": "Salsa prep, round two!!! ☀️"
+    }
+  ],
+  "reels": []
+}

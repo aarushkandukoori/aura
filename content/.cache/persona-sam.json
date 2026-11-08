@@ -1,0 +1,182 @@
+{
+  "bio": "bike mechanic @ the co-op 🔧 | kombucha dad (no kids, just SCOBYs) | birds + banjo | Boston 👍",
+  "look": "32-year-old white man, tall and lanky, long friendly face, full bushy copper-red beard, shaggy red hair under a faded knit beanie, freckles, grease-smudged hands, canvas shop apron over flannel shirts and rolled cuffs.",
+  "traits": [
+    "endlessly encouraging",
+    "patient teacher",
+    "earnest to a fault",
+    "quietly goofy",
+    "a little too into fermentation"
+  ],
+  "relationship": "Sam met the user when they brought a sad bike with a squeaky chain to the repair co-op, walked them through fixing it themselves, and has cheered on every post since like a proud uncle.",
+  "followers": 612,
+  "following": 388,
+  "avatarPrompt": "PERSON smiling warmly in a cluttered community bike repair shop, holding a wrench up near his face, bikes hanging on hooks behind him, warm afternoon light through a garage door, casual smartphone portrait",
+  "posts": [
+    {
+      "imagePrompts": [
+        "Close-up of two glass jars of homemade kombucha on a kitchen windowsill, one amber and one pinkish with floating raspberries, cloth covers held on with rubber bands, soft morning light"
+      ],
+      "caption": "Batch #47. Raspberry ginger. I have a good feeling about this one 👍",
+      "location": "Jamaica Plain, Boston",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON crouched beside a kid-sized purple bike in a community bike shop, adjusting the seat height with an Allen key, grinning at the camera, bikes on wall racks behind him, fluorescent and window light mixed"
+      ],
+      "caption": "Free tune-up Saturday at the co-op! 23 bikes back on the road. Thank you to every volunteer who showed up. Proud of you all 👍",
+      "location": "Southwest Corridor Bike Co-op",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot through binoculars-height view of a small red-tailed hawk perched on a bare branch above a pond, autumn foliage, overcast soft light, slightly zoomed smartphone photo",
+        "PERSON in a knit beanie and flannel holding binoculars on a wooded trail, pointing up at the trees with an excited expression, fall leaves on the ground"
+      ],
+      "caption": "Red-tailed hawk at the pond this morning!! Sat still for a full ten minutes. What a gentleman 👍 #birding",
+      "location": "Jamaica Pond",
+      "released": true,
+      "daysAgo": 6,
+      "comments": [
+        {
+          "by": "river",
+          "text": "a full ten minutes~ he was posing for you :)"
+        },
+        {
+          "by": "ethan",
+          "text": "Great shot."
+        },
+        {
+          "by": "maya",
+          "text": "the hawk has more patience than me im ngl 💀"
+        },
+        {
+          "by": "jamal",
+          "text": "what lens or zoom did you use for the hawk shot? 📷"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Close-up of grease-stained hands holding a bike chain and a chain tool over a wooden workbench, scattered spokes and tire levers, warm overhead shop light"
+      ],
+      "caption": "🔧🔧🔧👍",
+      "location": "Southwest Corridor Bike Co-op",
+      "released": true,
+      "daysAgo": 19,
+      "comments": [
+        {
+          "by": "tyler",
+          "text": "those hands have seen things 💪"
+        },
+        {
+          "by": "jules",
+          "text": "the most honest manicure in boston."
+        },
+        {
+          "by": "connor",
+          "text": "goated 🐐"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON playing a banjo on a back porch at dusk with two friends holding a fiddle and guitar, string lights overhead, mason jars of kombucha on a crate, warm golden light"
+      ],
+      "caption": "Porch jam night. We know four songs and we played all of them twice. Love these folks 👍",
+      "location": "",
+      "released": true,
+      "daysAgo": 34,
+      "comments": [
+        {
+          "by": "eli",
+          "text": "porch light... strings... this is the whole thing 🌙"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE BANJO ARC IS REAL!!! LEGEND 🔥🔥🔥"
+        },
+        {
+          "by": "gabriel",
+          "text": "Four songs twice is a full concert!!! I would absolutely buy a ticket!!! ☀️"
+        },
+        {
+          "by": "leah",
+          "text": "Honestly, four songs played with this much heart beats forty played badly (and the string lights help)."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot of a fully loaded touring bicycle leaning against a wooden fence on a rural New England road, red and orange maples, bright afternoon sun",
+        "View from a bike seat of a winding country road disappearing into autumn trees, handlebars with a small bell in the foreground",
+        "Tin camping mug of coffee on a picnic table beside a small camp stove, early morning mist over a field"
+      ],
+      "caption": "Overnighter out to the Berkshires. Two flats, zero complaints. Fall in New England is the real deal 👍 #bikepacking",
+      "location": "Berkshires, Massachusetts",
+      "released": true,
+      "daysAgo": 58,
+      "comments": [
+        {
+          "by": "theo",
+          "text": "Honestly mate, this is my kind of trip. Two flats and still smiling, that's the spirit 🌍✈️"
+        },
+        {
+          "by": "noor",
+          "text": "WAIT the mist pic asdfghj i need to go"
+        },
+        {
+          "by": "priya",
+          "text": "That road\nI want to be on that road\nEven with the flats\nok bye ✨"
+        },
+        {
+          "by": "crowd",
+          "text": "what tires were you running?"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON holding up a fizzy glass bottle of kombucha in a small kitchen, proud goofy grin, shelves of fermentation jars behind him, daylight from a window"
+      ],
+      "caption": "She's carbonated, folks!! Took me three tries but we got there 👍",
+      "location": "",
+      "released": true,
+      "daysAgo": 97,
+      "comments": [
+        {
+          "by": "marcus",
+          "text": "Excellent work, Sam. The fermentation chemistry is sound; I'd say you really found your solution. - M"
+        },
+        {
+          "by": "hana",
+          "text": "🍾🫧🙌✨🥂 omg the fizz!!! stoppp you look so proud 😭💛"
+        },
+        {
+          "by": "rafi",
+          "text": "bro really became a scientist ong 😂"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a row of repaired bikes lined up outside a bike co-op garage door at golden hour",
+      "text": "all fixed and ready to go home 👍"
+    },
+    {
+      "imagePrompt": "Vertical close-up of a chickadee on a backyard bird feeder hanging from a maple branch, morning light",
+      "text": "little buddy is back!!"
+    },
+    {
+      "imagePrompt": "PERSON in a beanie making a thumbs-up next to a large glass fermentation jar on a kitchen counter, vertical selfie",
+      "text": "SCOBY check: thriving 👍"
+    }
+  ],
+  "reels": []
+}

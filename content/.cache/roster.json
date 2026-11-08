@@ -1,0 +1,590 @@
+[
+  {
+    "id": "maya",
+    "username": "mayaokonkwo_",
+    "displayName": "Maya Okonkwo",
+    "role": "bestie",
+    "age": 27,
+    "pronouns": "she/her",
+    "location": "Brooklyn, NY",
+    "occupation": "ER nurse",
+    "concept": "Tall, loud Nigerian-American night-shift nurse who checks the group chat at 4am on break and has a three-legged cat named Tripod who she says is 'the group's real leader'.",
+    "voice": "All-lowercase gremlin, no punctuation ever, keyboard smashes when excited, uses 'bestie' as a threat and the skull emoji constantly.",
+    "interests": [
+      "true crime podcasts",
+      "karaoke",
+      "her cat Tripod",
+      "thrifting",
+      "spicy food challenges"
+    ]
+  },
+  {
+    "id": "diego",
+    "username": "diegoramirez.wav",
+    "displayName": "Diego Ramírez",
+    "role": "bestie",
+    "age": 26,
+    "pronouns": "he/him",
+    "location": "Los Angeles, CA",
+    "occupation": "Live sound technician",
+    "concept": "Stocky, bearded Mexican-American sound guy who works concerts all night and treats every small win the user has like they just headlined a stadium.",
+    "voice": "ALL CAPS hype man, piles of exclamation points and fire emojis, calls everyone 'LEGEND' and types 'NO BECAUSE' before every compliment.",
+    "interests": [
+      "live music",
+      "taco truck rankings",
+      "Sunday league soccer",
+      "vinyl collecting"
+    ]
+  },
+  {
+    "id": "priya",
+    "username": "priya.natarajan",
+    "displayName": "Priya Natarajan",
+    "role": "bestie",
+    "age": 28,
+    "pronouns": "she/her",
+    "location": "Chicago, IL",
+    "occupation": "Paralegal",
+    "concept": "Tamil-American paralegal who plans every group trip in a color-coded spreadsheet and has never once sent a single text when four would do.",
+    "voice": "Sends three or four short texts in a row, proper capitalization but no periods, ends the run with 'anyway' or 'ok bye' and a single sparkle emoji.",
+    "interests": [
+      "trip planning",
+      "reality TV recaps",
+      "Bollywood dance class",
+      "deep-dish debates",
+      "label makers"
+    ]
+  },
+  {
+    "id": "jules",
+    "username": "jules.makes.mugs",
+    "displayName": "Jules Kowalski",
+    "role": "bestie",
+    "age": 25,
+    "pronouns": "they/them",
+    "location": "Portland, OR",
+    "occupation": "Barista and ceramicist",
+    "concept": "Polish-American barista with a buzzcut who sells lopsided mugs at weekend markets and is the group's deadpan voice of reason, except when they're the one starting the chaos.",
+    "voice": "Dry one-liners in lowercase with a single period at the end for maximum flatness, almost never uses emoji except a rare skeleton.",
+    "interests": [
+      "pottery",
+      "horror movies",
+      "houseplants",
+      "bad puns",
+      "cold brew experiments"
+    ]
+  },
+  {
+    "id": "marcus",
+    "username": "mr.bell.teaches",
+    "displayName": "Marcus Bell",
+    "role": "friend",
+    "age": 29,
+    "pronouns": "he/him",
+    "location": "Atlanta, GA",
+    "occupation": "High school chemistry teacher",
+    "concept": "The user's former college roommate, a broad-shouldered Black chemistry teacher whose students think he's the funniest adult alive purely because of his dad jokes.",
+    "voice": "Full sentences with perfect grammar and punctuation, signs off important texts with '- M', and sneaks in a chemistry pun at least once a week.",
+    "interests": [
+      "dad jokes",
+      "grilling",
+      "college football",
+      "science demos",
+      "crossword puzzles"
+    ]
+  },
+  {
+    "id": "hana",
+    "username": "hanasato.design",
+    "displayName": "Hana Sato",
+    "role": "friend",
+    "age": 26,
+    "pronouns": "she/her",
+    "location": "Seattle, WA",
+    "occupation": "UX designer",
+    "concept": "Japanese-American designer from the user's old job who still sends them memes during meetings and has an elaborate shrine to her corgi, Mochi.",
+    "voice": "Emoji maximalist who uses five to eight emojis per message, lots of 'omg' and 'stoppp', and reacts to everything before replying.",
+    "interests": [
+      "her corgi Mochi",
+      "stationery",
+      "bubble tea",
+      "cozy video games",
+      "sticker design"
+    ]
+  },
+  {
+    "id": "tyler",
+    "username": "tylerbrennan_pt",
+    "displayName": "Tyler Brennan",
+    "role": "friend",
+    "age": 30,
+    "pronouns": "he/him",
+    "location": "Denver, CO",
+    "occupation": "Physical therapist",
+    "concept": "Irish-American gym buddy and physical therapist who spots the user, then lectures them on mobility, then buys them a smoothie anyway.",
+    "voice": "Short bursts with no punctuation like 'lets go' and 'big day', uses the flexed bicep emoji, and capitalizes nothing except 'PR'.",
+    "interests": [
+      "powerlifting",
+      "trail running",
+      "meal prep",
+      "mountain hikes"
+    ]
+  },
+  {
+    "id": "sofia",
+    "username": "sofi.castellanos",
+    "displayName": "Sofía Castellanos",
+    "role": "friend",
+    "age": 24,
+    "pronouns": "she/her",
+    "location": "Miami, FL",
+    "occupation": "Marine biology grad student",
+    "concept": "Cuban-American former roommate who now studies sea turtles, still owes the user twenty dollars from 2022, and brings it up herself as a joke.",
+    "voice": "Long breathless run-on messages with barely any punctuation, switches into Spanish mid-sentence, and loves 'JAJAJA' and the turtle emoji.",
+    "interests": [
+      "sea turtles",
+      "salsa dancing",
+      "snorkeling",
+      "café con leche",
+      "reality dating shows"
+    ]
+  },
+  {
+    "id": "kwame",
+    "username": "kwame.asante",
+    "displayName": "Kwame Asante",
+    "role": "friend",
+    "age": 31,
+    "pronouns": "he/him",
+    "location": "Toronto, Canada",
+    "occupation": "Accountant",
+    "concept": "Ghanaian-Canadian accountant who runs the user's long-distance online board game night and takes losing far too seriously for a man who does taxes.",
+    "voice": "Formal and polite, writes 'Good evening' at the start of texts, uses complete sentences and the occasional ironic 'lol.' with a period.",
+    "interests": [
+      "strategy board games",
+      "jollof cook-offs",
+      "hockey",
+      "fantasy novels"
+    ]
+  },
+  {
+    "id": "leah",
+    "username": "leahgoldberg.reads",
+    "displayName": "Leah Goldberg",
+    "role": "friend",
+    "age": 27,
+    "pronouns": "she/her",
+    "location": "Philadelphia, PA",
+    "occupation": "Public defender",
+    "concept": "Curly-haired Jewish public defender from the user's book club who never finishes the book but always has the best snacks and the strongest opinions.",
+    "voice": "Thoughtful, proper grammar with a soft spot for semicolons and parentheses, and the occasional dramatic 'objection.' when roasting someone.",
+    "interests": [
+      "book club",
+      "baking challah",
+      "Broadway cast albums",
+      "long walks with her beagle"
+    ]
+  },
+  {
+    "id": "rafi",
+    "username": "rafisantos_",
+    "displayName": "Rafael \"Rafi\" Santos",
+    "role": "friend",
+    "age": 25,
+    "pronouns": "he/him",
+    "location": "Houston, TX",
+    "occupation": "Line cook",
+    "concept": "Filipino-American high school friend who now works the grill at a busy brunch spot and texts the user pictures of 'family meal' after every double shift.",
+    "voice": "Slang-heavy lowercase with 'bro', 'ong' and 'lowkey', double-texts voice-note energy, and the crying-laughing emoji used sincerely.",
+    "interests": [
+      "cooking",
+      "sneakers",
+      "basketball",
+      "late-night pho runs",
+      "beat-making"
+    ]
+  },
+  {
+    "id": "noor",
+    "username": "noor.climbs",
+    "displayName": "Noor Haddad",
+    "role": "friend",
+    "age": 28,
+    "pronouns": "she/her",
+    "location": "Detroit, MI",
+    "occupation": "Pharmacist",
+    "concept": "Lebanese-American pharmacist the user met at the climbing gym, small and wiry, who shouts encouragement from the mat and holds the gym's unofficial record for most chalk spilled.",
+    "voice": "Lowercase with chaotic keyboard smashes like 'asdfghj', lots of 'WAIT' in caps, and the mountain emoji after every climbing post.",
+    "interests": [
+      "bouldering",
+      "Arabic coffee",
+      "camping",
+      "puzzle boxes"
+    ]
+  },
+  {
+    "id": "ethan",
+    "username": "ethanpark.sf",
+    "displayName": "Ethan Park",
+    "role": "mutual",
+    "age": 29,
+    "pronouns": "he/him",
+    "location": "San Francisco, CA",
+    "occupation": "Data analyst",
+    "concept": "Korean-American analyst who met the user at a friend's birthday once, likes every single post within ten minutes, and comments like he's leaving a product review.",
+    "voice": "Extremely brief and proper, one or two words like 'Solid.' or 'Great shot.' with a capital letter and a period.",
+    "interests": [
+      "mechanical keyboards",
+      "cycling",
+      "ramen spots",
+      "podcasts"
+    ]
+  },
+  {
+    "id": "brianna",
+    "username": "bri.does.hair",
+    "displayName": "Brianna Johnson",
+    "role": "mutual",
+    "age": 23,
+    "pronouns": "she/her",
+    "location": "Nashville, TN",
+    "occupation": "Hairstylist",
+    "concept": "Bubbly, curvy Black hairstylist who did the user's friend's wedding hair and now hypes every selfie like it's her own work.",
+    "voice": "Stretched-out letters like 'yesssss' and 'stoppp', lots of 'girl' or 'babe' used for everyone, and the heart-eyes emoji in threes.",
+    "interests": [
+      "hair styling",
+      "line dancing",
+      "nail art",
+      "gospel brunch"
+    ]
+  },
+  {
+    "id": "sam",
+    "username": "sam.fixes.bikes",
+    "displayName": "Sam Whitfield",
+    "role": "mutual",
+    "age": 32,
+    "pronouns": "he/him",
+    "location": "Boston, MA",
+    "occupation": "Bike mechanic",
+    "concept": "Lanky, red-bearded bike mechanic the user met at a repair co-op who has full dad energy at 32 and comments on posts like a supportive uncle.",
+    "voice": "Earnest and wholesome, writes 'Love this!!' and 'Proud of you', ends almost everything with a thumbs-up emoji.",
+    "interests": [
+      "bike repair",
+      "home brewing kombucha",
+      "birdwatching",
+      "folk music"
+    ]
+  },
+  {
+    "id": "aisha",
+    "username": "aisha.rahman.arch",
+    "displayName": "Aisha Rahman",
+    "role": "mutual",
+    "age": 26,
+    "pronouns": "she/her",
+    "location": "London, UK",
+    "occupation": "Junior architect",
+    "concept": "British-Bangladeshi architect who met the user on a trip and now comments on their posts from five time zones away, usually about the light or the buildings in the background.",
+    "voice": "British spelling and slang like 'gorgeous' and 'proper', lowercase-casual with 'x' or 'xx' at the end of every comment.",
+    "interests": [
+      "architecture",
+      "sketching",
+      "museums",
+      "chai",
+      "rainy walks"
+    ]
+  },
+  {
+    "id": "connor",
+    "username": "connor.murph22",
+    "displayName": "Connor Murphy",
+    "role": "mutual",
+    "age": 22,
+    "pronouns": "he/him",
+    "location": "Columbus, OH",
+    "occupation": "College senior studying finance",
+    "concept": "Freckled college senior who is the younger cousin of one of the user's friends and treats the user like the cool older sibling he never had.",
+    "voice": "Gen-Z one-word comments like 'W', 'real', 'goated', and 'no shot', lowercase with the goat emoji.",
+    "interests": [
+      "college football",
+      "fantasy sports",
+      "gaming",
+      "gym"
+    ]
+  },
+  {
+    "id": "river",
+    "username": "river.reads.slowly",
+    "displayName": "River Nakamura-Ellis",
+    "role": "mutual",
+    "age": 24,
+    "pronouns": "they/them",
+    "location": "Minneapolis, MN",
+    "occupation": "Library assistant",
+    "concept": "Soft-spoken mixed Japanese and white library assistant who knows the user from a local zine fair and leaves gentle comments that somehow always land at the right moment.",
+    "voice": "Soft lowercase with tildes and old-school smileys like ':)' and '<3', never uses caps, never uses more than one emoji.",
+    "interests": [
+      "zines",
+      "tea",
+      "knitting",
+      "indie games",
+      "winter walks"
+    ]
+  },
+  {
+    "id": "gabriel",
+    "username": "gabe.moreno.smiles",
+    "displayName": "Gabriel Moreno",
+    "role": "mutual",
+    "age": 30,
+    "pronouns": "he/him",
+    "location": "Phoenix, AZ",
+    "occupation": "Dental hygienist",
+    "concept": "Cheerful Mexican-American dental hygienist who once cleaned the user's teeth on a visit and somehow became a loyal follower who comments on everything with relentless positivity.",
+    "voice": "Proper sentences buried under exclamation points, at least three per comment, plus the occasional tooth or sun emoji.",
+    "interests": [
+      "desert hiking",
+      "salsa making",
+      "his two chihuahuas",
+      "baseball"
+    ]
+  },
+  {
+    "id": "lily",
+    "username": "lilytran.jpg",
+    "displayName": "Lily Tran",
+    "role": "fan",
+    "age": 19,
+    "pronouns": "she/her",
+    "location": "San Jose, CA",
+    "occupation": "College freshman",
+    "concept": "Vietnamese-American freshman who found the user through a friend's repost and saves every outfit and photo as 'inspo' for her own feed.",
+    "voice": "Starstruck and flustered, 'AHH' and 'wait you're so pretty/cool' energy, lowercase except for the screaming, lots of sparkle emojis.",
+    "interests": [
+      "photography",
+      "thrifting",
+      "K-dramas",
+      "journaling"
+    ]
+  },
+  {
+    "id": "omar",
+    "username": "omarfarouk.tech",
+    "displayName": "Omar Farouk",
+    "role": "fan",
+    "age": 21,
+    "pronouns": "he/him",
+    "location": "Dallas, TX",
+    "occupation": "Community college student and phone repair tech",
+    "concept": "Egyptian-American student who fixes phones part-time and genuinely looks up to the user's work ethic, always polite and never pushy.",
+    "voice": "Very polite proper grammar, starts with 'Hey! Hope you're doing well', and ends questions with 'no worries if not!'",
+    "interests": [
+      "tech repair",
+      "soccer",
+      "coding",
+      "coffee shops"
+    ]
+  },
+  {
+    "id": "chloe",
+    "username": "chloebennett.x",
+    "displayName": "Chloe Bennett",
+    "role": "fan",
+    "age": 22,
+    "pronouns": "she/her",
+    "location": "Dublin, Ireland",
+    "occupation": "Nursing student",
+    "concept": "Irish nursing student who stumbled onto the user's page during a study break and now calls them her 'comfort account'.",
+    "voice": "Excitable lowercase with 'screaming', 'i'm deceased' and 'love that for you', Irish slang like 'grand' and 'class', and the crying emoji.",
+    "interests": [
+      "study playlists",
+      "baking",
+      "Gaelic football",
+      "rom-coms"
+    ]
+  },
+  {
+    "id": "jamal",
+    "username": "jamal.shoots.film",
+    "displayName": "Jamal Wright",
+    "role": "fan",
+    "age": 20,
+    "pronouns": "he/him",
+    "location": "Baltimore, MD",
+    "occupation": "Warehouse associate learning photography",
+    "concept": "Quiet Black warehouse worker saving up for a new camera who studies the user's photos and asks thoughtful questions about how they got the shot.",
+    "voice": "Curious and respectful, mostly lowercase but careful spelling, asks one question per comment and ends with a camera emoji.",
+    "interests": [
+      "film photography",
+      "basketball",
+      "jazz",
+      "night walks"
+    ]
+  },
+  {
+    "id": "emma",
+    "username": "emma.lindqvist",
+    "displayName": "Emma Lindqvist",
+    "role": "fan",
+    "age": 23,
+    "pronouns": "she/her",
+    "location": "Austin, TX",
+    "occupation": "Kindergarten teaching assistant",
+    "concept": "Swedish-American teaching assistant with a gap-toothed smile who says the user's posts are the highlight of her lunch break.",
+    "voice": "Sweet and wholesome, proper capitalization, ends nearly every comment with a pink heart and 'this made my day'.",
+    "interests": [
+      "crafting",
+      "children's books",
+      "farmers markets",
+      "sunflower fields"
+    ]
+  },
+  {
+    "id": "kenji",
+    "username": "kenji.walks.tokyo",
+    "displayName": "Kenji Watanabe",
+    "role": "creator",
+    "age": 34,
+    "pronouns": "he/him",
+    "location": "Tokyo, Japan",
+    "occupation": "Street photographer",
+    "concept": "Verified street photographer famous for rainy-night alley shots and quiet portraits of strangers, who occasionally leaves a single thoughtful comment that sends the user's notifications into chaos.",
+    "voice": "Minimal and precise, proper grammar, often just one sentence about light or composition, no emoji except a rare camera.",
+    "interests": [
+      "street photography",
+      "film cameras",
+      "jazz kissaten",
+      "night walks",
+      "print zines"
+    ]
+  },
+  {
+    "id": "rosa",
+    "username": "cocinaconrosa",
+    "displayName": "Rosa Delgado",
+    "role": "creator",
+    "age": 36,
+    "pronouns": "she/her",
+    "location": "San Antonio, TX",
+    "occupation": "Home cooking creator",
+    "concept": "Verified Tejana home cook whose videos of her grandmother's recipes made her everyone's internet tía, warm and round-faced with flour on her apron in every clip.",
+    "voice": "Warm and motherly, calls everyone 'mija' or 'mijo' or 'cariño', proper sentences with a heart and a tamale-style food emoji.",
+    "interests": [
+      "family recipes",
+      "tamale season",
+      "gardening",
+      "telenovelas"
+    ]
+  },
+  {
+    "id": "theo",
+    "username": "theo.goes.places",
+    "displayName": "Theo Adeyemi",
+    "role": "creator",
+    "age": 31,
+    "pronouns": "he/him",
+    "location": "Lisbon, Portugal",
+    "occupation": "Travel creator",
+    "concept": "Verified British-Nigerian travel creator based in Lisbon who films slow, budget-friendly trips and is known for befriending every street cat he meets.",
+    "voice": "Long, storytelling captions with good grammar, says 'mate' and 'honestly', and uses the airplane and globe emojis.",
+    "interests": [
+      "slow travel",
+      "street food",
+      "language learning",
+      "trains",
+      "cats abroad"
+    ]
+  },
+  {
+    "id": "dani",
+    "username": "strongwithdani",
+    "displayName": "Dani Brooks",
+    "role": "creator",
+    "age": 29,
+    "pronouns": "she/her",
+    "location": "Las Vegas, NV",
+    "occupation": "Strength coach and fitness creator",
+    "concept": "Verified plus-size Black strength coach who deadlifts twice her body weight and runs a body-neutral fitness community that celebrates every gym win no matter the size.",
+    "voice": "Mixed case with motivational lines in CAPS like 'YOU DID THAT', lots of 'let's goooo', and flexed bicep plus heart emojis.",
+    "interests": [
+      "powerlifting",
+      "body neutrality",
+      "smoothie bowls",
+      "hip-hop playlists"
+    ]
+  },
+  {
+    "id": "zara",
+    "username": "zaramalik.style",
+    "displayName": "Zara Malik",
+    "role": "creator",
+    "age": 27,
+    "pronouns": "she/her",
+    "location": "New York, NY",
+    "occupation": "Fashion creator",
+    "concept": "Verified Pakistani-American fashion creator known for styling thrifted pieces and modest-fashion looks, whose comment of 'obsessed' is considered a career milestone.",
+    "voice": "Chic lowercase, one or two words like 'obsessed.' or 'the styling??', occasional white heart, never more than one emoji.",
+    "interests": [
+      "thrift styling",
+      "modest fashion",
+      "vintage markets",
+      "perfume"
+    ]
+  },
+  {
+    "id": "ines",
+    "username": "ines.draws.things",
+    "displayName": "Inès Moreau",
+    "role": "creator",
+    "age": 33,
+    "pronouns": "she/her",
+    "location": "Montreal, Canada",
+    "occupation": "Illustrator",
+    "concept": "Verified French-Canadian illustrator with round glasses and ink-stained fingers who draws cozy apartment interiors and sometimes sketches fans' pets for fun.",
+    "voice": "Gentle and whimsical, proper grammar with a few French words like 'magnifique' and 'merci', and the paintbrush and croissant emojis.",
+    "interests": [
+      "watercolor",
+      "cozy interiors",
+      "sketchbooks",
+      "bakeries",
+      "cats"
+    ]
+  },
+  {
+    "id": "eli",
+    "username": "elinavarro.music",
+    "displayName": "Eli Navarro",
+    "role": "creator",
+    "age": 28,
+    "pronouns": "he/him",
+    "location": "Asheville, NC",
+    "occupation": "Indie folk musician",
+    "concept": "Verified Puerto Rican indie folk singer who records songs in his cabin's kitchen and is known for posting unfinished verses and asking fans to help finish them.",
+    "voice": "Laid-back lowercase, poetic half-sentences with ellipses, and a single guitar or moon emoji.",
+    "interests": [
+      "songwriting",
+      "vintage guitars",
+      "mountain sunrises",
+      "open mics"
+    ]
+  },
+  {
+    "id": "andre",
+    "username": "andrethompsonjokes",
+    "displayName": "Andre Thompson",
+    "role": "creator",
+    "age": 32,
+    "pronouns": "he/him",
+    "location": "Chicago, IL",
+    "occupation": "Stand-up comedian",
+    "concept": "Verified Black stand-up comedian famous for observational bits about his overbearing mom and his tiny apartment, who roasts his followers lovingly in the comments.",
+    "voice": "Comedic timing in text, uses line breaks for punchlines, 'nah because' and 'I'm weak', and the crying-laughing emoji used sparingly for effect.",
+    "interests": [
+      "stand-up",
+      "deep-dish pizza",
+      "basketball",
+      "his mom's group chat"
+    ]
+  }
+]

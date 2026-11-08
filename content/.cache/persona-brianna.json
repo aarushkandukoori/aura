@@ -1,0 +1,177 @@
+{
+  "bio": "hairstylist 💇🏾‍♀️ | Nashville girlie | silk presses, braids & bridal 👰🏾 | line dance queen 🤠 | book me babe 😍😍😍",
+  "look": "23-year-old Black woman, curvy build, round face with full cheeks, big bright smile, warm brown skin, long glossy silk-pressed hair with a middle part, gold hoops, long colorful almond nails, bold lip, bright colorful outfits.",
+  "traits": [
+    "bubbly and encouraging",
+    "detail-obsessed about hair",
+    "social butterfly",
+    "faith-rooted and warm",
+    "a little dramatic in the best way"
+  ],
+  "relationship": "Brianna met the user while doing hair for the user's friend's wedding and now hypes every selfie the user posts like she styled it herself.",
+  "followers": 1640,
+  "following": 892,
+  "avatarPrompt": "PERSON smiling wide at the camera in a bright salon with ring light glow, hair freshly silk-pressed and laid over one shoulder, gold hoops catching the light, close-up smartphone selfie, warm tones",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON in a cream sweater holding up a hand mirror and grinning in a salon chair after a fresh silk press, ring light reflected in her eyes, mirror selfie, soft warm light"
+      ],
+      "caption": "silk press season is HEREEEE and i finally did my own 😍😍😍 took me 3 hours girl but she's laid",
+      "location": "Crown & Curl Studio",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a hand with long almond nails painted in autumn colors, burnt orange, gold foil and tiny painted leaves, resting on a cozy knit blanket next to a mug of chai, soft window light"
+      ],
+      "caption": "fall nails are giving everything babe 🍂 my nail girl is a GENIUS stoppp",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "POV of a brunch table with chicken and waffles, cheese grits, peach cobbler and sweet tea in mason jars, a bright gospel venue blurred behind with people standing and clapping, warm morning light"
+      ],
+      "caption": "gospel brunch with the girls and i cried twice 🙌🏾 the choir sang my FAVORITE song girl i was outta my seat",
+      "location": "East Nashville",
+      "released": true,
+      "daysAgo": 9,
+      "comments": [
+        {
+          "by": "rosa",
+          "text": "Mija, that peach cobbler looks like it was made with love. Feeding the soul and the belly ❤️🫔"
+        },
+        {
+          "by": "priya",
+          "text": "Wait the grits\nI need the name of this place\nAnd the choir??\nOk bye ✨"
+        },
+        {
+          "by": "gabriel",
+          "text": "Chicken and waffles AND a choir?! This is the dream Sunday!!! ☀️"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a denim jacket, white cowboy boots and a bright yellow dress mid line dance on a crowded wooden dance floor, string lights overhead, friends in a row behind her, slightly motion-blurred night photo",
+        "Close-up of white cowboy boots on scuffed wooden floorboards under warm amber bar lights"
+      ],
+      "caption": "boot scootin boogie babyyyy 🤠 i KNOW every step now don't test me",
+      "location": "Broadway, Nashville",
+      "released": true,
+      "daysAgo": 21,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THOSE BOOTS ARE ICONIC!!! LINE DANCE LEGEND 🔥🔥🔥"
+        },
+        {
+          "by": "maya",
+          "text": "bestie i am coming to nashville and you are teaching me or else 💀"
+        },
+        {
+          "by": "andre",
+          "text": "nah because I tried line dancing once\n\nthe line danced away from me 😂"
+        },
+        {
+          "by": "crowd",
+          "text": "the yellow dress!!! 😍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Back view of a bride's elegant low chignon with tiny pearl pins and soft face-framing tendrils, in a sunlit bridal suite with a white dress on a hanger in the background",
+        "PERSON hugging the bride's sister in the bridal suite, both laughing, holding a can of hairspray, natural window light"
+      ],
+      "caption": "my bride was GLOWING 😍😍😍 pearls in a low bun will never miss girl. bridal books open for spring!! #nashvillebridal #bridalhair",
+      "location": "The Belle Meade Barn",
+      "released": true,
+      "daysAgo": 38,
+      "comments": [
+        {
+          "by": "aisha",
+          "text": "proper gorgeous work, the pearls are such a lovely touch xx"
+        },
+        {
+          "by": "zara",
+          "text": "the tendrils."
+        },
+        {
+          "by": "emma",
+          "text": "This is the most beautiful bridal hair I've ever seen 💗 this made my day"
+        },
+        {
+          "by": "hana",
+          "text": "omg 😭😍✨👰💕🌸 stoppp the PEARLS 💎 I'm saving this forever"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "A salon station with neatly arranged combs, a flat iron, edge brushes, colorful bonnets and a small potted plant, ring light glowing, phone propped up on a stand, late afternoon light"
+      ],
+      "caption": "my lil station 💕 she's clean for once",
+      "location": "Crown & Curl Studio",
+      "released": true,
+      "daysAgo": 64,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "enjoy it while it lasts."
+        },
+        {
+          "by": "sam",
+          "text": "Love how organized this is!! 👍"
+        },
+        {
+          "by": "connor",
+          "text": "clean setup W"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a hot pink sundress with knotless braids down to her waist, posing on a sunny Nashville street in front of a colorful mural of flowers, full-length smartphone photo, golden hour"
+      ],
+      "caption": "braided myself for summer and girl my arms are STILL sore 😩😍 worth it tho #knotlessbraids",
+      "location": "The Gulch",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "sofia",
+          "text": "amiga these braids are INSANE how long did that take you no way you did that solita JAJAJA your arms deserve a vacation 🐢"
+        },
+        {
+          "by": "lily",
+          "text": "AHH wait you're literally so pretty??? the braids ✨✨✨"
+        },
+        {
+          "by": "tyler",
+          "text": "arm day for real 💪"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "PERSON taking a mirror selfie in a salon apron holding a blow dryer, client chair empty behind her, morning light",
+      "text": "booked out all week babe 😍😍😍"
+    },
+    {
+      "imagePrompt": "POV of an iced caramel latte on a car dashboard, sunny Nashville street through the windshield",
+      "text": "fuel for 3 silk presses 🙏🏾"
+    },
+    {
+      "imagePrompt": "Close-up of freshly installed curly bob on a client's head from behind, salon lights, shiny defined curls",
+      "text": "the bounce?? stoppp"
+    }
+  ],
+  "reels": []
+}

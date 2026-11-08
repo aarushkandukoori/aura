@@ -1,0 +1,274 @@
+{
+  "bio": "thrifted, styled, modest. | nyc 🤍 | vintage markets on sundays | perfume opinions available on request",
+  "look": "27-year-old Pakistani-American woman with warm medium-brown skin, an oval face, strong dark brows, almond eyes and a soft winged liner. She always wears a neatly draped neutral silk hijab. She's tall and slim, wears layered thrifted modest outfits and stacks gold rings.",
+  "traits": [
+    "discerning eye",
+    "quietly generous",
+    "dry and understated",
+    "ritual-driven",
+    "fiercely loyal to small sellers"
+  ],
+  "relationship": "Zara found the user's posts through a mutual and started leaving the occasional 'obsessed.' Now she quietly rates the user's taste and sends them thrift finds she thinks they'd like.",
+  "followers": 612000,
+  "following": 843,
+  "avatarPrompt": "PERSON in a cream hijab and camel thrifted blazer, soft half-smile, shoulders-up portrait against a warm plaster wall in golden late-afternoon window light, shallow depth of field, polished editorial smartphone photo",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON full-length mirror selfie in a sage green hijab, oversized charcoal wool coat, ankle-length pleated chocolate skirt and loafers, standing in a sunlit prewar apartment hallway with herringbone floors, phone held at chest height"
+      ],
+      "caption": "coat was $14. that's the post.",
+      "location": "Brooklyn, New York",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "overhead flat lay of five vintage glass perfume bottles in amber, rose and smoky tones arranged on a cream linen cloth with a dried rose and gold rings, soft morning window light"
+      ],
+      "caption": "fall rotation 🤍",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "close-up of hands flipping through a rail of colorful vintage silk scarves at an outdoor flea market, autumn leaves on the pavement, overcast soft light",
+        "PERSON holding up a rust paisley silk scarf to the camera at a flea market stall, smiling slightly, crowd blurred behind her"
+      ],
+      "caption": "sunday.",
+      "location": "Chelsea Flea, New York",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "two cups of pink Kashmiri chai on a marble cafe table beside a plate of cardamom shortbread, steam rising, warm afternoon light through a large window"
+      ],
+      "caption": "chai date with myself.",
+      "location": "Jackson Heights, Queens",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "PERSON walking toward the camera on a leafy West Village street in a cream cable-knit sweater dress over wide-leg trousers, mocha hijab, burgundy leather bag, golden hour backlight, candid street-style framing"
+      ],
+      "caption": "knitwear season. finally.",
+      "location": "West Village, New York",
+      "released": true,
+      "daysAgo": 4,
+      "comments": [
+        {
+          "by": "maya",
+          "text": "bestie you cannot keep walking like that in public people will crash cars 💀"
+        },
+        {
+          "by": "brianna",
+          "text": "girlll the sweater dress over trousers?? stoppp 😍😍😍"
+        },
+        {
+          "by": "lily",
+          "text": "AHH wait the whole outfit is so pretty i'm screenshotting everything ✨✨✨"
+        },
+        {
+          "by": "aisha",
+          "text": "proper autumn perfection, the burgundy bag is gorgeous xx"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "piles of folded secondhand clothing on wooden tables inside a large bright thrift warehouse, a single mustard corduroy jacket pulled out and draped on top, fluorescent and skylight mix"
+      ],
+      "caption": "the mustard one came home with me. obviously. #thriftfinds",
+      "location": "Bushwick, Brooklyn",
+      "released": true,
+      "daysAgo": 11,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "the jacket chose you."
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE EYE ON THIS WOMAN!!! LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "jamal",
+          "text": "how do you even spot pieces in piles like that? 📷"
+        },
+        {
+          "by": "crowd",
+          "text": "pls tell me where this is i need it"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON seated on a velvet vintage armchair in a softly lit studio, wearing a deep emerald satin abaya-style maxi dress with a thrifted black blazer over the shoulders, ivory hijab, gaze off camera, moody editorial lighting",
+        "close detail of hands with stacked gold rings resting on emerald satin fabric"
+      ],
+      "caption": "eid look, two days late. blazer was my dad's.",
+      "location": "",
+      "released": true,
+      "daysAgo": 19,
+      "comments": [
+        {
+          "by": "priya",
+          "text": "The emerald\nWith the blazer\nAnd it was your DAD'S\nI'm not okay ok bye ✨"
+        },
+        {
+          "by": "hana",
+          "text": "omg 😭😭💚💚✨✨ stoppp this is art 🖤"
+        },
+        {
+          "by": "rosa",
+          "text": "Mija, your father must be so proud. Beautiful! ❤️🫔"
+        },
+        {
+          "by": "emma",
+          "text": "The detail about your dad's blazer got me. This made my day 💗"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "view down a quiet cobbled street in DUMBO at blue hour with the bridge arching overhead, wet stones reflecting warm streetlights, no people"
+      ],
+      "caption": "",
+      "location": "DUMBO, Brooklyn",
+      "released": true,
+      "daysAgo": 28,
+      "comments": [
+        {
+          "by": "kenji",
+          "text": "The wet stone carries the light beautifully."
+        },
+        {
+          "by": "river",
+          "text": "so calm~ i can almost hear it :)"
+        },
+        {
+          "by": "ethan",
+          "text": "Great shot."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "three thrifted handbags in tan, oxblood and olive suede lined up on a vintage wooden dresser beside a small brass tray and a candle, soft afternoon light"
+      ],
+      "caption": "under $40 total. ranked in comments.",
+      "location": "",
+      "released": true,
+      "daysAgo": 43,
+      "comments": [
+        {
+          "by": "sofia",
+          "text": "okay the olive one is calling my name like literally i would wear it every day con todo JAJAJA please tell me your secret 🐢"
+        },
+        {
+          "by": "connor",
+          "text": "oxblood goated 🐐"
+        },
+        {
+          "by": "leah",
+          "text": "Oxblood, obviously; the olive is a close second (I'll accept no other ranking)."
+        },
+        {
+          "by": "crowd",
+          "text": "forty dollars?? i spend that on lunch"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON laughing with three friends around a crowded table of biryani, kebabs and naan at a cozy Pakistani restaurant, warm pendant lights, candid wide shot from across the table"
+      ],
+      "caption": "family style.",
+      "location": "Coney Island Avenue, Brooklyn",
+      "released": true,
+      "daysAgo": 67,
+      "comments": [
+        {
+          "by": "rafi",
+          "text": "bro that biryani lowkey looks unreal ong 😂"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. I would like the name of this restaurant, for research purposes. lol."
+        },
+        {
+          "by": "tyler",
+          "text": "big feast big day"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON in a long camel trench, cream turtleneck, wide-leg denim and white hijab standing at a vintage market stall under string lights, holding a framed antique mirror, early evening glow"
+      ],
+      "caption": "the mirror stayed. the look didn't. #modestfashion",
+      "location": "Brooklyn Flea, New York",
+      "released": true,
+      "daysAgo": 104,
+      "comments": [
+        {
+          "by": "gabriel",
+          "text": "This is the most effortless thing I've ever seen!!! The trench is perfect!!! You glow!!! ☀️"
+        },
+        {
+          "by": "chloe",
+          "text": "screaming at the caption i'm deceased, the trench is class 😭"
+        },
+        {
+          "by": "omar",
+          "text": "Hey! Hope you're doing well. Any tips on finding trenches that fit tall people? No worries if not!"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "vertical close-up of a vintage cut-glass perfume atomizer on a windowsill with soft morning light and blurred city rooftops behind",
+      "text": "today's scent: rain on old books"
+    },
+    {
+      "imagePrompt": "vertical shot of PERSON's hand holding up a moss green silk hijab against a thrift store rack of jewel-toned clothing",
+      "text": "yes or yes."
+    },
+    {
+      "imagePrompt": "vertical overhead shot of a steaming cup of chai beside a sketchbook of outfit doodles on a wooden desk at night, warm lamp light",
+      "text": "planning sunday 🤍"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "vertical shot of a crumpled oversized gray blazer laid flat on a thrift store counter under bright lights",
+        "vertical shot of PERSON at home steaming the blazer and rolling the sleeves, natural window light",
+        "vertical full-length shot of PERSON in the styled blazer over a long ivory slip skirt and blush hijab, turning in a sunlit hallway"
+      ],
+      "caption": "$9 blazer, three ways. this was way one.",
+      "audio": "Velvet Static - Neon Hours",
+      "released": true,
+      "daysAgo": 23
+    },
+    {
+      "framePrompts": [
+        "vertical POV of walking into a crowded outdoor vintage market on a crisp autumn morning, colorful stalls ahead",
+        "vertical close-up of hands testing a vintage perfume on the wrist at a stall full of antique bottles",
+        "vertical shot of PERSON on the subway holding a small paper-wrapped bottle, soft smile, window light streaking"
+      ],
+      "caption": "found her.",
+      "audio": "original audio",
+      "released": false,
+      "daysAgo": 0
+    }
+  ]
+}

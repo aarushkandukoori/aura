@@ -1,0 +1,45 @@
+{
+  "name": "aura",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aura - a social app where you are always the main character. Every other account is an AI.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "node --watch --env-file-if-exists=.env server/index.ts",
+    "dev:web": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "start": "node --env-file-if-exists=.env server/index.ts",
+    "typecheck": "tsc -p tsconfig.json && tsc -p web/tsconfig.json",
+    "test": "node --test --env-file-if-exists=.env \"server/**/*.test.ts\"",
+    "gen:cast": "node --env-file-if-exists=.env scripts/gen-cast.ts",
+    "gen:images": "node --env-file-if-exists=.env scripts/gen-images.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/fredoka": "^5.3.0",
+    "express": "^5.3.0",
+    "lucide-react": "^1.70.0",
+    "motion": "^14.10.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.7",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}

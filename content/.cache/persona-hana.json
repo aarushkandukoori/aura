@@ -1,0 +1,250 @@
+{
+  "bio": "UX designer by day 🖥️✨ | Mochi's personal assistant 🐶🍑 | sticker gremlin 🌸 | boba-powered 🧋💕 | Seattle ☔",
+  "look": "26-year-old Japanese-American woman, round friendly face, dimpled smile, straight shoulder-length black hair with blunt bangs, petite build, oversized pastel cardigans, wire-rimmed round glasses, little enamel pins on a tote bag.",
+  "traits": [
+    "bubbly and endlessly enthusiastic",
+    "detail-obsessed perfectionist about fonts and kerning",
+    "fiercely loyal friend who remembers everything",
+    "a little dramatic about her dog",
+    "cozy homebody with secret competitive streak"
+  ],
+  "relationship": "Hana sat next to the user at their old job and still sends them memes mid-meeting like nothing changed, and she thinks of the user as her forever desk buddy.",
+  "followers": 1340,
+  "following": 612,
+  "avatarPrompt": "PERSON smiling with dimples while holding a fluffy red-and-white corgi up next to her cheek, soft window light in a cozy apartment, pastel cardigan, close-up square smartphone selfie",
+  "posts": [
+    {
+      "imagePrompts": [
+        "PERSON sitting cross-legged on a rug wearing a cream cardigan, holding a sheet of freshly printed die-cut stickers up to the camera with a proud grin, corgi sleeping beside her, warm lamp light, evening"
+      ],
+      "caption": "omg omg the new Mochi sticker sheet is DONE 😭🐶🌸✨💕🎉 shop restock friday!!! stoppp she's so round 🍑",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Overhead shot of two bubble tea cups on a wooden cafe table, one taro and one brown sugar with tapioca pearls, a small sketchbook open beside them with doodles of dogs, rainy window light"
+      ],
+      "caption": "rainy day = double boba day 🧋🧋☔💜🤎✨ no I will not be explaining myself 😌🙈",
+      "location": "Capitol Hill, Seattle",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "Close-up of a corgi wearing a tiny knitted pumpkin-colored sweater, sitting on a kitchen floor looking up at the camera with big eyes, soft morning light"
+      ],
+      "caption": "🎃🐶🧡🍂✨🥺💕",
+      "location": "",
+      "released": false,
+      "daysAgo": 0,
+      "comments": []
+    },
+    {
+      "imagePrompts": [
+        "A small wooden shelf in an apartment corner decorated as a shrine to a corgi: framed photos of the dog, a tiny dog bed, fairy lights, plush toys, a dried flower bouquet, warm cozy light",
+        "Close-up of a framed photo on the shelf showing a corgi puppy asleep in a slipper, surrounded by fairy lights and a little ceramic dog figurine"
+      ],
+      "caption": "omg ok the Mochi shrine got an upgrade 😭🐶✨🕯️💐🌸 fairy lights + new puppy pic + her very first slipper 🥿💕 yes she is alive and well this is just appreciation 🙏",
+      "location": "",
+      "released": true,
+      "daysAgo": 5,
+      "comments": [
+        {
+          "by": "jules",
+          "text": "she's literally right there. this is a mausoleum for a living dog."
+        },
+        {
+          "by": "maya",
+          "text": "bestie this is a cult 💀💀 i want in"
+        },
+        {
+          "by": "priya",
+          "text": "Wait the slipper\nI'm emotional\nThe fairy lights are a nice touch\nanyway ✨"
+        },
+        {
+          "by": "brianna",
+          "text": "stoppp girl this is everything 😍😍😍"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON at a standing desk in a bright open-plan office, holding a sticky note covered in wireframe sketches up beside her face, playful wink, glasses on, natural daylight"
+      ],
+      "caption": "me pretending I'm not sending memes during sprint planning 🤫📱😂🙈💻✨ (I am. I always am.)",
+      "location": "South Lake Union, Seattle",
+      "released": true,
+      "daysAgo": 14,
+      "comments": [
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THE WIREFRAMES ARE ACTUALLY CLEAN??? LEGEND!!! 🔥🔥🔥"
+        },
+        {
+          "by": "marcus",
+          "text": "Your multitasking is impressive. Your manager's patience must be a noble gas: completely unreactive. - M"
+        },
+        {
+          "by": "rafi",
+          "text": "bro the wink is a confession ong 😂"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Flat lay on a white desk of colorful gel pens, washi tape rolls, a dotted notebook with a hand-drawn monthly spread, and corgi-shaped paper clips, soft daylight"
+      ],
+      "caption": "november spread ✍️🍂📓🌸✨💛 the corgi paper clips were NOT necessary and I regret nothing #bujo #stationeryaddict",
+      "location": "",
+      "released": true,
+      "daysAgo": 23,
+      "comments": [
+        {
+          "by": "leah",
+          "text": "The handwriting alone is a crime (in the best way); I need to know which pen that is."
+        },
+        {
+          "by": "ines",
+          "text": "Magnifique! The little leaves in the margins are so charming 🎨🥐"
+        },
+        {
+          "by": "river",
+          "text": "this is so calming to look at ~ :)"
+        },
+        {
+          "by": "lily",
+          "text": "AHH wait your spreads are always so cute ✨✨ how do you do this"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Point-of-view shot of a Nintendo-style handheld console held in two hands, screen showing a cozy farming game with a tiny house and garden, blanket over lap, mug of tea on the couch arm, evening lamp light"
+      ],
+      "caption": "friday night plans: watering my pixel turnips 🌱🎮🧸☕💤✨ do not perceive me",
+      "location": "",
+      "released": true,
+      "daysAgo": 38,
+      "comments": [
+        {
+          "by": "connor",
+          "text": "goated evening 🐐"
+        },
+        {
+          "by": "noor",
+          "text": "WAIT is that the new update asdfghj i haven't played yet"
+        },
+        {
+          "by": "kwame",
+          "text": "Good evening. A truly respectable use of a Friday. lol."
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON and two friends laughing at an outdoor table at a night market, holding skewers and bubble tea, string lights overhead, candid slightly blurry phone photo",
+        "Close-up of hands holding a paper tray of takoyaki with bonito flakes, string lights blurred in the background",
+        "PERSON holding up a small plush corgi prize won at a carnival game booth, grinning wide"
+      ],
+      "caption": "night market dump 🏮🍡🧋🐙😋💕🎉 I won a plush Mochi 2.0 and she's coming home with me obviously 🐶",
+      "location": "Uwajimaya area, Chinatown-International District",
+      "released": true,
+      "daysAgo": 57,
+      "comments": [
+        {
+          "by": "sofia",
+          "text": "ok the takoyaki looks INSANE i need to go next time no me dejes fuera porfa JAJAJA 🐢"
+        },
+        {
+          "by": "gabriel",
+          "text": "This looks like the best night ever!!! That plush is adorable!!! Mochi has competition!!! ☀️"
+        },
+        {
+          "by": "tyler",
+          "text": "big night"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "Corgi running joyfully across a grassy park lawn toward the camera, ears flopping, tongue out, golden afternoon light, Puget Sound blurred in the background"
+      ],
+      "caption": "ZOOMIES 🐶💨💨🍑☀️😭💛",
+      "location": "Golden Gardens Park",
+      "released": true,
+      "daysAgo": 84,
+      "comments": [
+        {
+          "by": "sam",
+          "text": "Love this!! Look at her go 👍"
+        },
+        {
+          "by": "emma",
+          "text": "Her little ears!! This made my day 💗"
+        },
+        {
+          "by": "andre",
+          "text": "nah because the loaf has an engine\n\nI'm weak"
+        },
+        {
+          "by": "crowd",
+          "text": "the floof 😭"
+        }
+      ]
+    },
+    {
+      "imagePrompts": [
+        "PERSON sitting on a cafe window ledge in an oversized lavender cardigan, holding a strawberry milk tea, soft gray rainy light outside, half-smile looking out the window"
+      ],
+      "caption": "summer's over and I'm thriving in cardigan season 💜☔🧋🍂✨🥰",
+      "location": "Fremont, Seattle",
+      "released": true,
+      "daysAgo": 112,
+      "comments": [
+        {
+          "by": "zara",
+          "text": "the cardigan. 🤍"
+        },
+        {
+          "by": "aisha",
+          "text": "proper cosy vibes, gorgeous x"
+        },
+        {
+          "by": "diego",
+          "text": "NO BECAUSE THIS IS THE CARDIGAN QUEEN!!! 🔥🔥"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "imagePrompt": "Vertical shot of a corgi asleep on its back with paws in the air on a fluffy blanket, morning light",
+      "text": "she's buffering 🐶💤😭✨🍑"
+    },
+    {
+      "imagePrompt": "Vertical close-up of a laptop screen blurred behind a phone, a hand holding an iced matcha boba in front of a meeting setup, office desk",
+      "text": "meeting #4 of the day 🫠☕🧋💻🙃"
+    },
+    {
+      "imagePrompt": "Vertical photo of a sticker sheet coming out of a desktop cutting machine, tiny corgi and boba designs, desk lamp glow",
+      "text": "omg the cut lines are PERFECT 😭✂️🌸✨💕"
+    }
+  ],
+  "reels": [
+    {
+      "framePrompts": [
+        "Vertical close-up of PERSON's hands sketching a round corgi character on a tablet with a stylus, cozy desk lamp, boba cup nearby",
+        "Vertical shot of a printer feeding out a glossy sticker sheet covered in corgi and boba designs",
+        "Vertical shot of PERSON sticking a finished corgi sticker onto a laptop lid while the real corgi sniffs it curiously, PERSON laughing"
+      ],
+      "caption": "sketch → print → Mochi quality check 🐶✅✏️🖨️🌸✨💕 she approved (she licked it)",
+      "audio": "Paper Lantern - Soft Static Club",
+      "released": true,
+      "daysAgo": 19
+    }
+  ]
+}
