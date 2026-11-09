@@ -179,7 +179,7 @@ export function randomCrowdIds(count: number, options: { followingMe?: boolean }
   return rows.map((row) => String(row.id))
 }
 
-// ----- search and suggestions ----------------------------------------------------------------
+// ----- search ------------------------------------------------------------------------------------
 
 /** Accounts whose username or name contains the query: me, then cast, then crowd; prefix matches first. */
 export function searchAccounts(query: string, limit = 30): Account[] {
@@ -197,18 +197,3 @@ export function searchAccounts(query: string, limit = 30): Account[] {
   return toAccounts(rows)
 }
 
-/**
- * "Suggested for you": cast I don't follow (creators and mutuals first), topped up with people
- * who already follow me, so the list is never empty.
- */
-export function getSuggestions(limit = 8): Account[] {
-  const cast = q(`
-    SELECT * FROM accounts WHERE kind = 'cast' AND i_follow = 0
-    ORDER BY CASE role WHEN 'creator' THEN 0 WHEN 'mutual' THEN 1 WHEN 'fan' THEN 2 ELSE 3 END, followers DESC
-    LIMIT ?`).all(limit) as AccountRow[]
-  const crowd = cast.length < limit
-    ? q(`SELECT * FROM accounts WHERE kind = 'crowd' AND follows_me = 1 AND i_follow = 0 AND avatar IS NOT NULL
-         ORDER BY followers DESC LIMIT ?`).all(limit - cast.length) as AccountRow[]
-    : []
-  return toAccounts([...cast, ...crowd])
-}

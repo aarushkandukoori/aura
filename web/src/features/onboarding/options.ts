@@ -50,7 +50,7 @@ export const PRONOUNS = ['she/her', 'he/him', 'they/them']
  */
 const RESERVED_USERNAMES = new Set([
   'explore', 'reels', 'search', 'create', 'stories', 'highlights', 'messages', 'activity', 'settings', 'saved',
-  'onboarding', 'api', 'media', 'content', 'assets',
+  'onboarding', 'signin', 'auth', 'api', 'media', 'content', 'assets',
 ])
 
 /** Usernames: 3-24 lowercase letters, numbers, dots and underscores (same rule as the server). */
@@ -72,3 +72,25 @@ export function suggestUsername(displayName: string): string {
   const plain = displayName.normalize('NFKD').replace(/[̀-ͯ]/g, '') // drop accents
   return cleanUsername(plain.trim().toLowerCase().replace(/\s+/g, '.'))
 }
+
+/**
+ * Ideas for "Tell us about your world". Tapping one puts it in the text box to edit. They show the
+ * kind of thing that makes a great world: names, places, routines, and how popular you want to be.
+ */
+export const WORLD_EXAMPLES: { label: string; emoji: string; text: string }[] = [
+  {
+    label: 'Gym + anime',
+    emoji: '🏋️',
+    text: "I'm a sophomore in college and I basically live at the gym. My best friend Jake spots me every morning and we watch anime every Friday night. I want to be pretty popular on campus.",
+  },
+  {
+    label: 'Cozy and bookish',
+    emoji: '📚',
+    text: "I'm a nurse and I work night shifts. I love cozy mystery books, tea and long walks. I want a small, close circle: my book club friends and my sister Ana. Nothing too big.",
+  },
+  {
+    label: 'Going big',
+    emoji: '🎤',
+    text: "I make music in my bedroom and play open mics on weekends. My friends are all musicians and producers, and my roommate Theo DJs. I want to blow up and be famous.",
+  },
+]

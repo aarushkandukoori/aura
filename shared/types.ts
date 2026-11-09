@@ -104,6 +104,8 @@ export interface Post {
   previewComments: Comment[] // up to 2, shown under the post in the feed (no replies)
   createdAt: Millis
   suggested: boolean         // feed only: render a "Suggested for you" label
+  /** Why the algorithm picked it, e.g. "Because you like #coffee" (suggested posts only). */
+  reason?: string | null
 }
 
 export interface Comment {
@@ -203,7 +205,7 @@ export interface Conversation {
 }
 
 export interface ProviderInfo {
-  active: 'anthropic' | 'claude-cli' | 'offline'
+  active: 'anthropic' | 'openai' | 'claude-cli' | 'offline'
   detail: string             // human readable, e.g. "Claude Code login · claude-opus-5-5"
 }
 
@@ -212,6 +214,8 @@ export interface Settings {
   speed: Speed
   model: AiModel
   provider: ProviderInfo
+  /** Models this server lets people pick (a public server may allow only the cheap one). */
+  models?: AiModel[]
 }
 
 export interface Badges {
@@ -226,10 +230,22 @@ export interface Page<T> {
 
 /** GET /api/session - the first call every client makes. */
 export interface Session {
+  /** true when the server has Google sign-in set up. false = local mode: no sign-in, one world. */
+  authEnabled: boolean
+  /** The signed-in Google account, or null (signed out, or local mode). */
+  account: SignedInAccount | null
   onboarded: boolean
   me: Me | null
   settings: Settings
   badges: Badges
+}
+
+/** The Google account behind a session. Each account has its own separate Aura world. */
+export interface SignedInAccount {
+  id: ID
+  email: string
+  name: string
+  picture: string | null
 }
 
 export interface Health {
@@ -254,6 +270,68 @@ export interface OnboardingRequest {
   interests: string[]        // e.g. ["music", "food", "fitness"]
   tier: Tier
   origin: string             // how you know your friends: "college" | "high school" | "work" | "online" | "hometown"
+  /** The plan from POST /api/onboarding/plan, if the user described their world. Shapes the cast and chats. */
+  plan?: WorldPlan | null
+}
+
+/**
+ * POST /api/onboarding/plan. During sign-up the user talks (speech to text on their device) or types
+ * for up to a minute about the world they want: who their friends are, what they're into, how
+ * popular they want to be. The AI turns that into a WorldPlan the user can review before building.
+ */
+export interface WorldPlanRequest {
+  transcript: string          // what they said or typed (the server keeps the first ~3,000 characters)
+  displayName?: string | null // from their Google account, when known
+}
+
+export interface WorldPlan {
+  displayName: string
+  username: string            // a suggestion; the user can change it
+  bio: string
+  pronouns: string
+  interests: string[]
+  origin: string              // how they know their friends, in their words ("the robotics club at college")
+  tier: Tier                  // read from how popular they said they want to be ("popular" when unclear)
+  summary: string             // one or two warm sentences describing the world we're about to build
+  /** Cast members chosen as their people, with the relationship rewritten around what they said. */
+  friends: { id: ID; role: Role; relationship: string; account: Account | null }[]
+  /** Group chats to create, made of chosen cast members. */
+  groupChats: { title: string; emoji: string; vibe: string; memberIds: ID[] }[]
+  /** People they described whom no cast member fits; created as new characters in the background. */
+  newFriends: { name: string; description: string; role: Role }[]
+  /** Facts about the user that every character knows from the start. */
+  memories: string[]
+}
+
+/**
+ * POST /api/events. What the user looked at and for how long; the recommendation algorithm learns
+ * from these (likes, comments, saves, shares and follows are already known from their own endpoints).
+ * Clients collect events and send them in batches (every ~10 s and when the app goes to background).
+ */
+export type TrackEventType =
+  | 'impression'   // a post was at least half on screen for 1 s or more (ms = how long)
+  | 'open'         // opened a post's detail view or comments
+  | 'profile_view' // opened someone's profile (accountId)
+  | 'reel_watch'   // watched a reel (ms = time watched, complete = reached the end at least once)
+  | 'story_view'   // looked at a story (ms = time on screen)
+  | 'story_skip'   // tapped past a story within 1.5 s
+  | 'search'       // searched (query)
+  | 'tag_open'     // opened a hashtag page (tag)
+
+export interface TrackEvent {
+  type: TrackEventType
+  postId?: ID | null
+  accountId?: ID | null
+  storyId?: ID | null
+  ms?: number | null
+  complete?: boolean | null
+  query?: string | null
+  tag?: string | null
+  at: Millis
+}
+
+export interface TrackRequest {
+  events: TrackEvent[]
 }
 
 export interface UpdateMeRequest {

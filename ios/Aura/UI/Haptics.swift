@@ -8,9 +8,9 @@ enum Haptics {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
 
-    /// A fuller tap for a like.
+    /// A light but crisp tap for a like, the way Instagram's like and double-tap feel.
     static func like() {
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        UIImpactFeedbackGenerator(style: .rigid).impactOccurred(intensity: 0.7)
     }
 
     /// A tick, for picking something (follow, tab, reaction).

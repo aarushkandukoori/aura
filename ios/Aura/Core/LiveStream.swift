@@ -52,8 +52,15 @@ final class LiveStream {
                 request.setValue("text/event-stream", forHTTPHeaderField: "Accept")
                 // The server pings every 20 s, so a minute of silence means the connection is dead.
                 request.timeoutInterval = 60
+                API.authorize(&request) // the stream belongs to the signed-in person's world
                 let (bytes, response) = try await session.bytes(for: request)
-                guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+                if status == 401 {
+                    // Signed out: retrying can't help. The store hears it and shows the sign-in screen.
+                    NotificationCenter.default.post(name: API.signedOutNotification, object: nil)
+                    break
+                }
+                guard status == 200 else {
                     throw URLError(.badServerResponse)
                 }
                 setConnected(true)

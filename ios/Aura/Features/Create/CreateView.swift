@@ -24,7 +24,7 @@ struct CreateView: View {
                 MediaEditStep(draft: draft)
                     .transition(stepTransition)
             case .details:
-                PostDetailsStep(draft: draft) { finish() }
+                PostDetailsStep(draft: draft) { share() }
                     .transition(stepTransition)
             }
         }
@@ -72,7 +72,6 @@ struct CreateView: View {
         case .details:
             ToolbarItem(placement: .topBarLeading) {
                 backButton { go(to: draft.isVideo ? .pick : .edit, forward: false) }
-                    .disabled(draft.isSharing)
             }
         }
     }
@@ -96,12 +95,13 @@ struct CreateView: View {
         withAnimation(.snappy(duration: 0.35)) { step = next }
     }
 
-    /// The post is live: start a fresh draft and show it at the top of Home.
-    private func finish() {
-        Haptics.success()
+    /// Share, the Instagram way: go straight back to Home, where a "Posting…" row with a progress
+    /// bar shows while PostingQueue uploads the post, then the post slides in at the top of the feed.
+    private func share() {
+        Haptics.tap()
+        PostingQueue.shared.share(draft, using: store)
         draft = PostDraft()
         step = .pick
         store.show([], in: .home)
-        store.showToast("Your post is live ✨")
     }
 }

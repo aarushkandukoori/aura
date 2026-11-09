@@ -1,0 +1,17 @@
+# Kept out of the Docker image: installed and built inside it, local data, secrets, the iPhone
+# app, and scratch files.
+.git
+.gitignore
+.env
+.env.*
+.claude
+node_modules
+dist
+data
+ios
+screenshots
+content/.cache
+*.log
+.DS_Store
+*.tmp
+*.swp

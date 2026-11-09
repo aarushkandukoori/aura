@@ -1,12 +1,12 @@
 /**
- * Profiles, profile grids, follower lists, follow / unfollow, suggestions and search.
+ * Profiles, profile grids, follower lists, follow / unfollow and search.
+ * ("Suggested for you" accounts come from the recommendation algorithm: GET /suggestions in events.ts.)
  */
 import { Router } from 'express'
 import type { SearchResult } from '../../shared/types.ts'
 import * as sim from '../sim/index.ts'
 import {
-  followList, getAccountByUsername, getAccountRow, getProfile, getProfilePosts, getSuggestions, searchAccounts,
-  searchTags, setFollow,
+  followList, getAccountByUsername, getAccountRow, getProfile, getProfilePosts, searchAccounts, searchTags, setFollow,
 } from '../repo/index.ts'
 import { badRequest, notFound, notifySim, oneOf, queryText } from './http.ts'
 
@@ -51,10 +51,6 @@ accountRoutes.delete('/accounts/:id/follow', (req, res) => {
   if (!row) throw notFound('Account')
   if (row.kind === 'me') throw badRequest("You can't unfollow yourself")
   res.json(setFollow(row.id, false))
-})
-
-accountRoutes.get('/suggestions', (_req, res) => {
-  res.json(getSuggestions())
 })
 
 accountRoutes.get('/search', (req, res) => {

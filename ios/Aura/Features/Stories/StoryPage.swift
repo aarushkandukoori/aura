@@ -18,8 +18,9 @@ struct StoryPage: View {
     var onNextTray: () -> Void
     var onPreviousTray: () -> Void
     var onReply: (Story) -> Void
-    var onReact: (String, Story) -> Void
     var onShowViewers: (Story) -> Void
+    /// Closes the viewer (the X): the viewer shrinks the story back into the avatar first.
+    var onClose: () -> Void
 
     static let storyDuration = 5.0
 
@@ -32,11 +33,13 @@ struct StoryPage: View {
     @State private var pausedByViewer = false
     @State private var confirmingDelete = false
     @State private var viewerAvatars: [String?] = []
+    /// Stories I've hearted from this page (the heart stays red for them).
+    @State private var likedIds: Set<String> = []
 
     init(tray: StoryTray, isActive: Bool, isPausedByViewer: Bool, isReplying: Bool, hasPreviousTray: Bool,
          onNextTray: @escaping () -> Void, onPreviousTray: @escaping () -> Void,
-         onReply: @escaping (Story) -> Void, onReact: @escaping (String, Story) -> Void,
-         onShowViewers: @escaping (Story) -> Void) {
+         onReply: @escaping (Story) -> Void, onShowViewers: @escaping (Story) -> Void,
+         onClose: @escaping () -> Void) {
         self.tray = tray
         self.isActive = isActive
         self.isPausedByViewer = isPausedByViewer
@@ -45,8 +48,8 @@ struct StoryPage: View {
         self.onNextTray = onNextTray
         self.onPreviousTray = onPreviousTray
         self.onReply = onReply
-        self.onReact = onReact
         self.onShowViewers = onShowViewers
+        self.onClose = onClose
         _stories = State(initialValue: tray.stories)
         // Pick up where I left off: the first story I haven't seen yet.
         _index = State(initialValue: tray.stories.firstIndex { !$0.seen } ?? 0)
@@ -72,9 +75,12 @@ struct StoryPage: View {
             bottomBar
                 .frame(height: 46)
                 .padding(.horizontal, 12)
-                .opacity(isReplying ? 0 : 1)
+                .opacity(isReplying || isHolding ? 0 : 1)
+                .animation(.easeOut(duration: 0.2), value: isHolding)
         }
         .padding(.bottom, 4)
+        // Watching or tapping past someone's stories teaches the algorithm (Core/Tracker.swift).
+        .tracksStoryWatch(of: story, isActive: isActive)
         .task(id: "\(story.id)|\(isActive)") { await play() }
         .task(id: "\(story.id)|\(liveViewCount)|\(isActive)") { await loadViewerAvatars() }
         .onChange(of: isPausedByViewer, initial: true) { _, paused in pausedByViewer = paused }
@@ -159,7 +165,7 @@ struct StoryPage: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel("Story options")
             }
-            Button { store.closeStories() } label: {
+            Button(action: onClose) {
                 Image(systemName: "xmark")
                     .font(.system(size: 20, weight: .semibold))
                     .frame(width: 36, height: 36)
@@ -207,15 +213,14 @@ struct StoryPage: View {
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
-                Button { onReact("❤️", story) } label: {
-                    Image(systemName: "heart")
-                        .font(.system(size: 24))
-                        .foregroundStyle(.white)
+                Button { like(story) } label: {
+                    PoppingIcon(symbol: "heart", isOn: likedIds.contains(story.id), size: 24,
+                                onColor: Theme.like, offColor: .white)
                         .frame(width: 36, height: 44)
                         .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Like story")
+                .buttonStyle(.squash)
+                .accessibilityLabel(likedIds.contains(story.id) ? "Liked" : "Like story")
             }
         }
     }
@@ -263,6 +268,13 @@ struct StoryPage: View {
         } else {
             progress = 0 // the very first story: start it over
         }
+    }
+
+    /// Hearts the story: the heart pops red and they get a ❤️ in their DMs (once per story).
+    private func like(_ story: Story) {
+        guard likedIds.insert(story.id).inserted else { return }
+        Haptics.like()
+        Task { try? await API.reactToStory(story.id, emoji: "❤️") }
     }
 
     private func preloadNextPicture() {

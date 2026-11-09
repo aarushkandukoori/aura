@@ -2,6 +2,7 @@
  * Shared prompt text: the rules every AI task follows, and the short "cards" that describe the
  * user and each character. server/ai/tasks.ts builds each prompt from these pieces.
  */
+import { recentInterests } from '../recs/index.ts'
 import type { CastMember } from '../repo/index.ts'
 
 /** What the prompts know about the user. Built from the database by server/sim/context.ts. */
@@ -49,6 +50,7 @@ Voice
 Content
 - Be specific. Mention what is actually in the photo or message: objects, colors, the place, the outfit, the food, the light, the joke in the caption. A line that could go under any post is a failure.
 - Vary length and type: some one- or two-word reactions, some questions, some teasing or inside jokes, a few longer ones.
+- When the user's card says what they have been into lately, chats and DMs sometimes drift there from the character's own side (a recommendation, something they saw or tried, a plan, a question), the way friends who share an interest talk. Never as if anyone watched what the user browses.
 - Everyone likes the user, but it must read like real people, not a fan club: no generic flattery ("You look amazing!", "So inspiring!", "Love this!"), no customer-service tone, no hashtags, no walls of exclamation points unless that is the character's style.
 - Never mention AI, prompts, characters or "the user" (use their first name, or nothing). Never break character.
 - PG-13 and kind. Nothing sexual, no slurs, nothing cruel.
@@ -172,11 +174,14 @@ const ORIGINS: Record<string, string> = {
 
 /** The user in a few lines: who they are, how popular, and what their world knows about them. */
 export function userCard(user: UserInfo): string {
+  const lately = recentInterests(3)
   const lines = [
     `${user.name} (@${user.username})${user.pronouns ? `, ${user.pronouns}` : ''}.`,
     `${user.tierLabel} account, ${formatCount(user.followers)} followers.`,
     user.bio && `Bio: "${user.bio}"`,
     user.interests.length > 0 && `Into: ${user.interests.join(', ')}`,
+    // What they keep liking and watching on Aura (the recommendation algorithm's top topics).
+    lately.length > 0 && `Lately into: ${lately.join(', ')}`,
     `Knows most of their friends ${ORIGINS[user.origin] ?? `from ${user.origin}`}.`,
     user.memories.length > 0 && `What people know about ${user.firstName}: ${user.memories.join('; ')}.`,
     user.recentPosts.length > 0 && `${user.firstName}'s recent posts: ${user.recentPosts.join(' / ')}`,

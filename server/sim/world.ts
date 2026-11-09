@@ -7,11 +7,15 @@
  * The events that use AI or the characters' posts and stories only happen while the user is
  * around (did something in the last 15 minutes, or just opened the app). A tab left open
  * overnight only gets followers and likes, so it never spends AI calls or empties the library.
+ *
+ * Each world has its own loop (a world_tick job in its jobs table) that runs while an app is open
+ * on that world: the first app to connect starts it, and it stops after the last one closes.
  */
 import type { Tier } from '../../shared/types.ts'
 import { groupChatter } from '../ai/tasks.ts'
-import { getSetting, now, q, setSetting } from '../db/index.ts'
+import { getSetting, now, q, setSetting, worldState } from '../db/index.ts'
 import { clientCount, onPresenceChange } from '../live.ts'
+import { pickLibraryPost, pickLibraryStory } from '../recs/index.ts'
 import {
   addFollowers, addPostLikes, bumpAura, followBack, getCast, getConversationRow, getLibraryPosts, getLibraryStories,
   isOnboarded, listConversations, recycleStories, releasePost, releaseStory, touchActive,
@@ -37,37 +41,31 @@ const currentTier = () => getSetting<Tier>('tier', 'popular')
 
 // ----- is the user around? ------------------------------------------------------------------------
 
-let lastUserActionAt = 0
-let lastCastPostAt = 0
+/** Per world: when the user last did something, when the loop last released a character post, and whether an app is open. */
+const loopState = worldState(() => ({ lastUserActionAt: 0, lastCastPostAt: 0, connected: false }))
 
 /**
  * The user just did something (posted, commented, sent a message, followed, liked) or opened the
  * app. Read receipts don't count: the apps send those on their own while a chat is open.
  */
 export function noteUserActive(): void {
-  lastUserActionAt = now()
+  loopState().lastUserActionAt = now()
 }
 
-const userIsAround = () => now() - lastUserActionAt < IDLE_AFTER_MS
+const userIsAround = () => now() - loopState().lastUserActionAt < IDLE_AFTER_MS
 
 // ----- the events -----------------------------------------------------------------------------
 
-/** Library items by people I follow come first, so they show up in my feed. Content order within one author. */
-function pickFromLibrary<T extends { author_id: string }>(library: T[]): T | null {
-  if (library.length === 0) return null
-  const followed = new Set(getCast().filter((member) => member.iFollow).map((member) => member.id))
-  const authors = [...new Set(library.map((item) => item.author_id))]
-  const preferred = authors.filter((id) => followed.has(id))
-  const authorId = pick(preferred.length > 0 ? preferred : authors)
-  return library.find((item) => item.author_id === authorId) ?? null
-}
-
-/** A character posts one of their library posts, which then collects likes and comments. */
+/**
+ * A character posts one of their library posts, which then collects likes and comments. Which one
+ * is up to the recommendation algorithm: the next post of whoever the user would most enjoy
+ * (people they follow first, so it reaches their feed), with some chance mixed in.
+ */
 async function castPosts(): Promise<boolean> {
-  const row = pickFromLibrary(getLibraryPosts())
+  const row = pickLibraryPost(getLibraryPosts())
   const post = row ? releasePost(row.id) : null
   if (!post) return false
-  lastCastPostAt = now()
+  loopState().lastCastPostAt = now()
   planCastPost(post.id)
   return true
 }
@@ -76,7 +74,7 @@ async function castPosts(): Promise<boolean> {
 async function castStory(): Promise<boolean> {
   let library = getLibraryStories()
   if (library.length === 0 && recycleStories() > 0) library = getLibraryStories()
-  const row = pickFromLibrary(library)
+  const row = pickLibraryStory(library) // the same way as posts: what the user would enjoy most
   return row ? releaseStory(row.id) !== null : false
 }
 
@@ -207,12 +205,14 @@ async function quietEvent(): Promise<void> {
   if (!EVENTS[name].needsUser) await EVENTS[name].run()
 }
 
-/** Job world_tick: every 40-120 s, if someone has the app open, one thing happens in the world. */
+/** Job world_tick: every 40-120 s, while someone has the app open, one thing happens in the world. */
 export async function worldTick(): Promise<void> {
-  // The loop always continues, even if this event fails. A tick that runs again after a restart
-  // finds its successor already waiting, so a restart never starts a second loop.
+  // With no app open the loop stops here; the next app to connect starts it again (presenceChanged).
+  // Otherwise it always continues, even if this event fails. A tick that runs again after a
+  // restart finds its successor already waiting, so a restart never starts a second loop.
+  if (clientCount() === 0) return
   if (!hasWaiting('world_tick')) schedule('world_tick', randomInt(40, 120) * 1000)
-  if (!isOnboarded() || clientCount() === 0) return
+  if (!isOnboarded()) return
   setSetting('lastSeenAt', now())
   try {
     // Friends drift online and offline ("Active now").
@@ -222,7 +222,7 @@ export async function worldTick(): Promise<void> {
       await quietEvent()
     } else {
       // Right after a character posted, the others wait a few minutes before posting too.
-      await runRandomEvent(now() - lastCastPostAt < CAST_POST_GAP_MS ? ['cast_post'] : [])
+      await runRandomEvent(now() - loopState().lastCastPostAt < CAST_POST_GAP_MS ? ['cast_post'] : [])
     }
   } catch (error) {
     // Swallowed on purpose: a retry of this job would start a second loop.
@@ -246,29 +246,43 @@ export async function catchUp(): Promise<void> {
 
 // ----- presence -------------------------------------------------------------------------------
 
-let connected = false
 let unsubscribe: (() => void) | null = null
 
-/** Apps connecting and disconnecting. Opening the app counts as being around; coming back after AWAY_MS schedules a catch-up. */
+/** Start the current world's loop unless it is already running. */
+function startLoop(): void {
+  if (!hasPending('world_tick')) schedule('world_tick', 20_000)
+}
+
+/**
+ * Apps connecting to and disconnecting from a world (runs inside that world). An open app keeps
+ * the loop going; opening the app counts as being around; coming back after AWAY_MS schedules a catch-up.
+ */
 function presenceChanged(count: number): void {
+  if (count > 0) startLoop()
   if (!isOnboarded()) return
+  const state = loopState()
   const time = now()
-  if (count > 0 && !connected) {
+  if (count > 0 && !state.connected) {
     noteUserActive()
     if (time - getSetting('lastSeenAt', time) >= AWAY_MS) schedule('catch_up', 1_500)
   }
-  connected = count > 0
+  state.connected = count > 0
   setSetting('lastSeenAt', time)
 }
 
 export function startWorld(): void {
-  connected = clientCount() > 0
   unsubscribe?.()
   unsubscribe = onPresenceChange(presenceChanged)
-  if (!hasPending('world_tick')) schedule('world_tick', 20_000)
 }
 
 export function stopWorld(): void {
   unsubscribe?.()
   unsubscribe = null
+}
+
+/** After Start over: the loop's job was wiped with everything else, so start it again if an app is open. */
+export function restartWorldLoop(): void {
+  const open = clientCount() > 0
+  loopState().connected = open
+  if (open) startLoop()
 }

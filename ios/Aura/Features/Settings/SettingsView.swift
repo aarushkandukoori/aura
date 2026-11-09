@@ -11,10 +11,13 @@ struct SettingsView: View {
     @State private var checking = false
     @State private var confirmingReset = false
     @State private var resetting = false
+    @State private var confirmingSignOut = false
+    @State private var signingOut = false
 
     var body: some View {
         List {
             accountSection
+            signedInSection
             popularitySection
             worldSection
             appearanceSection
@@ -26,12 +29,57 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .task { await store.refreshSession() } // fresh provider status
-        .confirmationDialog("Start over?", isPresented: $confirmingReset, titleVisibility: .visible) {
-            Button("Start over", role: .destructive) { Task { await startOver() } }
-            Button("Cancel", role: .cancel) {}
-        } message: {
-            Text("This deletes your posts, messages and followers and builds a brand new world. It can't be undone.")
+    }
+
+    // MARK: - Signed in (only when the server has sign-in on)
+
+    @ViewBuilder private var signedInSection: some View {
+        if store.authEnabled, let account = store.account {
+            Section {
+                HStack(spacing: 12) {
+                    AvatarView(path: account.picture, size: 40)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Signed in as")
+                            .font(.footnote)
+                            .foregroundStyle(Theme.muted)
+                        Text(account.email)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.text)
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+                    }
+                }
+                .accessibilityElement(children: .combine)
+                Button(role: .destructive) {
+                    confirmingSignOut = true
+                } label: {
+                    HStack {
+                        Text("Sign out")
+                        Spacer()
+                        if signingOut { ProgressView() }
+                    }
+                }
+                .disabled(signingOut)
+                // On the button, so the question points at it.
+                .confirmationDialog("Sign out of Aura?", isPresented: $confirmingSignOut, titleVisibility: .visible) {
+                    Button("Sign out", role: .destructive) { Task { await signOut() } }
+                    Button("Cancel", role: .cancel) {}
+                } message: {
+                    Text("Your world stays saved. Sign in with the same Google account to come back to it.")
+                }
+            } header: {
+                Text("Account")
+            } footer: {
+                Text("Each Google account has its own private world.")
+            }
+            .listRowBackground(Theme.surface)
         }
+    }
+
+    private func signOut() async {
+        signingOut = true
+        await store.signOut()
+        signingOut = false
     }
 
     // MARK: - Account
@@ -108,10 +156,14 @@ struct SettingsView: View {
             .pickerStyle(.segmented)
             .listRowSeparator(.hidden)
 
-            Picker("Characters write with", selection: modelBinding) {
-                ForEach(AiModel.allCases) { model in Text(model.label).tag(model) }
+            // Only the models this server allows (a public server may run just one: then no picker).
+            let models = store.settings?.models ?? AiModel.allCases
+            if models.count > 1 {
+                Picker("Characters write with", selection: modelBinding) {
+                    ForEach(models) { model in Text(model.label).tag(model) }
+                }
+                .pickerStyle(.menu)
             }
-            .pickerStyle(.menu)
 
             if let provider = store.settings?.provider {
                 HStack(spacing: 10) {
@@ -159,9 +211,23 @@ struct SettingsView: View {
         )
     }
 
+    /// Who writes the characters' words on this server, and where your words and photos go (a public server may use OpenAI).
+    private func aboutText(_ kind: ProviderKind) -> String {
+        let intro = "Aura is a social world made just for you. Every account here except yours is an AI character."
+        switch kind {
+        case .anthropic, .claudeCli:
+            return "\(intro) Their posts, comments and messages are written by Claude, an AI model made by Anthropic. Your photos and messages are sent to Claude only so the characters can react to them, and everything else stays on your Aura server."
+        case .openai:
+            return "\(intro) Their posts, comments and messages are written by OpenAI's GPT models. Your photos and messages are sent to OpenAI only so the characters can react to them, and everything else stays on your Aura server."
+        case .offline:
+            return "\(intro) No AI model is connected right now, so they answer with built-in replies. Everything stays on your Aura server."
+        }
+    }
+
     private func providerTitle(_ kind: ProviderKind) -> String {
         switch kind {
         case .anthropic: "Connected to the Claude API"
+        case .openai: "Connected to the OpenAI API"
         case .claudeCli: "Connected through Claude Code"
         case .offline: "Offline: built-in replies"
         }
@@ -197,7 +263,7 @@ struct SettingsView: View {
 
     private var serverSection: some View {
         Section {
-            TextField("http://localhost:8790", text: $serverAddress)
+            TextField(API.defaultServer, text: $serverAddress)
                 .keyboardType(.URL)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
@@ -240,7 +306,7 @@ struct SettingsView: View {
     }
 
     private var serverFooter: String {
-        var text = "The Aura server running on your Mac. On a real iPhone, use your Mac's address on the same Wi-Fi."
+        var text = "The Aura server this app talks to. For one running on your Mac, use the Mac's address on the same Wi-Fi."
         if ProcessInfo.processInfo.arguments.contains("-AuraServer") {
             text += " This launch was started with -AuraServer, which wins over this setting until the next normal launch."
         }
@@ -261,6 +327,12 @@ struct SettingsView: View {
                 }
             }
             .disabled(resetting)
+            .confirmationDialog("Start over?", isPresented: $confirmingReset, titleVisibility: .visible) {
+                Button("Start over", role: .destructive) { Task { await startOver() } }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("This deletes your posts, messages and followers and builds a brand new world. It can't be undone.")
+            }
         } footer: {
             Text("Wipes this world and takes you back to the beginning.")
         }
@@ -271,7 +343,7 @@ struct SettingsView: View {
         Section("About") {
             VStack(alignment: .leading, spacing: 10) {
                 AuraWordmark(size: 26)
-                Text("Aura is a social world made just for you. Every account here except yours is an AI character: their posts, comments and messages are written by Claude, or by built-in templates when it's offline. Your photos and messages are sent to Claude only so the characters can react to them, and everything else stays on your own Aura server.")
+                Text(aboutText(store.settings?.provider.active ?? .offline))
                     .font(.subheadline)
                     .foregroundStyle(Theme.text)
                     .fixedSize(horizontal: false, vertical: true)

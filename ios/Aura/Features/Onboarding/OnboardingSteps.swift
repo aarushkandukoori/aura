@@ -34,7 +34,7 @@ struct NameStep: View {
                             .submitLabel(.next)
                             .focused($focus, equals: .username)
                             .onSubmit { focus = .pronouns }
-                        if UsernameRules.problem(with: draft.username) == nil {
+                        if UsernameRules.problem(with: draft.username) == nil && draft.usernameProblem == nil {
                             Image(systemName: "checkmark.circle.fill")
                                 .foregroundStyle(Theme.aura4)
                                 .transition(.scale.combined(with: .opacity))
@@ -83,10 +83,11 @@ struct NameStep: View {
     }
 
     private var usernameIsWarning: Bool {
-        !draft.username.isEmpty && UsernameRules.problem(with: draft.username) != nil
+        draft.usernameProblem != nil || (!draft.username.isEmpty && UsernameRules.problem(with: draft.username) != nil)
     }
 
     private var usernameNote: String {
+        if let taken = draft.usernameProblem { return taken } // the server's answer, e.g. "That username is taken"
         if draft.username.isEmpty { return "Letters, numbers, dots and underscores." }
         return UsernameRules.problem(with: draft.username) ?? "You can change it anytime."
     }

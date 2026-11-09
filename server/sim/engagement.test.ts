@@ -12,8 +12,12 @@ import { after, before, test } from 'node:test'
 const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aura-sim-engagement-'))
 process.env.AURA_DATA_DIR = dataDir
 process.env.AURA_PROVIDER = 'offline'
+// Local mode (one world, the default outside a request), even if .env sets up sign-in.
+delete process.env.GOOGLE_CLIENT_ID
+delete process.env.GOOGLE_CLIENT_SECRET
+delete process.env.AURA_DEV_LOGIN
 
-const { db, q, setSetting } = await import('../db/index.ts')
+const { closeAllWorlds, q, setSetting } = await import('../db/index.ts')
 const { TIERS } = await import('../config.ts')
 const repo = await import('../repo/index.ts')
 const { buildWorld } = await import('../seed/world.ts')
@@ -32,7 +36,7 @@ before(() => {
 })
 
 after(() => {
-  db.close()
+  closeAllWorlds()
   fs.rmSync(dataDir, { recursive: true, force: true })
 })
 

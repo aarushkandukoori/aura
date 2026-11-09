@@ -209,7 +209,10 @@ private struct ProfileScreen: View {
     private func loadProfile() async {
         guard !isMe else { return }
         do {
-            loadedProfile = try await API.profile(username)
+            let profile = try await API.profile(username)
+            // The first load is a visit (pull to refresh isn't), which teaches the algorithm.
+            if loadedProfile == nil { Tracker.shared.profileView(profile.id) }
+            loadedProfile = profile
             errorMessage = nil
             notFound = false
         } catch {

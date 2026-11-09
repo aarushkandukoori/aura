@@ -1,17 +1,23 @@
 import SwiftUI
 
-/// A post's pictures: one photo, a swipeable carousel (with dots), a reel preview or a video.
+/// A post's pictures: one photo, a swipeable carousel, a reel preview or a video.
 ///
-/// Double-tap likes the post with a heart burst. A single tap on a reel opens it in the Reels tab;
-/// on a photo with tagged people it shows who is tagged.
+/// Double-tap likes the post with Instagram's big heart. A single tap on a reel opens it in the Reels
+/// tab; on a photo with tagged people it shows who is tagged. After saving, a "Saved" bar slides up
+/// over the bottom edge for a moment.
 struct PostMediaView: View {
     @Environment(AppStore.self) private var store
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     let post: Post
+    /// The carousel photo on screen (PostCellView shares it with the dots in the action row).
+    @Binding var page: Int
+    /// Goes up each time the post is saved from its action row: the "Saved" bar slides up.
+    var savedBarTrigger = 0
 
-    @State private var page = 0             // the carousel photo on screen
     @State private var hearts = 0           // HeartBurst plays each time this goes up
     @State private var showsTags = false
     @State private var showsPageCounter = true
+    @State private var showsSavedBar = false
 
     var body: some View {
         content
@@ -22,13 +28,8 @@ struct PostMediaView: View {
             .overlay { if showsTags { tagLabels } }
             .overlay(alignment: .topTrailing) { topBadge }
             .overlay(alignment: .bottomLeading) { bottomBadge }
-            .overlay(alignment: .bottom) {
-                if post.media.count > 1 && !post.isReel {
-                    CarouselDots(count: post.media.count, current: page)
-                        .padding(.bottom, 12)
-                }
-            }
             .overlay { HeartBurst(trigger: hearts) }
+            .overlay(alignment: .bottom) { savedBar }
             // The double tap must come first so a single tap waits to see if a second one follows.
             .onTapGesture(count: 2) {
                 hearts += 1
@@ -36,6 +37,10 @@ struct PostMediaView: View {
             }
             .onTapGesture { singleTap() }
             .task(id: page) { await flashPageCounter() }
+            .task(id: savedBarTrigger) { await flashSavedBar() }
+            .onChange(of: post.savedByMe) { _, saved in
+                if !saved { withAnimation(Motion.slide.orFade(reduceMotion)) { showsSavedBar = false } }
+            }
     }
 
     @ViewBuilder private var content: some View {
@@ -117,7 +122,19 @@ struct PostMediaView: View {
         .transition(.opacity.combined(with: .scale(scale: 0.9)))
     }
 
-    // MARK: - Taps
+    /// The "Saved" bar, clipped to the photo so it slides up from under its bottom edge.
+    private var savedBar: some View {
+        ZStack(alignment: .bottom) {
+            if showsSavedBar {
+                SavedBar(thumbnail: post.thumbnail)
+                    .transition(reduceMotion ? .opacity : .move(edge: .bottom))
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .clipped()
+    }
+
+    // MARK: - Taps and timers
 
     private func singleTap() {
         if post.isReel {
@@ -135,26 +152,14 @@ struct PostMediaView: View {
         guard !Task.isCancelled else { return }
         withAnimation(.easeOut(duration: 0.4)) { showsPageCounter = false }
     }
-}
 
-/// The little dots on a carousel's photo. The current one is solid white.
-struct CarouselDots: View {
-    let count: Int
-    let current: Int
-
-    var body: some View {
-        HStack(spacing: 5) {
-            ForEach(0..<count, id: \.self) { index in
-                Circle()
-                    .fill(.white.opacity(index == current ? 1 : 0.5))
-                    .frame(width: 6, height: 6)
-                    .scaleEffect(index == current ? 1.2 : 1)
-            }
-        }
-        .shadow(color: .black.opacity(0.35), radius: 3)
-        .animation(.snappy, value: current)
-        .accessibilityElement()
-        .accessibilityLabel("Photo \(current + 1) of \(count)")
+    /// Slides the "Saved" bar up for three seconds after a save.
+    private func flashSavedBar() async {
+        guard savedBarTrigger > 0 else { return } // not when the post first appears
+        withAnimation(Motion.slide.orFade(reduceMotion)) { showsSavedBar = true }
+        try? await Task.sleep(for: .seconds(3))
+        guard !Task.isCancelled else { return }
+        withAnimation(Motion.slide.orFade(reduceMotion)) { showsSavedBar = false }
     }
 }
 

@@ -14,13 +14,15 @@ export {
   isOnboarded,
   /** Settings DTO (tier, speed, model, provider line). */
   getSettings,
-  /** Session DTO: onboarded, me, settings, badges. Works before onboarding. */
+  /** Session DTO: authEnabled, account, onboarded, me, settings, badges. Works before onboarding. */
   getSession,
+  /** Session DTO for a signed-out request (sign-in on, no world yet). */
+  signedOutSession,
   /** Change tier / speed / model; a tier change moves my follower count. */
   updateSettings,
   /** true for tiers that get the verified badge (influencer, icon). */
   isVerifiedTier,
-  /** Wipe everything and broadcast { type: 'reset' } (call sim.stop/start around it). */
+  /** Wipe the current world and broadcast { type: 'reset' } (then call sim.onWorldReset()). */
   resetWorld,
 } from './session.ts'
 
@@ -56,8 +58,6 @@ export {
   randomCrowdIds,
   /** Search accounts by username or name (me, cast, crowd; max 30). */
   searchAccounts,
-  /** "Suggested for you": unfollowed cast (creators/mutuals first), topped up with my followers. */
-  getSuggestions,
 } from './accounts.ts'
 export type { CastMember, Persona } from './accounts.ts'
 

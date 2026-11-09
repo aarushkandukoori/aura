@@ -4,7 +4,8 @@ import SwiftUI
 struct PostDetailsStep: View {
     @Environment(AppStore.self) private var store
     @Bindable var draft: PostDraft
-    var onShared: () -> Void
+    /// Share was tapped: CreateView hands the draft to PostingQueue and goes back to Home.
+    var onShare: () -> Void
 
     @State private var cover: UIImage?
     @State private var showsTagPeople = false
@@ -41,8 +42,6 @@ struct PostDetailsStep: View {
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) { shareButton }
-        .disabled(draft.isSharing)
-        .overlay { if draft.isSharing { sharingOverlay } }
         .sheet(isPresented: $showsTagPeople) {
             TagPeopleSheet(tagged: $draft.tagged)
                 .environment(store)
@@ -158,34 +157,27 @@ struct PostDetailsStep: View {
 
     // MARK: - Sharing
 
+    /// Share (one post at a time: while the last one is still uploading, it waits).
     private var shareButton: some View {
-        Button {
-            captionFocused = false
-            Task {
-                if await draft.share(using: store) { onShared() } else { Haptics.error() }
+        let isBusy = PostingQueue.shared.isActive
+        return VStack(spacing: 6) {
+            if isBusy {
+                Text("Your last post is still sharing…")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.muted)
             }
-        } label: {
-            Text("Share")
+            Button {
+                captionFocused = false
+                onShare()
+            } label: {
+                Text("Share")
+            }
+            .buttonStyle(.aura(.primary, size: .large, fullWidth: true))
+            .disabled(isBusy)
         }
-        .buttonStyle(.aura(.primary, size: .large, fullWidth: true))
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .background(Theme.background)
-    }
-
-    private var sharingOverlay: some View {
-        ZStack {
-            Theme.background.opacity(0.75).ignoresSafeArea()
-            VStack(spacing: 14) {
-                ProgressView().controlSize(.large)
-                Text(draft.shareStatus)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Theme.text)
-            }
-            .padding(28)
-            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        }
-        .transition(.opacity)
     }
 
     /// The first photo as it will look (cropped and filtered), for the small preview.

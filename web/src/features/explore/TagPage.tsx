@@ -9,6 +9,7 @@ import { Button, EmptyState, LoadingBlock, PageHeader, PostGrid } from '../../co
 import { api } from '../../lib/api'
 import { formatNumber } from '../../lib/format'
 import { usePostList } from '../../lib/lists'
+import { useTagView } from '../../lib/track'
 import { useOpenGridPost } from './useOpenGridPost'
 
 export function TagPage() {
@@ -17,6 +18,7 @@ export function TagPage() {
   const list = usePostList(`tag:${tag}`, (cursor) => api.tag(tag, cursor))
   const openGridPost = useOpenGridPost()
   const total = useTagTotal(tag)
+  useTagView(tag)
   // The search index knows the full count; until it answers, a finished list can count itself.
   const count = total ?? (list.done ? list.posts.length : null)
 

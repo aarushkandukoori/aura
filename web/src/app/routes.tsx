@@ -9,6 +9,7 @@ import type { ReactNode } from 'react'
 import { matchPath, Route, Routes, useLocation } from 'react-router'
 import { NotFound } from '../components'
 import { ActivityPage } from '../features/activity'
+import { SignInPage } from '../features/auth'
 import { CreatePage } from '../features/create'
 import { ExplorePage, SearchPage, TagPage } from '../features/explore'
 import { HomePage } from '../features/feed'
@@ -37,6 +38,7 @@ export function AppRoutes() {
   return (
     <>
       <Routes location={background ?? location}>
+        <Route path="/signin" element={<SignInPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
         {/* Direct loads of the full-screen viewers (nothing underneath). */}
         <Route path="/stories/:username" element={<FullScreen><StoryViewerPage /></FullScreen>} />

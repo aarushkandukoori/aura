@@ -4,6 +4,7 @@ import { CountUp } from '../../components'
 import { timeAgoLong } from '../../lib/format'
 import { useIsMobile } from '../../lib/hooks'
 import { usePost, useStore } from '../../lib/store'
+import { trackOpen, useImpression } from '../../lib/track'
 import type { Comment, Post } from '../../lib/types'
 import { ShareSheet } from '../messages'
 import { Caption, PreviewComments } from './Caption'
@@ -42,13 +43,19 @@ export function PostCard({ post: initial, variant = 'feed', onComment, onDeleted
   // Comments I post from this card show under it right away.
   const [myComments, setMyComments] = useState<Comment[]>([])
   const inFeed = variant === 'feed'
+  // Tells the recommendation algorithm how long this post stayed on screen in the feed.
+  const impressionRef = useImpression(inFeed ? post.id : null)
 
-  const showComments = onComment ?? (() => (isMobile ? setCommentsOpen(true) : openPost(post.id)))
+  const openComments = onComment ?? (() => (isMobile ? setCommentsOpen(true) : openPost(post.id)))
+  const showComments = () => {
+    if (inFeed) trackOpen(post.id)
+    openComments()
+  }
   const previews = [...post.previewComments, ...myComments.filter((mine) => !post.previewComments.some((c) => c.id === mine.id))]
   const isCarousel = post.kind !== 'reel' && post.media.length > 1
 
   return (
-    <article aria-label={`Post by ${post.author.username}`} className="pb-4 md:mb-5 md:border-b md:border-line md:pb-5">
+    <article ref={impressionRef} aria-label={`Post by ${post.author.username}`} className="pb-4 md:mb-5 md:border-b md:border-line md:pb-5">
       <PostHeader post={post} onShare={() => setShareOpen(true)} onDeleted={onDeleted} />
       <PostMedia
         post={post}

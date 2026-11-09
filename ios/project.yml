@@ -7,7 +7,7 @@ name: Aura
 options:
   bundleIdPrefix: com.aarushkandukoori
   deploymentTarget:
-    iOS: "17.0"
+    iOS: "18.0"
   createIntermediateGroups: true
   developmentLanguage: en
 
@@ -18,6 +18,9 @@ settings:
     SWIFT_STRICT_CONCURRENCY: minimal
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
+    # The Aura server the app talks to until someone picks another one in Settings: the public server.
+    # For a local server, build with AURA_SERVER_URL=http://localhost:8790 or launch with -AuraServer.
+    AURA_SERVER_URL: "https://aura.tailcd5953.ts.net"
 
 targets:
   Aura:
@@ -39,13 +42,19 @@ targets:
           UIApplicationSupportsMultipleScenes: false
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-        # The Aura server runs on this Mac (or this Wi-Fi) over plain http.
+        # The default server address, read by API.swift (from the AURA_SERVER_URL build setting above).
+        AuraServerURL: $(AURA_SERVER_URL)
+        # The Aura server runs on this Mac (or this Wi-Fi) over plain http; a public server uses https.
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
         NSPhotoLibraryUsageDescription: Aura opens your photo library so you can share photos and videos.
         NSCameraUsageDescription: Aura uses the camera so you can take photos and videos to share.
         NSLocalNetworkUsageDescription: Aura connects to your Aura server on this network.
+        # Sign-up: "Tell us about your world" turns what you say into text.
+        NSMicrophoneUsageDescription: Aura listens while you describe your world, so you can talk instead of typing.
+        NSSpeechRecognitionUsageDescription: Aura turns what you say about your world into text to build it for you.
         # aura://profile/<username>, aura://tag/<tag>, aura://messages/<id> ... open screens in the app.
+        # aura://auth?token=... ends Sign in with Google (the sign-in sheet catches it, see SignInView).
         CFBundleURLTypes:
           - CFBundleURLName: com.aarushkandukoori.aura
             CFBundleURLSchemes:
@@ -60,6 +69,7 @@ targets:
         ENABLE_PREVIEWS: YES
         SUPPORTS_MACCATALYST: NO
         CODE_SIGN_STYLE: Automatic
-        # No signing for the Simulator. To run on a real iPhone, pick your team in Xcode.
-        "CODE_SIGNING_ALLOWED[sdk=iphonesimulator*]": NO
+        # The Simulator build is signed "to run locally" (no Apple team needed): the Keychain, where
+        # the sign-in token lives, only works for signed apps. To run on a real iPhone, pick your team in Xcode.
+        "CODE_SIGN_IDENTITY[sdk=iphonesimulator*]": "-"
     scheme: {}

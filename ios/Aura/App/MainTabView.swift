@@ -83,6 +83,7 @@ struct MainTabView: View {
                 .environment(\.openURL, openLinksInApp)
         }
         .background { AvatarTabIconsLoader(icons: $avatarIcons) }
+        .zoomTransitions() // grid tiles zoom into the posts they open (UI/ZoomTransitions.swift)
     }
 
     /// Tapping the tab you're already on goes back to its first screen. On Home's first screen it
@@ -147,11 +148,13 @@ struct HomeTopBar: View {
                                 .frame(width: 9, height: 9)
                                 .overlay(Circle().stroke(Theme.background, lineWidth: 1.5))
                                 .offset(x: 3, y: -1)
+                                .popOnIncrease(store.badges.notifications) // UI/BadgePop.swift
                                 .transition(.scale)
                         }
                     }
                     .frame(width: 34, height: 40)
                     .contentShape(Rectangle())
+                    .overlay(alignment: .bottom) { ActivityBubble() } // UI/ActivityBubble.swift
             }
             .accessibilityLabel(store.badges.notifications > 0 ? "Activity, \(store.badges.notifications) new" : "Activity")
             NavigationLink(value: Route.inbox) {
@@ -167,6 +170,7 @@ struct HomeTopBar: View {
                                 .background(Theme.like, in: Capsule())
                                 .overlay(Capsule().stroke(Theme.background, lineWidth: 1.5))
                                 .offset(x: 10, y: -8)
+                                .popOnIncrease(store.badges.messages) // UI/BadgePop.swift
                                 .transition(.scale)
                         }
                     }

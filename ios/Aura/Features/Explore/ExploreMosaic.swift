@@ -110,12 +110,10 @@ struct ExploreMosaic: View {
         tile(post, height: tallHeight, showsViewCount: post.isReel)
     }
 
+    /// Opens the post (or reel), zooming out of the tile.
     private func tile(_ post: Post, height: CGFloat, showsViewCount: Bool) -> some View {
-        NavigationLink(value: post.isReel ? Route.reel(post.id) : Route.post(post.id)) {
-            PostTile(post: post, aspect: tileWidth / height, showsViewCount: showsViewCount)
-                .frame(width: tileWidth, height: height)
-        }
-        .buttonStyle(.plain)
+        PostTileButton(post: post, aspect: tileWidth / height, showsViewCount: showsViewCount)
+            .frame(width: tileWidth, height: height)
     }
 }
 

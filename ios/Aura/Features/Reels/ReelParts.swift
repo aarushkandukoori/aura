@@ -30,20 +30,21 @@ struct CenterIcon: View {
     }
 }
 
-/// A big icon with a count under it, for the right side of a reel.
-struct RailButton: View {
-    let systemImage: String
+/// A big icon with a count under it, for the right side of a reel. It squashes under the finger.
+///
+///     RailButton(count: post.commentCount, label: "Comments") { openComments() } icon: {
+///         RailIcon(systemImage: "bubble.right")
+///     }
+struct RailButton<Icon: View>: View {
     let count: Int?
-    var tint: Color = .white
     let label: String
     let action: () -> Void
+    @ViewBuilder let icon: Icon
 
     var body: some View {
         Button(action: action) {
             VStack(spacing: 4) {
-                Image(systemName: systemImage)
-                    .font(.system(size: 27))
-                    .foregroundStyle(tint)
+                icon
                 if let count {
                     CountText(value: count)
                         .font(.caption.weight(.semibold))
@@ -52,9 +53,20 @@ struct RailButton: View {
             .frame(minWidth: 44)
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.squash)
         .accessibilityLabel(label)
         .accessibilityValue(count.map { Format.count($0) } ?? "")
+    }
+}
+
+/// A plain white rail icon (comment, share).
+struct RailIcon: View {
+    let systemImage: String
+
+    var body: some View {
+        Image(systemName: systemImage)
+            .font(.system(size: 27))
+            .foregroundStyle(.white)
     }
 }
 

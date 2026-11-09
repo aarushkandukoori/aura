@@ -32,6 +32,7 @@ struct TagView: View {
             await pager.loadFirstPage(into: store)
             await loadCount()
         }
+        .onAppear { Tracker.shared.tagOpen(tag) }
     }
 
     private var header: some View {

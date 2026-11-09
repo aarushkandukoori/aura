@@ -45,7 +45,7 @@ function likesFor(persona: CastPersona): number {
   return castPostLikes(persona.followers ?? 0, persona.role === 'creator')
 }
 
-interface SeedPost {
+export interface SeedPost {
   authorId: string
   sourceId: string
   kind: 'photo' | 'carousel' | 'reel'
@@ -60,7 +60,7 @@ interface SeedPost {
   views: number
 }
 
-function insertPost(post: SeedPost): string {
+export function insertPost(post: SeedPost): string {
   const id = newId('p')
   q(`INSERT INTO posts (id, author_id, kind, media, caption, location, audio, like_count, view_count, ai_note, source_id, released, created_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
@@ -71,7 +71,7 @@ function insertPost(post: SeedPost): string {
 }
 
 /** 2-6 other characters liked it some time after it went up. */
-function addNamedLikers(postId: string, likerPool: string[], createdAt: number, time: number): void {
+export function addNamedLikers(postId: string, likerPool: string[], createdAt: number, time: number): void {
   for (const accountId of sample(likerPool, randomInt(2, 6))) {
     const likedAt = Math.min(createdAt + randomInt(1, 48 * 60) * MINUTE, time - MINUTE)
     q('INSERT INTO post_likes (post_id, account_id, created_at) VALUES (?, ?, ?)').run(postId, accountId, likedAt)

@@ -14,7 +14,9 @@ import type {
   OnboardingRequest, Page, Post, Profile, Reaction, SaveResponse, SearchResult, SendMessageRequest,
   Session, Settings, ShareRequest, Story, StoryReplyResponse, StoryTray, UpdateConversationRequest,
   UpdateMeRequest, UpdateSettingsRequest, UploadResponse, ViewersResponse, ViewResponse,
+  WorldPlan, WorldPlanRequest,
 } from './types'
+import type { TrackRequest } from './types'
 
 export class ApiError extends Error {
   status: number
@@ -26,6 +28,16 @@ export class ApiError extends Error {
 
 type Ok = { ok: true }
 type QueryValue = string | number | null | undefined
+
+/**
+ * Fired on window when the server answers 401: the session expired or was ended elsewhere.
+ * The session gate (app/SessionGate.tsx) listens and shows the sign-in page.
+ */
+export const SIGNED_OUT_EVENT = 'aura:signed-out'
+
+function noticeSignedOut(status: number): void {
+  if (status === 401) window.dispatchEvent(new Event(SIGNED_OUT_EVENT))
+}
 
 /** Build "?a=1&b=2", leaving out empty values. */
 function query(params: Record<string, QueryValue>): string {
@@ -52,6 +64,7 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
   }
   const data = await response.json().catch(() => null)
   if (!response.ok) {
+    noticeSignedOut(response.status)
     const message = data && typeof data.error === 'string' ? data.error : `Something went wrong (${response.status})`
     throw new ApiError(response.status, message)
   }
@@ -77,7 +90,10 @@ async function upload(file: Blob, size?: { width: number; height: number }): Pro
     throw new ApiError(0, "Upload failed. Check your connection.")
   }
   const data = await response.json().catch(() => null)
-  if (!response.ok) throw new ApiError(response.status, data?.error ?? `Upload failed (${response.status})`)
+  if (!response.ok) {
+    noticeSignedOut(response.status)
+    throw new ApiError(response.status, data?.error ?? `Upload failed (${response.status})`)
+  }
   return data as UploadResponse
 }
 
@@ -89,12 +105,16 @@ export const api = {
   health: () => get<Health>('/health'),
   avatars: () => get<string[]>('/avatars'),
   onboard: (body: OnboardingRequest) => post<Session>('/onboarding', body),
+  /** POST /api/onboarding/plan: what the user said about their world -> a plan to review (can take ~30 s). */
+  onboardingPlan: (body: WorldPlanRequest) => post<WorldPlan>('/onboarding/plan', body),
   updateMe: (body: UpdateMeRequest) => patch<Me>('/me', body),
   settings: () => get<Settings>('/settings'),
   updateSettings: (body: UpdateSettingsRequest) => patch<Settings>('/settings', body),
   reset: () => post<Ok>('/reset'),
   badges: () => get<Badges>('/badges'),
   upload,
+  /** POST /api/auth/logout: ends this device's session (signing in is a page visit to /auth/google). */
+  logout: () => post<Ok>('/auth/logout'),
 
   // ----- feed, posts, explore, reels -----
   feed: (cursor?: string | null) => get<Page<Post>>(`/feed${query({ cursor })}`),
@@ -162,4 +182,8 @@ export const api = {
     post<Message>(`/conversations/${enc(conversationId)}/messages`, body),
   readConversation: (conversationId: ID) => post<Badges>(`/conversations/${enc(conversationId)}/read`),
   reactToMessage: (messageId: ID, emoji: string | null) => post<Reaction[]>(`/messages/${enc(messageId)}/react`, { emoji }),
+
+  // ----- recommendations -----
+  /** POST /api/events: what the user looked at, in batches (lib/track.ts collects and sends them). */
+  track: (body: TrackRequest) => post<{ ok: true; accepted: number }>('/events', body),
 }

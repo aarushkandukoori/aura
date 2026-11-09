@@ -1,7 +1,8 @@
 import SwiftUI
 
-/// Decides what the whole screen shows: a launch screen while asking the server, onboarding for a
-/// new world, the app itself, or a "can't reach the server" screen. A reset sends you back to onboarding.
+/// Decides what the whole screen shows: a launch screen while asking the server, sign-in (when the
+/// server has accounts), onboarding for a new world, the app itself, or a "can't reach the server"
+/// screen. A reset sends you back to onboarding; signing out, back to sign-in.
 struct RootView: View {
     @Environment(AppStore.self) private var store
 
@@ -13,8 +14,12 @@ struct RootView: View {
                 LaunchView()
                     .zIndex(1)
                     .transition(.opacity)
+            case .signIn:
+                SignInView()
+                    .zIndex(1)
+                    .transition(.opacity)
             case .onboarding:
-                OnboardingView()
+                OnboardingView(account: store.account, startsWithWelcome: !store.authEnabled)
                     .zIndex(1)
                     .transition(.opacity)
             case .ready:
@@ -74,7 +79,7 @@ struct ServerUnreachableView: View {
                 Text("Server address")
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Theme.muted)
-                TextField("http://localhost:8790", text: $address)
+                TextField(API.defaultServer, text: $address)
                     .keyboardType(.URL)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
@@ -98,9 +103,11 @@ struct ServerUnreachableView: View {
             .buttonStyle(.aura(.primary, size: .large, fullWidth: true))
             .disabled(retrying)
             Spacer()
-            Text("Start the server on your Mac with: npm run dev")
-                .font(.footnote)
-                .foregroundStyle(Theme.muted)
+            if API.server.contains("localhost") || API.server.contains("127.0.0.1") {
+                Text("Start the server on your Mac with: npm run dev")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.muted)
+            }
         }
         .padding(24)
     }

@@ -7,3 +7,4 @@ data/
 ios/build/
 ios/*.xcodeproj/xcuserdata/
 ios/DerivedData/
+.env.public

@@ -7,6 +7,7 @@ import { Bookmark, ChevronRight, Monitor, Moon, Sun } from 'lucide-react'
 import { useEffect, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { Avatar, LoadingBlock, PageHeader, SegmentedControl, toast } from '../../components'
+import { SignedInRow } from '../auth'
 import { api } from '../../lib/api'
 import { cx } from '../../lib/cx'
 import { useMe, useStore } from '../../lib/store'
@@ -66,6 +67,8 @@ export function SettingsPage() {
   if (!settings) return <LoadingBlock />
   const speed = SPEED_OPTIONS.find((option) => option.value === settings.speed)
   const model = MODEL_OPTIONS.find((option) => option.value === settings.model)
+  // Only the models this server allows (a public server may run just one).
+  const modelOptions = MODEL_OPTIONS.filter((option) => !settings.models || settings.models.includes(option.value))
 
   return (
     <div>
@@ -94,6 +97,7 @@ export function SettingsPage() {
               </span>
               <ChevronRight size={18} className="text-muted" />
             </Link>
+            <SignedInRow />
           </div>
         </Section>
 
@@ -111,14 +115,16 @@ export function SettingsPage() {
           />
         </Section>
 
-        <Section title="AI model" description={model?.hint}>
-          <SegmentedControl
-            label="AI model"
-            block
-            options={MODEL_OPTIONS}
-            value={settings.model}
-            onChange={(value) => saveSettings({ model: value })}
-          />
+        <Section title="AI model" description={usesClaude(settings.provider) ? model?.hint : undefined}>
+          {modelOptions.length > 1 && (
+            <SegmentedControl
+              label="AI model"
+              block
+              options={modelOptions}
+              value={settings.model}
+              onChange={(value) => saveSettings({ model: value })}
+            />
+          )}
           <ProviderStatus provider={settings.provider} />
         </Section>
 
@@ -132,10 +138,7 @@ export function SettingsPage() {
 
         <Section title="About Aura">
           <p className="text-sm leading-relaxed text-muted">
-            Every account on Aura except yours is an AI character. Their photos are AI-generated, and their captions,
-            comments and messages are written by Claude, an AI model made by Anthropic. When you post, comment or send a
-            message, your words and photos are sent to Claude only so the characters can write their reactions. Everything
-            else stays in a database on the computer running Aura.
+            <AboutText provider={settings.provider} />
           </p>
         </Section>
       </div>
@@ -153,7 +156,20 @@ function Section({ title, description, children }: { title: string; description?
   )
 }
 
-/** "● Claude Code login · claude-opus-5-5": which way the characters reach Claude right now. */
+/** The model hints name Claude models; a server on OpenAI maps the same choices to its own models. */
+const usesClaude = (provider: ProviderInfo) => provider.active === 'anthropic' || provider.active === 'claude-cli'
+
+/** Who writes the characters' words on this server, and where the user's words and photos go (it differs per server). */
+function AboutText({ provider }: { provider: ProviderInfo }) {
+  const intro = 'Every account on Aura except yours is an AI character, and their photos are AI-generated.'
+  if (provider.active === 'offline') {
+    return `${intro} No AI model is connected right now, so their comments and messages come from built-in templates. Everything stays in a database on the computer running Aura.`
+  }
+  const writer = usesClaude(provider) ? { name: 'Claude, an AI model made by Anthropic', short: 'Claude' } : { name: "OpenAI's GPT models", short: 'OpenAI' }
+  return `${intro} Their comments and messages are written by ${writer.name}. When you post, comment or send a message, your words and photos are sent to ${writer.short} only so the characters can write their reactions. Everything else stays in a database on the computer running Aura.`
+}
+
+/** "● Claude Code login · claude-opus-5-5": which way the characters reach the AI right now. */
 function ProviderStatus({ provider }: { provider: ProviderInfo }) {
   const online = provider.active !== 'offline'
   return (

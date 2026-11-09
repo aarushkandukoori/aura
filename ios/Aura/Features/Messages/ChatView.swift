@@ -155,12 +155,7 @@ struct ChatView: View {
                        onOpenPhoto: { openPhoto = ChatPhoto(path: $0.thumbnail) },
                        onJumpTo: { jump(to: $0, reader: reader) })
         case .status(let text):
-            Text(text)
-                .font(.caption)
-                .foregroundStyle(Theme.muted)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.top, 4)
-                .padding(.trailing, 4)
+            ChatStatusLine(text: text)
         case .typing(let typers):
             ChatTypingBubble(typers: typers)
         case .end:
@@ -290,6 +285,30 @@ struct ChatView: View {
     private func closeChat() {
         let tab = store.selectedTab
         store.setPath(store.path(for: tab).filter { $0 != .chat(conversationId) }, for: tab)
+    }
+}
+
+/// "Sent" or "Seen 2m ago" under my last message. It fades in, and "Sent" fades into "Seen" when
+/// they read it, like Instagram's.
+private struct ChatStatusLine: View {
+    let text: String
+
+    @State private var shown = false
+
+    var body: some View {
+        ZStack(alignment: .trailing) {
+            Text(text)
+                .id(text)
+                .transition(.opacity)
+        }
+        .animation(.easeInOut(duration: 0.35), value: text)
+        .font(.caption)
+        .foregroundStyle(Theme.muted)
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding(.top, 4)
+        .padding(.trailing, 4)
+        .opacity(shown ? 1 : 0)
+        .onAppear { withAnimation(.easeIn(duration: 0.3).delay(0.15)) { shown = true } }
     }
 }
 

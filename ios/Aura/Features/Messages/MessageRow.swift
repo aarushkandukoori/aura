@@ -3,7 +3,8 @@ import UIKit
 
 /// One message in a chat: their avatar (on the last bubble of a run) and name (groups), the
 /// message's pieces, its reactions, and "Not sent" with a retry when sending failed.
-/// Double-tap a bubble to heart it; long press for the reaction bar, Reply and Copy.
+/// Double-tap a bubble to heart it (the reaction pops onto the bubble's corner); long press for the
+/// reaction bar, Reply and Copy. A message I just sent rises out of the composer.
 struct MessageRow: View {
     @Environment(AppStore.self) private var store
     let message: Message
@@ -50,6 +51,8 @@ struct MessageRow: View {
         .padding(.top, placement.isFirstInRun ? 10 : 2)
         .padding(.bottom, message.reactions.isEmpty ? 0 : 20) // room for the reaction pill
         .opacity(isLocal && !isFailed ? 0.7 : 1)
+        // Only the local copy of a message I just sent (the server's copy replaces it in place).
+        .modifier(RiseFromComposer(isActive: isLocal))
     }
 
     // MARK: - Parts
@@ -106,10 +109,12 @@ struct MessageRow: View {
             if !message.reactions.isEmpty {
                 MessageReactionsBadge(reactions: message.reactions)
                     .offset(x: isMine ? -10 : 10, y: 17)
-                    .transition(.scale(scale: 0.4).combined(with: .opacity))
+                    // Pops onto the bubble's corner with an overshoot, like Instagram's reactions.
+                    .transition(.scale(scale: 0.1, anchor: isMine ? .topTrailing : .topLeading)
+                        .combined(with: .opacity))
             }
         }
-        .animation(.spring(duration: 0.3, bounce: 0.5), value: message.reactions)
+        .animation(Motion.pop, value: message.reactions)
     }
 
     @ViewBuilder private var textPiece: some View {
@@ -222,6 +227,27 @@ struct MessageRow: View {
         let sender = MessagePreview.firstName(message.sender)
         if quotesMe { return "\(sender) replied to you" }
         return reply.senderName == message.sender.displayName ? "\(sender) replied" : "\(sender) replied to \(quotedName)"
+    }
+}
+
+/// A message I just sent rises out of the composer into its place at the bottom of the chat (the
+/// chat scrolls at the same time), instead of just appearing.
+private struct RiseFromComposer: ViewModifier {
+    let isActive: Bool
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var risen = false
+
+    func body(content: Content) -> some View {
+        let waiting = isActive && !risen
+        content
+            .offset(y: waiting && !reduceMotion ? 44 : 0)
+            .scaleEffect(waiting && !reduceMotion ? 0.9 : 1, anchor: .bottomTrailing)
+            .opacity(waiting ? 0 : 1)
+            .onAppear {
+                guard isActive else { return }
+                withAnimation(Motion.slide.orFade(reduceMotion)) { risen = true }
+            }
     }
 }
 

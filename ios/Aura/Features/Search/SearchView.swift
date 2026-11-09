@@ -136,6 +136,7 @@ struct SearchView: View {
             let found = try await API.search(text)
             withAnimation(.snappy(duration: 0.2)) { result = found }
             errorMessage = nil
+            Tracker.shared.search(text) // what people search for teaches the algorithm
         } catch {
             if !error.isCancellation {
                 result = nil

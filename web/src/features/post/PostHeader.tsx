@@ -9,7 +9,7 @@ import { PostMenu } from './PostMenu'
 interface PostHeaderProps {
   post: Post
   onShare: () => void
-  /** feed: the time after the name and "Suggested for you" under it. detail: the top of the post modal. */
+  /** feed: the time after the name and why a suggested post is here under it. detail: the top of the post modal. */
   variant?: 'feed' | 'detail'
   onDeleted?: () => void
 }
@@ -23,7 +23,8 @@ export function PostHeader({ post, onShare, variant = 'feed', onDeleted }: PostH
   // Remember whether I followed them when the post appeared, so the button can switch to
   // "Following" after a tap instead of vanishing.
   const [offerFollow] = useState(() => author.kind !== 'me' && !author.iFollow)
-  const subtitle = variant === 'feed' && post.suggested ? 'Suggested for you' : post.kind === 'reel' ? post.audio : post.location
+  // Suggested posts say why the algorithm picked them ("Because you like #coffee"), like Instagram.
+  const subtitle = variant === 'feed' && post.suggested ? post.reason || 'Suggested for you' : post.kind === 'reel' ? post.audio : post.location
 
   return (
     <header className={cx('flex items-center gap-2.5', variant === 'feed' ? 'px-3 py-2.5 md:px-0' : 'h-[60px] shrink-0 border-b border-line px-4')}>

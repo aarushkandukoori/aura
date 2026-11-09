@@ -8,7 +8,7 @@
 import { dmOpener, dmReply, groupReply, type Line, type OpenerReason } from '../ai/tasks.ts'
 import { nudge } from '../ai/offline.ts'
 import { latestFromUser } from '../ai/prompts.ts'
-import { getSetting, now, q, setSetting } from '../db/index.ts'
+import { getSetting, now, q, setSetting, worldState } from '../db/index.ts'
 import {
   addMemory, bumpCloseness, getCastMember, getConversation, getConversationRow, getMemories, getMessages,
   getOrCreateDm, listConversations, markSeen, memberIds, reactToMessage, sendCastMessage, setTyping,
@@ -31,10 +31,12 @@ interface Bubble {
   story?: { id: string } | null
 }
 
-const busyChats = new Set<string>()
+/** Per world: the chats that have a sequence playing right now. */
+const busyChatsOf = worldState(() => new Set<string>())
 
 /** Run `work` while holding a chat's lock. Returns false, without running it, if the chat is busy. */
 async function withChatLock(conversationId: string, work: () => Promise<void>): Promise<boolean> {
+  const busyChats = busyChatsOf()
   if (busyChats.has(conversationId)) return false
   busyChats.add(conversationId)
   try {
@@ -45,9 +47,9 @@ async function withChatLock(conversationId: string, work: () => Promise<void>): 
   return true
 }
 
-/** Forget every lock (Start over). */
+/** Forget every lock of the current world (Start over). */
 export function clearChatLocks(): void {
-  busyChats.clear()
+  busyChatsOf().clear()
 }
 
 /** Has this person just said exactly this here? A job replayed after a restart must not send it twice. */
@@ -192,10 +194,10 @@ export async function startDm(member: CastMember, reason: OpenerReason): Promise
 }
 
 /**
- * The message each chat was last nudged about. Kept in memory: losing it on a restart costs at
- * most one extra nudge, and nothing is left behind in the database when a chat is deleted.
+ * Per world: the message each chat was last nudged about. Kept in memory: losing it on a restart
+ * costs at most one extra nudge, and nothing is left behind in the database when a chat is deleted.
  */
-const nudgedAbout = new Map<string, string>()
+const nudgedAboutOf = worldState(() => new Map<string, string>())
 
 /**
  * Job read_nudge: the user read a close friend's message but didn't answer. A few minutes later
@@ -207,12 +209,12 @@ export async function nudgeIfIgnored(payload: { conversationId: string }): Promi
   const member = getCastMember(memberIds(row)[0] ?? '')
   const last = getMessages(row.id, 1)[0]
   if (!member || (member.role !== 'bestie' && member.role !== 'friend') || !last) return
-  const alreadyNudged = nudgedAbout.get(row.id) === last.id
+  const alreadyNudged = nudgedAboutOf().get(row.id) === last.id
   if (last.sender.id !== member.id || alreadyNudged || now() - last.createdAt < 2 * MINUTE || !chance(0.3)) return
 
   const text = nudge(member, chatHistory(row.id, 10))
   if (!text) return
   await withChatLock(row.id, () => playBubbles(row.id, [{ by: member.id, text }]))
   const sent = getMessages(row.id, 1)[0]
-  if (sent) nudgedAbout.set(row.id, sent.id)
+  if (sent) nudgedAboutOf().set(row.id, sent.id)
 }

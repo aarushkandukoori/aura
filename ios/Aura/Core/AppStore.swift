@@ -1,9 +1,11 @@
 import Observation
 import SwiftUI
 
-/// Where the app is: asking the server, onboarding, using the app, or unable to reach the server.
+/// Where the app is: asking the server, signing in, onboarding, using the app, or unable to reach the server.
 enum AppPhase: Equatable {
     case loading
+    /// The server has sign-in on and nobody is signed in on this iPhone (AppStore+Auth.swift).
+    case signIn
     case onboarding
     case ready
     case unreachable(String)
@@ -12,33 +14,6 @@ enum AppPhase: Equatable {
 /// The five tabs at the bottom.
 enum AppTab: Hashable {
     case home, explore, create, reels, profile
-}
-
-/// Settings > Appearance, saved on this device. Read and change it with
-/// `@AppStorage(Appearance.storageKey) private var appearance: Appearance = .system`.
-enum Appearance: String, CaseIterable, Identifiable {
-    case system, light, dark
-
-    static let storageKey = "appearance"
-
-    var id: String { rawValue }
-
-    var label: String {
-        switch self {
-        case .system: "System"
-        case .light: "Light"
-        case .dark: "Dark"
-        }
-    }
-
-    /// nil = follow the iPhone's setting.
-    var colorScheme: ColorScheme? {
-        switch self {
-        case .system: nil
-        case .light: .light
-        case .dark: .dark
-        }
-    }
 }
 
 /// What the full-screen story viewer should show.
@@ -64,13 +39,19 @@ struct Toast: Identifiable, Equatable {
 ///
 /// It holds what more than one screen needs (who I am, badges, the post cache, stories, notifications,
 /// conversations) and keeps it current with the live event stream. The methods are split by topic:
-/// AppStore+Posts, +Stories, +Messages, +Live (event handling) and +Navigation.
+/// AppStore+Auth (signing in and out), +Posts, +Stories, +Messages, +Live (event handling) and +Navigation.
 @Observable
 @MainActor
 final class AppStore {
     // MARK: - Session
 
     var phase: AppPhase = .loading
+    /// True when the server has sign-in on (each Google account has its own world). False = local mode.
+    var authEnabled = false
+    /// The Google account signed in on this iPhone (nil when signed out, and always in local mode).
+    var account: SignedInAccount?
+    /// A note for the sign-in screen, e.g. why the app just signed out.
+    var signInMessage: String?
     /// The human using the app. Set once onboarded.
     var me: Me?
     var settings: AuraSettings?
@@ -150,20 +131,30 @@ final class AppStore {
     let live = LiveStream()
     @ObservationIgnored var toastTask: Task<Void, Never>?
     @ObservationIgnored var wasDisconnected = false
+    @ObservationIgnored private var signedOutObserver: NSObjectProtocol?
 
     init() {
         live.onEvent = { [weak self] event in self?.handle(event) }
         live.onConnectionChange = { [weak self] connected in self?.connectionChanged(connected) }
+        // Any request answered 401 means this sign-in ended: back to the sign-in screen.
+        signedOutObserver = NotificationCenter.default.addObserver(forName: API.signedOutNotification,
+                                                                   object: nil, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated { self?.handleSignedOut() }
+        }
     }
 
     // MARK: - Starting up
 
-    /// The first thing the app does: ask the server who we are, then onboard or load the world.
+    /// The first thing the app does: ask the server who we are, then sign in, onboard or load the world.
     func start() async {
         do {
             let session = try await API.session()
             apply(session)
-            if session.onboarded {
+            if session.authEnabled && session.account == nil {
+                // Nobody is signed in, or the saved sign-in stopped working: forget it and ask again.
+                AuthToken.delete(for: API.server)
+                phase = .signIn
+            } else if session.onboarded {
                 phase = .ready
                 live.start()
                 await loadInitialData()
@@ -187,14 +178,14 @@ final class AppStore {
     func changeServer(to address: String) async {
         UserDefaults.standard.set(address.trimmingCharacters(in: .whitespacesAndNewlines), forKey: API.serverKey)
         live.stop()
+        Tracker.shared.discard() // what was seen belongs to the old server's world
         clearWorld()
         me = nil
         await retry()
     }
 
-    /// Onboarding's last step. Builds the world on the server, then opens the app.
-    func completeOnboarding(_ request: OnboardingRequest) async throws {
-        let session = try await API.onboard(request)
+    /// Onboarding's last step built the world (POST /api/onboarding answered with this session): open the app.
+    func finishOnboarding(with session: Session) async {
         clearWorld()
         apply(session)
         phase = .ready
@@ -220,6 +211,8 @@ final class AppStore {
     }
 
     func apply(_ session: Session) {
+        authEnabled = session.authEnabled
+        account = session.account
         me = session.me
         settings = session.settings
         badges = session.badges
@@ -234,9 +227,11 @@ final class AppStore {
         Task { await refreshBadges() }
     }
 
-    /// The app went to the background: close the stream so the world rests while nobody is looking.
+    /// The app went to the background: close the stream so the world rests while nobody is looking,
+    /// and send what was looked at so far.
     func appDidEnterBackground() {
         live.stop()
+        Tracker.shared.sendBeforeSuspending()
     }
 
     // MARK: - Me and settings
@@ -260,6 +255,7 @@ final class AppStore {
     /// Back to onboarding with everything cleared (after a reset, from here or another device).
     func handleReset() {
         live.stop()
+        Tracker.shared.discard() // those posts are gone
         clearWorld()
         me = nil
         badges = Badges()

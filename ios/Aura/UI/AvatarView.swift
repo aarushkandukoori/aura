@@ -14,7 +14,8 @@ enum StoryRingState {
 ///
 /// `size` is the whole thing, ring included, so rows line up whether or not someone has a story.
 /// With an account, the ring follows the store's freshest info (it turns gray everywhere once you've
-/// watched the story).
+/// watched the story). Give it a `storyZoomID` when tapping it opens stories through StoryZoom: the
+/// ring then spins while the story loads, and the viewer grows out of this avatar.
 struct AvatarView: View {
     @Environment(AppStore.self) private var store
 
@@ -22,46 +23,65 @@ struct AvatarView: View {
     private let path: String?
     private let fixedRing: StoryRingState
     private let showsStoryRing: Bool
+    private let storyZoomID: String?
     let size: CGFloat
     let action: (() -> Void)?
 
+    /// True while a story watched just now is still on screen in the viewer: the ring stays colorful
+    /// until the viewer closes, then fades to gray where you can see it.
+    @State private var holdsColor = false
+
     /// An account's avatar. With `showsStoryRing`, a ring appears when they have an active story.
-    init(account: Account?, size: CGFloat = 32, showsStoryRing: Bool = false, action: (() -> Void)? = nil) {
+    init(account: Account?, size: CGFloat = 32, showsStoryRing: Bool = false, storyZoomID: String? = nil,
+         action: (() -> Void)? = nil) {
         self.account = account
         self.path = account?.avatar
         self.fixedRing = .none
         self.showsStoryRing = showsStoryRing
+        self.storyZoomID = storyZoomID
         self.size = size
         self.action = action
     }
 
     /// An avatar from a server path, with a ring you choose.
-    init(path: String?, size: CGFloat = 32, ring: StoryRingState = .none, action: (() -> Void)? = nil) {
+    init(path: String?, size: CGFloat = 32, ring: StoryRingState = .none, storyZoomID: String? = nil,
+         action: (() -> Void)? = nil) {
         self.account = nil
         self.path = path
         self.fixedRing = ring
         self.showsStoryRing = false
+        self.storyZoomID = storyZoomID
         self.size = size
         self.action = action
     }
 
     var body: some View {
-        if let action {
-            Button(action: action) { content }
-                .buttonStyle(.plain)
-        } else {
-            content
+        let current = account.map { store.latest($0) }
+        let ring = ringState(for: current)
+        Group {
+            if let action {
+                Button(action: action) { content(current, ring: holdsColor ? .unseen : ring) }
+                    .buttonStyle(.plain)
+            } else {
+                content(current, ring: holdsColor ? .unseen : ring)
+            }
+        }
+        .storyZoomSource(id: storyZoomID)
+        .onChange(of: ring) { old, new in
+            if old == .unseen && new == .seen && store.storyViewer != nil { holdsColor = true }
+        }
+        .onChange(of: store.storyViewer == nil) { _, closed in
+            if closed { holdsColor = false }
         }
     }
 
-    private var content: some View {
-        let current = account.map { store.latest($0) }
-        let ring = ringState(for: current)
+    private func content(_ current: Account?, ring: StoryRingState) -> some View {
         let ringWidth = max(2, size * 0.045)
         let gap = max(1.5, size * 0.04)
         let imageSize = ring == .none ? size : size - 2 * (ringWidth + gap)
+        let isLoading = storyZoomID != nil && StoryZoom.shared.loadingID == storyZoomID
         return ZStack {
-            StoryRing(state: ring, lineWidth: ringWidth)
+            StoryRing(state: ring, lineWidth: ringWidth, isLoading: isLoading)
             Group {
                 if let avatar = current?.avatar ?? path {
                     RemoteImage(path: avatar)
@@ -87,25 +107,62 @@ struct AvatarView: View {
 }
 
 /// The ring around an avatar: a slowly turning aura gradient for unseen stories, gray for seen ones.
+/// It fades from color to gray once you've watched, and while a story loads it breaks into dashes
+/// that spin, like Instagram's loading ring.
 struct StoryRing: View {
     var state: StoryRingState
     var lineWidth: CGFloat
+    var isLoading = false
+
+    var body: some View {
+        ZStack {
+            if isLoading {
+                LoadingRing(lineWidth: lineWidth)
+                    .transition(.opacity)
+            } else if state == .unseen {
+                TurningRing(lineWidth: lineWidth)
+                    .transition(.opacity)
+            } else if state == .seen {
+                Circle()
+                    .strokeBorder(Theme.seenRing, lineWidth: max(1, lineWidth * 0.6))
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.5), value: state)
+        .animation(.easeOut(duration: 0.15), value: isLoading)
+    }
+}
+
+/// The colorful ring of an unseen story, turning slowly.
+private struct TurningRing: View {
+    let lineWidth: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var spinning = false
 
     var body: some View {
-        switch state {
-        case .none:
-            EmptyView()
-        case .seen:
-            Circle().strokeBorder(Theme.seenRing, lineWidth: max(1, lineWidth * 0.6))
-        case .unseen:
+        Circle()
+            .strokeBorder(Theme.ringGradient, lineWidth: lineWidth)
+            .rotationEffect(.degrees(spinning ? 360 : 0))
+            .animation(reduceMotion ? nil : .linear(duration: 6).repeatForever(autoreverses: false), value: spinning)
+            .onAppear { spinning = true }
+    }
+}
+
+/// The ring while a story loads: colorful dashes going round, one turn a second.
+private struct LoadingRing: View {
+    let lineWidth: CGFloat
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        TimelineView(.animation(paused: reduceMotion)) { timeline in
+            let turns = timeline.date.timeIntervalSinceReferenceDate / 0.9
             Circle()
-                .strokeBorder(Theme.ringGradient, lineWidth: lineWidth)
-                .rotationEffect(.degrees(spinning ? 360 : 0))
-                .animation(reduceMotion ? nil : .linear(duration: 6).repeatForever(autoreverses: false), value: spinning)
-                .onAppear { spinning = true }
+                .strokeBorder(Theme.ringGradient,
+                              style: StrokeStyle(lineWidth: lineWidth, lineCap: .round,
+                                                 dash: [lineWidth * 2.2, lineWidth * 1.8]))
+                .rotationEffect(.degrees(turns.truncatingRemainder(dividingBy: 1) * 360))
         }
     }
 }

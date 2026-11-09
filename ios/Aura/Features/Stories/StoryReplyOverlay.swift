@@ -1,14 +1,17 @@
 import SwiftUI
 
-/// Replying to someone's story: the story dims, quick reactions appear, and a text field rises
-/// with the keyboard. A reply or reaction lands in your DMs with them.
+/// Replying to someone's story, the Instagram way: the story dims, the quick reactions pop in one
+/// after another, and the text field rises with the keyboard. Once you start typing the reactions
+/// step aside. A reply or reaction lands in your DMs with them.
 struct StoryReplyOverlay: View {
     let story: Story
     var onSend: (String) -> Void
     var onReact: (String) -> Void
     var onClose: () -> Void
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var text = ""
+    @State private var appeared = false
     @FocusState private var isFocused: Bool
 
     private static let reactions = ["😂", "😮", "😍", "😢", "👏", "🔥", "🎉", "💯"]
@@ -23,8 +26,9 @@ struct StoryReplyOverlay: View {
                 Text("Quick reactions")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.white.opacity(0.85))
+                    .opacity(appeared ? 1 : 0)
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 20) {
-                    ForEach(Self.reactions, id: \.self) { emoji in
+                    ForEach(Array(Self.reactions.enumerated()), id: \.element) { index, emoji in
                         Button { onReact(emoji) } label: {
                             Text(emoji)
                                 .font(.system(size: 44))
@@ -33,15 +37,25 @@ struct StoryReplyOverlay: View {
                         }
                         .buttonStyle(ReactionButtonStyle())
                         .accessibilityLabel("React \(emoji)")
+                        // Each one pops in a beat after the one before it.
+                        .scaleEffect(appeared || reduceMotion ? 1 : 0.3)
+                        .opacity(appeared ? 1 : 0)
+                        .animation(Motion.pop.delay(0.03 * Double(index)).orFade(reduceMotion), value: appeared)
                     }
                 }
                 .padding(.horizontal, 36)
             }
             .frame(maxHeight: .infinity)
+            // Typing hides the reactions, so the message has the stage.
+            .opacity(text.isEmpty ? 1 : 0)
+            .animation(.easeOut(duration: 0.18), value: text.isEmpty)
 
             inputBar
         }
-        .onAppear { isFocused = true }
+        .onAppear {
+            isFocused = true
+            appeared = true
+        }
     }
 
     private var inputBar: some View {
@@ -63,8 +77,10 @@ struct StoryReplyOverlay: View {
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .transition(.scale(scale: 0.6).combined(with: .opacity))
             }
         }
+        .animation(Motion.snap, value: trimmed.isEmpty)
         .padding(.leading, 8)
         .padding(.trailing, 16)
         .padding(.vertical, 6)
@@ -90,7 +106,7 @@ struct StoryReplyOverlay: View {
 private struct ReactionButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 1.25 : 1)
+            .scaleEffect(configuration.isPressed ? 1.3 : 1)
             .animation(.spring(duration: 0.25, bounce: 0.5), value: configuration.isPressed)
     }
 }

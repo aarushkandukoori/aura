@@ -13,7 +13,9 @@ struct PostHeader: View {
     var body: some View {
         let author = store.latest(post.author)
         HStack(spacing: 10) {
-            AvatarView(account: author, size: 38, showsStoryRing: true) { openAuthor(author) }
+            AvatarView(account: author, size: 38, showsStoryRing: true, storyZoomID: storyZoomID) {
+                openAuthor(author)
+            }
 
             VStack(alignment: .leading, spacing: 1) {
                 HStack(spacing: 4) {
@@ -36,8 +38,10 @@ struct PostHeader: View {
                                 .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
+                        .transition(.opacity)
                     }
                 }
+                .animation(Motion.snap, value: author.iFollow)
                 if let location = post.location, !location.isEmpty {
                     Text(location)
                         .font(.caption)
@@ -86,14 +90,17 @@ struct PostHeader: View {
         .accessibilityLabel("More options")
     }
 
-    /// A ringed avatar opens their stories; otherwise it opens their profile.
+    /// Names this avatar's spot for the story zoom (the viewer grows out of it and back into it).
+    private var storyZoomID: String { StoryZoom.headerID(post.id) }
+
+    /// A ringed avatar opens their stories (the ring spins while they load); otherwise their profile.
     private func openAuthor(_ author: Account) {
         guard author.hasStory else {
             store.navigate(to: .profile(author.username))
             return
         }
         Task {
-            let opened = await store.openStories(for: author)
+            let opened = await StoryZoom.shared.open(author, from: storyZoomID, store: store)
             if !opened { store.navigate(to: .profile(author.username)) }
         }
     }

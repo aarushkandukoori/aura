@@ -1,6 +1,8 @@
 import SwiftUI
 
-/// The big heart that pops over a photo when you double-tap it. Increase `trigger` to play it.
+/// The big white heart that pops in the middle of a photo when you double-tap it, like Instagram's:
+/// it springs in with an overshoot, holds for a moment, then grows a little as it fades away.
+/// Increase `trigger` to play it.
 ///
 ///     @State private var hearts = 0
 ///     media
@@ -10,38 +12,39 @@ struct HeartBurst: View {
     let trigger: Int
     var size: CGFloat = 96
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     private struct Values {
-        var scale = 0.2
+        var scale = 0.0
         var opacity = 0.0
-        var lift = 0.0
     }
 
     var body: some View {
         Image(systemName: "heart.fill")
             .font(.system(size: size))
             .foregroundStyle(.white)
-            .shadow(color: Theme.like.opacity(0.55), radius: 18)
-            .shadow(color: .black.opacity(0.18), radius: 6, y: 2)
+            .shadow(color: .black.opacity(0.22), radius: 10, y: 3)
             .keyframeAnimator(initialValue: Values(), trigger: trigger) { heart, values in
                 heart
                     .scaleEffect(values.scale)
                     .opacity(values.opacity)
-                    .offset(y: values.lift)
             } keyframes: { _ in
                 KeyframeTrack(\.scale) {
-                    SpringKeyframe(1.15, duration: 0.25, spring: .bouncy)
-                    SpringKeyframe(0.95, duration: 0.12)
-                    SpringKeyframe(1.0, duration: 0.35)
-                    CubicKeyframe(0.6, duration: 0.2)
+                    if reduceMotion {
+                        // Reduce Motion: no growing, the heart just fades in and out.
+                        LinearKeyframe(1, duration: 0.01)
+                        LinearKeyframe(1, duration: 0.9)
+                    } else {
+                        SpringKeyframe(1.18, duration: 0.2, spring: .init(response: 0.22, dampingRatio: 0.55))
+                        SpringKeyframe(1.0, duration: 0.14, spring: .snappy)
+                        LinearKeyframe(1.0, duration: 0.32)          // hold
+                        CubicKeyframe(1.3, duration: 0.24)           // grow as it fades
+                    }
                 }
                 KeyframeTrack(\.opacity) {
-                    LinearKeyframe(1, duration: 0.08)
-                    LinearKeyframe(1, duration: 0.62)
-                    LinearKeyframe(0, duration: 0.22)
-                }
-                KeyframeTrack(\.lift) {
-                    LinearKeyframe(0, duration: 0.7)
-                    CubicKeyframe(-40, duration: 0.22)
+                    LinearKeyframe(1, duration: 0.07)
+                    LinearKeyframe(1, duration: 0.59)
+                    CubicKeyframe(0, duration: 0.24)
                 }
             }
             .allowsHitTesting(false)

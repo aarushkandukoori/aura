@@ -57,6 +57,12 @@ struct InterestPicker: View {
 enum UsernameRules {
     static let allowed = Set("abcdefghijklmnopqrstuvwxyz0123456789._")
 
+    /// Words that are pages of the web app (a profile lives at /<username>), so the server refuses them.
+    static let reserved: Set<String> = [
+        "explore", "reels", "search", "create", "stories", "highlights", "messages", "activity", "settings", "saved",
+        "onboarding", "signin", "auth", "api", "media", "content", "assets",
+    ]
+
     /// What the username field keeps as you type: lowercase, allowed characters only, at most 24.
     static func clean(_ text: String) -> String {
         String(text.lowercased().filter { allowed.contains($0) }.prefix(24))
@@ -70,6 +76,7 @@ enum UsernameRules {
         if username.contains(where: { !allowed.contains($0) }) {
             return "Only lowercase letters, numbers, dots and underscores"
         }
+        if reserved.contains(username) { return "That username isn't available" }
         return nil
     }
 

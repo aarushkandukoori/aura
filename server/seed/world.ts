@@ -3,6 +3,9 @@
  * cast and the crowd, every character's posts, stories and highlights, the group chats and the
  * first "started following you" notification.
  *
+ * When the user described their world at sign-up, the plan they reviewed decides who their people
+ * are, how they know each other, the group chats and what everyone knows about them (plan.ts).
+ *
  * It all runs in one transaction, so a failure never leaves a half-built world behind, and it is
  * quick (one prepared statement per kind of row, ~3,000 inserts).
  */
@@ -13,6 +16,7 @@ import { bit, newId, q, setSetting, tx } from '../db/index.ts'
 import { createGroup, followGroupKey, interestEmoji, interestScore, isVerifiedTier } from '../repo/index.ts'
 import { chance, pick, randomBetween, randomInt, sample, shuffle } from '../repo/random.ts'
 import { loadContent } from './content.ts'
+import { castWithPlan, checkedPlan, seedPlan, type PlannedPersona } from './plan.ts'
 import { seedPosts } from './posts.ts'
 import { seedStories } from './stories.ts'
 
@@ -28,17 +32,23 @@ const FRIEND_GROUP_NAMES: [title: string, emoji: string][] = [
 ]
 
 export function buildWorld(request: OnboardingRequest): void {
-  const { cast, crowd } = loadContent({ fresh: true })
+  const content = loadContent({ fresh: true })
+  const plan = request.plan ? checkedPlan(request.plan, content.cast) : null
+  const people: PlannedPersona[] = plan
+    ? castWithPlan(content.cast, plan)
+    : content.cast.map((persona) => ({ persona, closeness: null }))
+  const cast = people.map((person) => person.persona)
   const time = Date.now()
   tx(() => {
     insertMe(request, time)
     const followedCreators = creatorsToFollow(cast, request.interests)
-    for (const persona of cast) insertCastMember(persona, followedCreators.has(persona.id), time)
-    insertCrowd(crowd.accounts, time)
+    for (const { persona, closeness } of people) insertCastMember(persona, followedCreators.has(persona.id), time, closeness)
+    insertCrowd(content.crowd.accounts, time)
     q("UPDATE accounts SET following = (SELECT COUNT(*) FROM accounts WHERE i_follow = 1) WHERE id = 'me'").run()
-    seedPosts(cast, crowd.accounts.map((account) => account.id), time, request.displayName.split(' ')[0])
+    seedPosts(cast, content.crowd.accounts.map((account) => account.id), time, request.displayName.split(' ')[0])
     seedStories(cast, time)
-    seedGroups(cast, request.interests)
+    if (plan) seedPlan(plan)
+    else seedGroups(cast, request.interests)
     seedFirstFollowers(cast, request.tier, time)
     saveSettings(request)
   })
@@ -71,7 +81,8 @@ function lastActiveAt(role: Role, time: number): number {
   return chance(onlineChance) ? time - randomInt(0, 4) * MINUTE : time - randomInt(20, 600) * MINUTE
 }
 
-function insertCastMember(persona: CastPersona, followedCreator: boolean, time: number): void {
+/** closeness: the plan's order when there is a plan, otherwise the usual number for their role. */
+function insertCastMember(persona: CastPersona, followedCreator: boolean, time: number, closeness: number | null): void {
   const isCreator = persona.role === 'creator'
   const personality = {
     look: persona.look, voice: persona.voice, traits: persona.traits, interests: persona.interests,
@@ -83,7 +94,7 @@ function insertCastMember(persona: CastPersona, followedCreator: boolean, time: 
     persona.id, persona.username.toLowerCase(), persona.displayName, persona.avatar?.file ?? null, persona.bio ?? '',
     persona.pronouns ?? '', persona.location ?? null, persona.occupation ?? null, bit(persona.verified), persona.role,
     JSON.stringify(personality), persona.followers ?? 0, persona.following ?? 0,
-    bit(!isCreator), bit(!isCreator || followedCreator), CLOSENESS[persona.role] ?? 0.3, lastActiveAt(persona.role, time), time,
+    bit(!isCreator), bit(!isCreator || followedCreator), closeness ?? CLOSENESS[persona.role] ?? 0.3, lastActiveAt(persona.role, time), time,
   )
 }
 

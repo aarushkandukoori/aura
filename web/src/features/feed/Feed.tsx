@@ -13,9 +13,10 @@ import { NewPostsPill } from './NewPostsPill'
 import { usePullToRefresh } from './usePullToRefresh'
 
 /**
- * The home feed column: stories tray, posts from me and people I follow (newest first) with a
- * suggested post now and then, endless scrolling, the "New posts" pill, and "You're all caught up"
- * where the posts from people I follow end. Pull down to refresh on phones.
+ * The home feed column: stories tray, posts from me and people I follow (ranked by the server's
+ * recommendation algorithm, server/recs) with a suggested post after every four, endless
+ * scrolling, the "New posts" pill, and "You're all caught up" where the posts from people I follow
+ * end. Pull down to refresh on phones.
  */
 export function Feed() {
   const isMobile = useIsMobile()
@@ -43,7 +44,7 @@ export function Feed() {
           {feed.posts.map((post, index) => (
             <Fragment key={post.id}>
               <PostCard post={post} />
-              {index === caughtUpAt && <CaughtUp since={post.createdAt} moreBelow={index < feed.posts.length - 1 || !feed.done} />}
+              {index === caughtUpAt && <CaughtUp since={oldestFollowed(feed.posts)} moreBelow={index < feed.posts.length - 1 || !feed.done} />}
             </Fragment>
           ))}
           <div ref={feed.sentinelRef} />
@@ -57,8 +58,9 @@ export function Feed() {
 
 /**
  * Where the posts from people I follow run out: the index of the last one, once we know nothing
- * from them comes after it. The server mixes in one suggested post per six, so two suggested posts
- * in a row after it (or the end of the feed) means they really are finished. -1 = not reached yet.
+ * from them comes after it. The server never puts two suggested posts in a row while followed posts
+ * remain, so two in a row after it (or the end of the feed) means they really are finished.
+ * -1 = not reached yet.
  */
 function caughtUpIndex(posts: Post[], done: boolean): number {
   let last = -1
@@ -68,4 +70,9 @@ function caughtUpIndex(posts: Post[], done: boolean): number {
   if (last === -1) return -1
   const suggestedAfter = posts.length - 1 - last
   return done || suggestedAfter >= 2 ? last : -1
+}
+
+/** The ranked feed isn't newest first, so "the past N days" counts from the oldest followed post shown. */
+function oldestFollowed(posts: Post[]): number {
+  return Math.min(...posts.filter((post) => !post.suggested).map((post) => post.createdAt))
 }

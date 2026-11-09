@@ -55,39 +55,41 @@ struct WelcomeStep: View {
 
 /// Profile pictures with story rings, spaced around a circle that turns very slowly.
 /// Each face turns the other way at the same speed, so it stays upright.
-private struct FaceOrbit: View {
+struct FaceOrbit: View {
     let paths: [String]
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var angle = 0.0
 
     private let radius: CGFloat = 132
+    /// One slow turn takes this long.
+    private let turnSeconds = 90.0
 
     var body: some View {
-        ZStack {
-            Circle()
-                .strokeBorder(Theme.border, style: StrokeStyle(lineWidth: 1, dash: [3, 7]))
-                .frame(width: radius * 2, height: radius * 2)
-            ForEach(Array(paths.prefix(8).enumerated()), id: \.offset) { index, path in
-                let spot = Angle.degrees(Double(index) / Double(min(paths.count, 8)) * 360)
-                AvatarView(path: path, size: index.isMultiple(of: 2) ? 60 : 46, ring: .unseen)
-                    .rotationEffect(.degrees(-angle))
-                    .offset(x: cos(spot.radians) * radius, y: sin(spot.radians) * radius)
-                    .transition(.scale.combined(with: .opacity))
+        // The angle comes from the clock, so faces that arrive after the screen appears turn in step.
+        TimelineView(.animation(paused: reduceMotion)) { timeline in
+            let angle = reduceMotion ? 0 : timeline.date.timeIntervalSinceReferenceDate
+                .truncatingRemainder(dividingBy: turnSeconds) / turnSeconds * 360
+            ZStack {
+                Circle()
+                    .strokeBorder(Theme.border, style: StrokeStyle(lineWidth: 1, dash: [3, 7]))
+                    .frame(width: radius * 2, height: radius * 2)
+                ForEach(Array(paths.prefix(8).enumerated()), id: \.offset) { index, path in
+                    let spot = Angle.degrees(Double(index) / Double(min(paths.count, 8)) * 360)
+                    AvatarView(path: path, size: index.isMultiple(of: 2) ? 60 : 46, ring: .unseen)
+                        .rotationEffect(.degrees(-angle))
+                        .offset(x: cos(spot.radians) * radius, y: sin(spot.radians) * radius)
+                        .transition(.scale.combined(with: .opacity))
+                }
             }
+            .rotationEffect(.degrees(angle))
         }
-        .rotationEffect(.degrees(angle))
         .animation(.spring(duration: 0.6), value: paths.count)
-        .onAppear {
-            guard !reduceMotion else { return }
-            withAnimation(.linear(duration: 90).repeatForever(autoreverses: false)) { angle = 360 }
-        }
         .accessibilityHidden(true)
     }
 }
 
 /// A small "notification" bubble that bobs gently next to the wordmark.
-private struct FloatingPill: View {
+struct FloatingPill: View {
     let text: String
     let delay: Double
 

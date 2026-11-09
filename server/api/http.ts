@@ -9,7 +9,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import type { NextFunction, Request, Response } from 'express'
 import type { Media } from '../../shared/types.ts'
-import { isOnboarded, mediaFilePath } from '../repo/index.ts'
+import { hasWorld } from '../db/index.ts'
+import { isUploadUrl, mediaFilePath } from '../repo/files.ts'
+import { isOnboarded } from '../repo/index.ts'
 
 export class HttpError extends Error {
   status: number
@@ -22,6 +24,12 @@ export class HttpError extends Error {
 export const badRequest = (message: string) => new HttpError(400, message)
 export const forbidden = (message: string) => new HttpError(403, message)
 export const notFound = (what: string) => new HttpError(404, `${what} not found`)
+
+/** With sign-in on, everything but the session, health and preset avatars needs a signed-in account (401). */
+export function requireSignIn(_req: Request, _res: Response, next: NextFunction): void {
+  if (!hasWorld()) throw new HttpError(401, 'Sign in to continue')
+  next()
+}
 
 /** Most routes need a world to exist: until onboarding is done they answer 409. */
 export function requireOnboarded(_req: Request, _res: Response, next: NextFunction): void {
@@ -109,7 +117,7 @@ export function wordList(value: unknown, field: string, limits: { min: number; m
  */
 const RESERVED_USERNAMES = new Set([
   'explore', 'reels', 'search', 'create', 'stories', 'highlights', 'messages', 'activity', 'settings', 'saved',
-  'onboarding', 'api', 'media', 'content', 'assets',
+  'onboarding', 'signin', 'auth', 'api', 'media', 'content', 'assets',
 ])
 
 /** Usernames: 3-24 lowercase letters, numbers, dots and underscores, and not an app page. */
@@ -141,8 +149,8 @@ function hasExtensionOf(file: string, type: 'image' | 'video'): boolean {
 }
 
 /**
- * A media URL we serve ourselves: a library image, or an upload that really exists. Its file
- * must be the right kind: a post can't show content/cast.json, and a .webp can't play as a video.
+ * A media URL we serve ourselves: a library image, or an upload of this world that really exists.
+ * Its file must be the right kind: a post can't show content/cast.json, and a .webp can't play as a video.
  */
 export function mediaUrl(value: unknown, field: string, type: 'image' | 'video' = 'image'): string {
   const url = text(value, field, { min: 1, max: 500 })
@@ -150,7 +158,7 @@ export function mediaUrl(value: unknown, field: string, type: 'image' | 'video' 
   if (!file) throw badRequest(`${field} must be an uploaded file or a library image`)
   if (!hasExtensionOf(file, type)) throw badRequest(`${field} must be ${type === 'image' ? 'a photo' : 'a video'}`)
   // Library images may still be generating, so only uploads must already exist.
-  if (url.startsWith('/media/uploads/') && !fs.existsSync(file)) throw badRequest(`${field} was never uploaded`)
+  if (isUploadUrl(url) && !fs.existsSync(file)) throw badRequest(`${field} was never uploaded`)
   return url
 }
 

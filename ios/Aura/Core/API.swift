@@ -27,7 +27,20 @@ enum API {
 
     /// UserDefaults key for the server address. The launch argument `-AuraServer http://host:port` sets it too.
     static let serverKey = "AuraServer"
-    static let defaultServer = "http://localhost:8790"
+
+    /// The server built into the app: the AuraServerURL Info.plist key, which project.yml fills from the
+    /// AURA_SERVER_URL build setting (localhost for development, the public server for a release).
+    /// Settings and the `-AuraServer` launch argument override it.
+    static let defaultServer: String = {
+        let built = (Bundle.main.object(forInfoDictionaryKey: "AuraServerURL") as? String ?? "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        // "$(AURA_SERVER_URL)" left as-is means the build setting was missing.
+        return built.isEmpty || built.hasPrefix("$(") ? "http://localhost:8790" : built
+    }()
+
+    /// Posted when the server answers 401: this sign-in has ended (signed out from the server, or it
+    /// expired). The store goes back to the sign-in screen.
+    static let signedOutNotification = Notification.Name("AuraSignedOut")
 
     /// The server address without a trailing slash, e.g. "http://localhost:8790".
     static var server: String {
@@ -56,14 +69,44 @@ enum API {
         try makeURL("/live")
     }
 
+    // MARK: - Signing in
+
+    /// Where Sign in with Google starts. The server sends the sign-in sheet on to Google, and Google's
+    /// answer comes back to the app as aura://auth?token=... (or aura://auth?error=...).
+    static func googleSignInURL() throws -> URL {
+        try rootURL("/auth/google", query: ["platform": "ios"])
+    }
+
+    /// Signs out on this device: the server forgets the token and ends its live stream.
+    static func signOut() async throws { try await call("POST", "/auth/logout") }
+
+    #if DEBUG
+    /// Test sign-in without Google. Only works on a server started with AURA_DEV_LOGIN=1.
+    static func devSignIn(email: String, name: String?) async throws -> DevSignInResponse {
+        let data = try await perform("POST", try rootURL("/auth/dev"), body: DevSignInRequest(email: email, name: name))
+        return try decode(DevSignInResponse.self, from: data, path: "/auth/dev")
+    }
+
+    private struct DevSignInRequest: Encodable {
+        var email: String
+        var name: String?
+        var platform = "ios" // "ios" answers with a token to keep, like Google sign-in does for this app
+    }
+    #endif
+
     // MARK: - Session, onboarding, settings
 
     static func session() async throws -> Session { try await get("/session") }
     static func health() async throws -> Health { try await get("/health") }
     /// Preset avatar URLs for onboarding and Edit profile.
     static func avatars() async throws -> [String] { try await getList("/avatars") }
+    /// Turns what the person said about their world into a plan to review. With AI this can take
+    /// half a minute or more, so it waits much longer than other requests.
+    static func worldPlan(_ body: WorldPlanRequest) async throws -> WorldPlan {
+        try await send("POST", "/onboarding/plan", body: body, timeout: 180)
+    }
     /// Builds the whole world (takes a few seconds).
-    static func onboard(_ body: OnboardingRequest) async throws -> Session { try await send("POST", "/onboarding", body: body) }
+    static func onboard(_ body: OnboardingRequest) async throws -> Session { try await send("POST", "/onboarding", body: body, timeout: 120) }
     static func updateMe(_ body: UpdateMeRequest) async throws -> Me { try await send("PATCH", "/me", body: body) }
     static func settings() async throws -> AuraSettings { try await get("/settings") }
     static func updateSettings(_ body: UpdateSettingsRequest) async throws -> AuraSettings { try await send("PATCH", "/settings", body: body) }
@@ -184,6 +227,11 @@ enum API {
         try await sendList("POST", "/messages/\(escape(id))/react", body: ReactRequest(emoji: emoji))
     }
 
+    // MARK: - Tracking
+
+    /// What the person looked at, in a batch (Tracker.swift collects and sends them).
+    static func track(_ events: [TrackEvent]) async throws { try await call("POST", "/events", body: TrackRequest(events: events)) }
+
     // MARK: - Plumbing
 
     /// API data is live, so never answer from a cache.
@@ -204,8 +252,14 @@ enum API {
         return part.addingPercentEncoding(withAllowedCharacters: allowed) ?? part
     }
 
+    /// An /api address, e.g. makeURL("/feed") -> http://localhost:8790/api/feed.
     private static func makeURL(_ path: String, query: [String: String?] = [:]) throws -> URL {
-        guard var components = URLComponents(string: server + "/api" + path) else {
+        try rootURL("/api" + path, query: query)
+    }
+
+    /// An address on the server outside /api, e.g. the sign-in routes under /auth.
+    private static func rootURL(_ path: String, query: [String: String?] = [:]) throws -> URL {
+        guard var components = URLComponents(string: server + path) else {
             throw APIError(message: "The server address \(server) doesn't look right.")
         }
         let items = query.compactMap { name, value in value.map { URLQueryItem(name: name, value: $0) } }
@@ -236,24 +290,26 @@ enum API {
     }
 
     private static func send<T: Decodable>(_ method: String, _ path: String, query: [String: String?] = [:],
-                                           body: (any Encodable)? = nil) async throws -> T {
-        let data = try await perform(method, path, query: query, body: body)
+                                           body: (any Encodable)? = nil, timeout: TimeInterval? = nil) async throws -> T {
+        let data = try await perform(method, try makeURL(path, query: query), body: body, timeout: timeout)
         return try decode(T.self, from: data, path: path)
     }
 
     /// For endpoints whose answer we don't need (they reply { ok: true }).
     private static func call(_ method: String, _ path: String, body: (any Encodable)? = nil) async throws {
-        _ = try await perform(method, path, query: [:], body: body)
+        _ = try await perform(method, try makeURL(path), body: body)
     }
 
-    private static func perform(_ method: String, _ path: String, query: [String: String?], body: (any Encodable)?) async throws -> Data {
-        var request = URLRequest(url: try makeURL(path, query: query))
+    private static func perform(_ method: String, _ url: URL, body: (any Encodable)?, timeout: TimeInterval? = nil) async throws -> Data {
+        var request = URLRequest(url: url)
         request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let timeout { request.timeoutInterval = timeout }
         if let body {
             request.httpBody = try JSONEncoder().encode(body)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
+        authorize(&request)
         return try await transfer { try await session.data(for: request) }
     }
 
@@ -265,7 +321,16 @@ enum API {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         if let width { request.setValue(String(width), forHTTPHeaderField: "X-Width") }
         if let height { request.setValue(String(height), forHTTPHeaderField: "X-Height") }
+        authorize(&request)
         return request
+    }
+
+    /// Adds "Authorization: Bearer <token>" when the app is signed in to this server, so the request
+    /// runs in that person's world. LiveStream calls it for the event stream too.
+    static func authorize(_ request: inout URLRequest) {
+        if let token = AuthToken.current {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
     }
 
     /// Runs a request and turns failures into readable APIErrors (using the server's { error } text when there is one).
@@ -280,6 +345,8 @@ enum API {
         }
         let status = (response as? HTTPURLResponse)?.statusCode ?? 0
         guard (200..<300).contains(status) else {
+            // Signed out on the server (or the sign-in expired): the store shows the sign-in screen.
+            if status == 401 { NotificationCenter.default.post(name: signedOutNotification, object: nil) }
             let serverMessage = (try? JSONDecoder().decode(ErrorBody.self, from: data))?.error
             throw APIError(message: serverMessage ?? "Something went wrong (error \(status)).", status: status)
         }

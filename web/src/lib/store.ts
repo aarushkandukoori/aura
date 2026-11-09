@@ -2,11 +2,12 @@
  * The app's shared state (zustand). Screens read from it, and lib/live.ts writes every live server
  * event into it, so a like, a comment or a DM shows up on every screen at once.
  *
- * The state is built from four slices (one file each in lib/slices/):
+ * The state is built from four slices (one file each in lib/slices/), plus sign-in:
  *   session   ready, onboarded, me, settings, badges, banners, toasts, milestone, theme, connected
  *   posts     posts[id] (cache every PostCard reads), postLists[key], newPostIds, comments[postId]
  *   people    accounts[id] (live follow/story/active state), trays, notifications, notificationsCursor
  *   messages  conversations[id], messages[conversationId], messageCursors, typing[conversationId]
+ *   auth      authEnabled, account (the signed-in Google account), signOut (features/auth/slice.ts)
  *
  * Read with a selector:   const me = useStore((s) => s.me)
  * Call actions anywhere:  useStore.getState().toggleLike(post)
@@ -15,23 +16,34 @@
  */
 import { create, type StateCreator } from 'zustand'
 import { useShallow } from 'zustand/react/shallow'
+import { createAuthSlice, type AuthSlice } from '../features/auth/slice'
 import { createMessagesSlice, type MessagesSlice } from './slices/messages'
 import { createPeopleSlice, type PeopleSlice } from './slices/people'
 import { createPostsSlice, type PostsSlice } from './slices/posts'
 import { createSessionSlice, type SessionSlice } from './slices/session'
 import type { Account, Conversation, ID, Me, Post } from './types'
 
-export type AuraState = SessionSlice & PostsSlice & PeopleSlice & MessagesSlice
+export type AuraState = SessionSlice & PostsSlice & PeopleSlice & MessagesSlice & AuthSlice
 
 /** The type of one slice creator: it gets the whole store's set/get and returns its part. */
 export type Slice<T> = StateCreator<AuraState, [], [], T>
 
-export const useStore = create<AuraState>()((...args) => ({
-  ...createSessionSlice(...args),
-  ...createPostsSlice(...args),
-  ...createPeopleSlice(...args),
-  ...createMessagesSlice(...args),
-}))
+export const useStore = create<AuraState>()((...args) => {
+  const [set] = args
+  const session = createSessionSlice(...args)
+  return {
+    ...session,
+    ...createPostsSlice(...args),
+    ...createPeopleSlice(...args),
+    ...createMessagesSlice(...args),
+    ...createAuthSlice(...args),
+    // Every Session also says whether sign-in is on and who is signed in.
+    setSession: (value) => {
+      set({ authEnabled: value.authEnabled, account: value.account })
+      session.setSession(value)
+    },
+  }
+})
 
 export type { Banner, Milestone, Toast } from './slices/session'
 export type { PostList } from './slices/posts'

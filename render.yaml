@@ -1,0 +1,39 @@
+# Render Blueprint: Aura as one Docker web service, with a 1 GB disk at /data for every world.
+# In Render: New > Blueprint > pick this repository. Then fill in the secret values.
+# Full steps (including the Google sign-in setup): DEPLOY.md.
+services:
+  - type: web
+    name: aura
+    runtime: docker
+    plan: starter              # a persistent disk needs a paid instance (free ones lose all data on restart)
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    disk:
+      name: aura-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      # Secrets: Render asks for these when the Blueprint is created.
+      - key: AURA_PUBLIC_URL     # the service's address, e.g. https://aura-x1y2.onrender.com (no slash at the end)
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY          # optional: OpenAI instead of Claude (leave empty when using Anthropic)
+        sync: false
+      # Spending limits for a public server (change them any time in the dashboard).
+      - key: AURA_DEFAULT_MODEL
+        value: haiku
+      - key: AURA_ALLOWED_MODELS
+        value: haiku
+      - key: AURA_AI_DAILY_CAP          # AI calls per world per day
+        value: "200"
+      - key: AURA_AI_GLOBAL_DAILY_CAP   # AI calls per day for everyone together
+        value: "2000"
+      - key: AURA_AI_CONCURRENCY
+        value: "6"
+      - key: AURA_UPLOAD_LIMIT_MB
+        value: "40"

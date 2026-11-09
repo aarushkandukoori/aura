@@ -56,7 +56,9 @@ final class PostDraft {
     var tagged: [Account] = []
 
     private(set) var isSharing = false
-    private(set) var shareStatus = ""
+    /// How far sharing has got, 0...1, for the "Posting…" row's progress bar. Each step (an upload,
+    /// then publishing) moves it to where that step will end, and the bar eases there.
+    private(set) var shareProgress = 0.0
     var errorMessage: String?
 
     var isVideo: Bool { media.first?.isVideo ?? false }
@@ -109,28 +111,33 @@ final class PostDraft {
     // MARK: - Sharing
 
     /// Crops and filters the photos, uploads everything and publishes the post.
-    /// Returns true when the post is live.
+    /// Returns true when the post is live. PostingQueue runs it while Home shows the progress.
     func share(using store: AppStore) async -> Bool {
         guard !media.isEmpty, !isSharing else { return false }
         isSharing = true
         errorMessage = nil
+        shareProgress = 0
         defer { isSharing = false }
+        // One step per upload (a video is one upload), then one to publish. The bar stops a little
+        // short of the end until the post is really live.
+        let steps = Double((media.first?.isVideo == true ? 1 : media.count) + 1)
+        func starting(step: Int) { shareProgress = 0.92 * Double(step + 1) / steps }
         do {
             var uploaded: [Media] = []
             if let videoURL = media.first?.videoURL {
-                shareStatus = "Uploading your video…"
+                starting(step: 0)
                 uploaded.append(try await Uploader.uploadVideo(at: videoURL))
             } else {
                 let ratio = cropRatio
                 for (number, item) in media.enumerated() {
-                    shareStatus = media.count > 1 ? "Uploading \(number + 1) of \(media.count)…" : "Uploading…"
+                    starting(step: number)
                     let finished = await Task.detached(priority: .userInitiated) {
                         PhotoEditing.render(item.image, ratio: ratio, focus: item.focus, filter: item.filter)
                     }.value
                     uploaded.append(try await Uploader.uploadImage(finished))
                 }
             }
-            shareStatus = "Sharing…"
+            starting(step: Int(steps) - 1)
             let place = location.trimmingCharacters(in: .whitespacesAndNewlines)
             let request = CreatePostRequest(
                 kind: isVideo ? .reel : (uploaded.count > 1 ? .carousel : .photo),
@@ -140,6 +147,7 @@ final class PostDraft {
                 taggedIds: tagged.map(\.id)
             )
             _ = try await store.createPost(request)
+            shareProgress = 1
             return true
         } catch {
             if !error.isCancellation { errorMessage = error.localizedDescription }

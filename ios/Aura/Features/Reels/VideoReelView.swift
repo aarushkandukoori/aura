@@ -10,12 +10,15 @@ struct VideoReelView: View {
     let isMuted: Bool
     /// Room to leave under the progress bar (the tab bar).
     let progressInset: CGFloat
+    /// Told the video's length in seconds once it is known (for tracking whether it was watched to the end).
+    var onDuration: (Double) -> Void = { _ in }
 
     @State private var player: AVQueuePlayer?
     /// Keeps the video looping (it must stay alive as long as the player).
     @State private var looper: AVPlayerLooper?
     @State private var timeObserver: Any?
     @State private var progress = 0.0
+    @State private var reportedDuration = false
 
     var body: some View {
         ZStack {
@@ -53,6 +56,10 @@ struct VideoReelView: View {
                                                      queue: .main) { time in
             guard let duration = queue.currentItem?.duration.seconds, duration.isFinite, duration > 0 else { return }
             progress = time.seconds / duration
+            if !reportedDuration {
+                reportedDuration = true
+                onDuration(duration)
+            }
         }
         player = queue
         updatePlayback()
@@ -65,6 +72,7 @@ struct VideoReelView: View {
         looper = nil
         player = nil
         progress = 0
+        reportedDuration = false
     }
 
     private func updatePlayback() {

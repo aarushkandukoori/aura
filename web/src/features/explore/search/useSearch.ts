@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api } from '../../../lib/api'
 import { useDebouncedValue } from '../../../lib/hooks'
+import { trackSearch } from '../../../lib/track'
 import type { SearchResult } from '../../../lib/types'
 
 /** What a search box shows: the latest results, an error, and whether newer results are on the way. */
@@ -26,6 +27,9 @@ export function useSearch(query: string): LiveSearch {
   const text = query.trim()
   const debounced = useDebouncedValue(text, 250)
   const [state, setState] = useState<SearchState>({ query: '', result: null, error: null })
+  // A query the user stopped typing for a second is a search the recommendation algorithm learns from.
+  const settled = useDebouncedValue(text, 1000)
+  useEffect(() => trackSearch(settled), [settled])
 
   useEffect(() => {
     if (!debounced) return

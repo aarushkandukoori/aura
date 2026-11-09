@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router'
 import { useOpenPost } from '../../app/navigation'
+import { trackOpen } from '../../lib/track'
 import type { Post } from '../../lib/types'
 
 /**
@@ -11,7 +12,11 @@ export function useOpenGridPost(): (post: Post) => void {
   const navigate = useNavigate()
   const openPost = useOpenPost()
   return useCallback(
-    (post: Post) => (post.kind === 'reel' ? navigate(`/reels/${post.id}`) : openPost(post.id)),
+    (post: Post) => {
+      trackOpen(post.id) // picking a tile says "more like this" to the recommendation algorithm
+      if (post.kind === 'reel') navigate(`/reels/${post.id}`)
+      else openPost(post.id)
+    },
     [navigate, openPost],
   )
 }

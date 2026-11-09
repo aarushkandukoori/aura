@@ -46,10 +46,22 @@ export function startLive(): () => void {
       // The browser retries a dropped stream by itself, but gives up for good when the server
       // answers with an error (for example while it restarts). Then we try again ourselves.
       if (source?.readyState === EventSource.CLOSED && !stopped) {
-        retryTimer = window.setTimeout(connect, retryDelay)
+        retryTimer = window.setTimeout(reconnect, retryDelay)
         retryDelay = Math.min(retryDelay * 2, 15_000)
       }
     }
+  }
+
+  // A stream refused with 401 (signed out in another tab, or the session expired) looks like any
+  // other error to EventSource, so ask the server whether we are still signed in before retrying.
+  async function reconnect() {
+    const session = await api.session().catch(() => null)
+    if (stopped) return
+    if (session?.authEnabled && !session.account) {
+      useStore.getState().markSignedOut() // the session gate shows the sign-in page
+      return
+    }
+    connect()
   }
 
   connect()

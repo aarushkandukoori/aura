@@ -1,0 +1,1566 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-08T22:40:46.673Z",
+ "model": "haiku",
+ "topics": {
+  "aisha-p1": [
+   "art",
+   "coffee"
+  ],
+  "aisha-p2": [
+   "city",
+   "fashion"
+  ],
+  "aisha-p3": [
+   "art",
+   "city"
+  ],
+  "aisha-p4": [
+   "art",
+   "study"
+  ],
+  "aisha-p5": [
+   "food",
+   "family"
+  ],
+  "aisha-p6": [
+   "art",
+   "travel"
+  ],
+  "aisha-p7": [
+   "travel",
+   "friends"
+  ],
+  "aisha-s1": [
+   "travel",
+   "city"
+  ],
+  "aisha-s2": [
+   "selfie",
+   "work"
+  ],
+  "aisha-s3": [
+   "art",
+   "coffee"
+  ],
+  "andre-p1": [
+   "comedy"
+  ],
+  "andre-p10": [
+   "comedy",
+   "work"
+  ],
+  "andre-p11": [
+   "comedy",
+   "celebrations"
+  ],
+  "andre-p2": [
+   "food",
+   "comedy"
+  ],
+  "andre-p3": [
+   "comedy",
+   "family"
+  ],
+  "andre-p4": [
+   "sports",
+   "comedy"
+  ],
+  "andre-p5": [
+   "family",
+   "food",
+   "comedy"
+  ],
+  "andre-p6": [
+   "city",
+   "nightlife"
+  ],
+  "andre-p7": [
+   "sports"
+  ],
+  "andre-p8": [
+   "food"
+  ],
+  "andre-p9": [
+   "home",
+   "comedy"
+  ],
+  "andre-r1": [
+   "fitness",
+   "comedy"
+  ],
+  "andre-r2": [
+   "family",
+   "comedy"
+  ],
+  "andre-s1": [
+   "family",
+   "comedy"
+  ],
+  "andre-s2": [
+   "selfie",
+   "comedy"
+  ],
+  "andre-s3": [
+   "nature",
+   "city"
+  ],
+  "brianna-p1": [
+   "beauty",
+   "selfie"
+  ],
+  "brianna-p2": [
+   "beauty",
+   "fashion"
+  ],
+  "brianna-p3": [
+   "food",
+   "music"
+  ],
+  "brianna-p4": [
+   "dance",
+   "nightlife"
+  ],
+  "brianna-p5": [
+   "beauty",
+   "celebrations"
+  ],
+  "brianna-p6": [
+   "beauty",
+   "work"
+  ],
+  "brianna-p7": [
+   "beauty",
+   "fashion"
+  ],
+  "brianna-s1": [
+   "beauty",
+   "work"
+  ],
+  "brianna-s2": [
+   "coffee",
+   "beauty"
+  ],
+  "brianna-s3": [
+   "beauty"
+  ],
+  "chloe-p1": [
+   "work",
+   "selfie"
+  ],
+  "chloe-p2": [
+   "cooking",
+   "study"
+  ],
+  "chloe-p3": [
+   "sports",
+   "friends"
+  ],
+  "chloe-p4": [
+   "study",
+   "music"
+  ],
+  "chloe-p5": [
+   "film",
+   "friends"
+  ],
+  "chloe-s1": [
+   "work",
+   "coffee"
+  ],
+  "chloe-s2": [
+   "selfie",
+   "home"
+  ],
+  "connor-p1": [
+   "work",
+   "fashion"
+  ],
+  "connor-p2": [
+   "sports",
+   "study"
+  ],
+  "connor-p3": [
+   "sports",
+   "friends"
+  ],
+  "connor-p4": [
+   "fitness"
+  ],
+  "connor-p5": [
+   "food"
+  ],
+  "connor-p6": [
+   "family",
+   "sports"
+  ],
+  "connor-p7": [
+   "gaming",
+   "sports"
+  ],
+  "connor-s1": [
+   "fashion",
+   "selfie"
+  ],
+  "connor-s2": [
+   "study",
+   "work"
+  ],
+  "connor-s3": [
+   "city"
+  ],
+  "dani-p1": [
+   "fitness",
+   "sports"
+  ],
+  "dani-p10": [
+   "fitness",
+   "friends",
+   "celebrations"
+  ],
+  "dani-p11": [
+   "city",
+   "celebrations"
+  ],
+  "dani-p2": [
+   "food",
+   "fitness"
+  ],
+  "dani-p3": [
+   "pets",
+   "fitness"
+  ],
+  "dani-p4": [
+   "fitness",
+   "music"
+  ],
+  "dani-p5": [
+   "fitness",
+   "friends"
+  ],
+  "dani-p6": [
+   "fitness",
+   "selfie"
+  ],
+  "dani-p7": [
+   "wellness",
+   "outdoors"
+  ],
+  "dani-p8": [
+   "sports",
+   "fitness",
+   "celebrations"
+  ],
+  "dani-p9": [
+   "food",
+   "friends"
+  ],
+  "dani-r1": [
+   "sports",
+   "fitness",
+   "friends"
+  ],
+  "dani-r2": [
+   "food",
+   "fitness"
+  ],
+  "dani-s1": [
+   "fitness",
+   "selfie"
+  ],
+  "dani-s2": [
+   "pets",
+   "fitness"
+  ],
+  "dani-s3": [
+   "food",
+   "cooking"
+  ],
+  "diego-p1": [
+   "music",
+   "work",
+   "nightlife"
+  ],
+  "diego-p10": [
+   "family",
+   "celebrations"
+  ],
+  "diego-p2": [
+   "food"
+  ],
+  "diego-p3": [
+   "music"
+  ],
+  "diego-p4": [
+   "sports",
+   "friends"
+  ],
+  "diego-p5": [
+   "music",
+   "work"
+  ],
+  "diego-p6": [
+   "friends",
+   "celebrations",
+   "food"
+  ],
+  "diego-p7": [
+   "music",
+   "home"
+  ],
+  "diego-p8": [
+   "food"
+  ],
+  "diego-p9": [
+   "work",
+   "music"
+  ],
+  "diego-r1": [
+   "music",
+   "work",
+   "food"
+  ],
+  "diego-s1": [
+   "music",
+   "work"
+  ],
+  "diego-s2": [
+   "food"
+  ],
+  "diego-s3": [
+   "music",
+   "home"
+  ],
+  "eli-p1": [
+   "music",
+   "study"
+  ],
+  "eli-p10": [
+   "music"
+  ],
+  "eli-p11": [
+   "music",
+   "nature"
+  ],
+  "eli-p2": [
+   "music",
+   "nature"
+  ],
+  "eli-p3": [
+   "music"
+  ],
+  "eli-p4": [
+   "music",
+   "nightlife"
+  ],
+  "eli-p5": [
+   "music",
+   "pets"
+  ],
+  "eli-p6": [
+   "music"
+  ],
+  "eli-p7": [
+   "food",
+   "family"
+  ],
+  "eli-p8": [
+   "music",
+   "outdoors",
+   "nature"
+  ],
+  "eli-p9": [
+   "music",
+   "celebrations"
+  ],
+  "eli-r1": [
+   "music"
+  ],
+  "eli-r2": [
+   "music",
+   "travel"
+  ],
+  "eli-s1": [
+   "coffee",
+   "music"
+  ],
+  "eli-s2": [
+   "selfie",
+   "music"
+  ],
+  "eli-s3": [
+   "pets",
+   "music"
+  ],
+  "emma-p1": [
+   "art",
+   "work"
+  ],
+  "emma-p2": [
+   "books",
+   "family"
+  ],
+  "emma-p3": [
+   "food",
+   "nature"
+  ],
+  "emma-p4": [
+   "art",
+   "family"
+  ],
+  "emma-p5": [
+   "nature",
+   "photography"
+  ],
+  "emma-s1": [
+   "food",
+   "work"
+  ],
+  "emma-s2": [
+   "fashion",
+   "selfie"
+  ],
+  "ethan-p1": [
+   "tech",
+   "home"
+  ],
+  "ethan-p2": [
+   "cycling",
+   "outdoors"
+  ],
+  "ethan-p3": [
+   "food"
+  ],
+  "ethan-p4": [
+   "friends",
+   "food"
+  ],
+  "ethan-p5": [
+   "cycling",
+   "outdoors"
+  ],
+  "ethan-p6": [
+   "tech",
+   "photography"
+  ],
+  "ethan-p7": [
+   "science",
+   "tech"
+  ],
+  "ethan-s1": [
+   "tech"
+  ],
+  "ethan-s2": [
+   "cycling",
+   "beach"
+  ],
+  "ethan-s3": [
+   "food",
+   "selfie"
+  ],
+  "gabriel-p1": [
+   "pets",
+   "fashion"
+  ],
+  "gabriel-p2": [
+   "sports",
+   "food"
+  ],
+  "gabriel-p3": [
+   "cooking",
+   "food"
+  ],
+  "gabriel-p4": [
+   "outdoors",
+   "fitness"
+  ],
+  "gabriel-p5": [
+   "work",
+   "celebrations"
+  ],
+  "gabriel-p6": [
+   "pets",
+   "outdoors"
+  ],
+  "gabriel-p7": [
+   "sports"
+  ],
+  "gabriel-s1": [
+   "work",
+   "wellness"
+  ],
+  "gabriel-s2": [
+   "pets"
+  ],
+  "gabriel-s3": [
+   "cooking"
+  ],
+  "hana-p1": [
+   "art",
+   "pets"
+  ],
+  "hana-p2": [
+   "food",
+   "art"
+  ],
+  "hana-p3": [
+   "pets",
+   "fashion"
+  ],
+  "hana-p4": [
+   "pets",
+   "home"
+  ],
+  "hana-p5": [
+   "work"
+  ],
+  "hana-p6": [
+   "art",
+   "home"
+  ],
+  "hana-p7": [
+   "gaming",
+   "home"
+  ],
+  "hana-p8": [
+   "travel",
+   "food",
+   "friends"
+  ],
+  "hana-p9": [
+   "pets",
+   "outdoors"
+  ],
+  "hana-r1": [
+   "art",
+   "pets",
+   "work"
+  ],
+  "hana-s1": [
+   "pets"
+  ],
+  "hana-s2": [
+   "work",
+   "tech",
+   "food"
+  ],
+  "hana-s3": [
+   "art",
+   "tech"
+  ],
+  "ines-p1": [
+   "art",
+   "pets"
+  ],
+  "ines-p10": [
+   "pets",
+   "art"
+  ],
+  "ines-p11": [
+   "books",
+   "wellness"
+  ],
+  "ines-p2": [
+   "art",
+   "pets"
+  ],
+  "ines-p3": [
+   "food",
+   "art"
+  ],
+  "ines-p4": [
+   "art"
+  ],
+  "ines-p5": [
+   "pets",
+   "art"
+  ],
+  "ines-p6": [
+   "city",
+   "art"
+  ],
+  "ines-p7": [
+   "art",
+   "home"
+  ],
+  "ines-p8": [
+   "food",
+   "art"
+  ],
+  "ines-p9": [
+   "art",
+   "friends"
+  ],
+  "ines-r1": [
+   "art",
+   "home"
+  ],
+  "ines-r2": [
+   "food",
+   "art"
+  ],
+  "ines-s1": [
+   "pets",
+   "art"
+  ],
+  "ines-s2": [
+   "food",
+   "city"
+  ],
+  "ines-s3": [
+   "art"
+  ],
+  "jamal-p1": [
+   "photography",
+   "city"
+  ],
+  "jamal-p2": [
+   "photography",
+   "work"
+  ],
+  "jamal-p3": [
+   "music",
+   "nightlife"
+  ],
+  "jamal-p4": [
+   "sports",
+   "photography"
+  ],
+  "jamal-p5": [
+   "photography",
+   "city"
+  ],
+  "jamal-s1": [
+   "photography"
+  ],
+  "jamal-s2": [
+   "selfie",
+   "photography"
+  ],
+  "jules-p1": [
+   "art",
+   "home"
+  ],
+  "jules-p10": [
+   "outdoors",
+   "coffee",
+   "friends"
+  ],
+  "jules-p2": [
+   "coffee",
+   "cooking"
+  ],
+  "jules-p3": [
+   "film",
+   "friends"
+  ],
+  "jules-p4": [
+   "art",
+   "work"
+  ],
+  "jules-p5": [
+   "home",
+   "nature"
+  ],
+  "jules-p6": [
+   "celebrations",
+   "art",
+   "coffee"
+  ],
+  "jules-p7": [
+   "coffee",
+   "science"
+  ],
+  "jules-p8": [
+   "coffee",
+   "work"
+  ],
+  "jules-p9": [
+   "art",
+   "work"
+  ],
+  "jules-r1": [
+   "art"
+  ],
+  "jules-s1": [
+   "art"
+  ],
+  "jules-s2": [
+   "film",
+   "home"
+  ],
+  "jules-s3": [
+   "coffee"
+  ],
+  "kenji-p1": [
+   "city",
+   "photography"
+  ],
+  "kenji-p10": [
+   "food",
+   "nightlife"
+  ],
+  "kenji-p11": [
+   "city",
+   "nature"
+  ],
+  "kenji-p2": [
+   "coffee",
+   "music"
+  ],
+  "kenji-p3": [
+   "photography",
+   "work"
+  ],
+  "kenji-p4": [
+   "books",
+   "art"
+  ],
+  "kenji-p5": [
+   "photography",
+   "city"
+  ],
+  "kenji-p6": [
+   "photography",
+   "city"
+  ],
+  "kenji-p7": [
+   "photography",
+   "film"
+  ],
+  "kenji-p8": [
+   "pets",
+   "city"
+  ],
+  "kenji-p9": [
+   "photography",
+   "city"
+  ],
+  "kenji-r1": [
+   "photography",
+   "film"
+  ],
+  "kenji-r2": [
+   "books",
+   "art"
+  ],
+  "kenji-s1": [
+   "music",
+   "coffee"
+  ],
+  "kenji-s2": [
+   "photography",
+   "film"
+  ],
+  "kenji-s3": [
+   "city",
+   "photography"
+  ],
+  "kwame-p1": [
+   "gaming",
+   "comedy",
+   "celebrations"
+  ],
+  "kwame-p2": [
+   "cooking",
+   "food"
+  ],
+  "kwame-p3": [
+   "books",
+   "home"
+  ],
+  "kwame-p4": [
+   "sports",
+   "friends",
+   "nightlife"
+  ],
+  "kwame-p5": [
+   "gaming",
+   "friends"
+  ],
+  "kwame-p6": [
+   "cooking",
+   "celebrations"
+  ],
+  "kwame-p7": [
+   "work",
+   "city"
+  ],
+  "kwame-p8": [
+   "gaming",
+   "friends",
+   "comedy"
+  ],
+  "kwame-p9": [
+   "family",
+   "food"
+  ],
+  "kwame-r1": [
+   "gaming",
+   "comedy",
+   "tech"
+  ],
+  "kwame-s1": [
+   "gaming",
+   "tech"
+  ],
+  "kwame-s2": [
+   "selfie",
+   "city"
+  ],
+  "kwame-s3": [
+   "cooking",
+   "food"
+  ],
+  "leah-p1": [
+   "books",
+   "friends",
+   "food"
+  ],
+  "leah-p2": [
+   "work",
+   "city"
+  ],
+  "leah-p3": [
+   "pets"
+  ],
+  "leah-p4": [
+   "cooking",
+   "celebrations",
+   "food"
+  ],
+  "leah-p5": [
+   "friends",
+   "books"
+  ],
+  "leah-p6": [
+   "music",
+   "art"
+  ],
+  "leah-p7": [
+   "pets",
+   "outdoors"
+  ],
+  "leah-p8": [
+   "fashion",
+   "selfie"
+  ],
+  "leah-p9": [
+   "books"
+  ],
+  "leah-r1": [
+   "cooking",
+   "food",
+   "celebrations"
+  ],
+  "leah-s1": [
+   "cooking",
+   "food"
+  ],
+  "leah-s2": [
+   "music"
+  ],
+  "leah-s3": [
+   "pets",
+   "food"
+  ],
+  "lily-p1": [
+   "fashion",
+   "selfie"
+  ],
+  "lily-p2": [
+   "art"
+  ],
+  "lily-p3": [
+   "fashion"
+  ],
+  "lily-p4": [
+   "film",
+   "wellness"
+  ],
+  "lily-p5": [
+   "city",
+   "photography"
+  ],
+  "lily-s1": [
+   "fashion",
+   "home"
+  ],
+  "lily-s2": [
+   "study",
+   "selfie"
+  ],
+  "marcus-p1": [
+   "science",
+   "work"
+  ],
+  "marcus-p2": [
+   "cooking",
+   "food"
+  ],
+  "marcus-p3": [
+   "home",
+   "coffee"
+  ],
+  "marcus-p4": [
+   "sports",
+   "celebrations"
+  ],
+  "marcus-p5": [
+   "science",
+   "work"
+  ],
+  "marcus-p6": [
+   "cooking",
+   "food",
+   "friends"
+  ],
+  "marcus-p7": [
+   "pets",
+   "home"
+  ],
+  "marcus-p8": [
+   "work",
+   "study"
+  ],
+  "marcus-p9": [
+   "friends",
+   "study"
+  ],
+  "marcus-r1": [
+   "cooking",
+   "home",
+   "food"
+  ],
+  "marcus-s1": [
+   "work",
+   "food"
+  ],
+  "marcus-s2": [
+   "science",
+   "work"
+  ],
+  "marcus-s3": [
+   "pets",
+   "selfie"
+  ],
+  "maya-p1": [
+   "work",
+   "selfie",
+   "coffee"
+  ],
+  "maya-p10": [
+   "pets",
+   "celebrations"
+  ],
+  "maya-p2": [
+   "pets",
+   "home"
+  ],
+  "maya-p3": [
+   "food"
+  ],
+  "maya-p4": [
+   "music",
+   "nightlife",
+   "friends"
+  ],
+  "maya-p5": [
+   "fashion"
+  ],
+  "maya-p6": [
+   "pets",
+   "wellness"
+  ],
+  "maya-p7": [
+   "cooking",
+   "food",
+   "family"
+  ],
+  "maya-p8": [
+   "friends",
+   "city",
+   "selfie"
+  ],
+  "maya-p9": [
+   "work",
+   "fashion"
+  ],
+  "maya-r1": [
+   "pets",
+   "work",
+   "fashion"
+  ],
+  "maya-s1": [
+   "work",
+   "food"
+  ],
+  "maya-s2": [
+   "pets",
+   "selfie"
+  ],
+  "maya-s3": [
+   "food",
+   "city"
+  ],
+  "noor-p1": [
+   "sports",
+   "fitness"
+  ],
+  "noor-p2": [
+   "coffee",
+   "food"
+  ],
+  "noor-p3": [
+   "gaming",
+   "home"
+  ],
+  "noor-p4": [
+   "outdoors",
+   "nature"
+  ],
+  "noor-p5": [
+   "sports",
+   "fitness"
+  ],
+  "noor-p6": [
+   "work",
+   "wellness"
+  ],
+  "noor-p7": [
+   "food",
+   "family"
+  ],
+  "noor-p8": [
+   "friends",
+   "sports"
+  ],
+  "noor-p9": [
+   "outdoors",
+   "sports"
+  ],
+  "noor-r1": [
+   "sports",
+   "fitness"
+  ],
+  "noor-s1": [
+   "sports"
+  ],
+  "noor-s2": [
+   "coffee",
+   "work"
+  ],
+  "noor-s3": [
+   "gaming",
+   "home"
+  ],
+  "omar-p1": [
+   "tech",
+   "work"
+  ],
+  "omar-p2": [
+   "tech",
+   "study"
+  ],
+  "omar-p3": [
+   "sports",
+   "friends"
+  ],
+  "omar-p4": [
+   "food",
+   "family"
+  ],
+  "omar-p5": [
+   "tech",
+   "study"
+  ],
+  "omar-s1": [
+   "tech"
+  ],
+  "omar-s2": [
+   "coffee",
+   "study"
+  ],
+  "priya-p1": [
+   "travel",
+   "work"
+  ],
+  "priya-p10": [
+   "travel",
+   "nature",
+   "outdoors"
+  ],
+  "priya-p2": [
+   "dance",
+   "fitness"
+  ],
+  "priya-p3": [
+   "home"
+  ],
+  "priya-p4": [
+   "food",
+   "friends"
+  ],
+  "priya-p5": [
+   "film",
+   "home"
+  ],
+  "priya-p6": [
+   "friends",
+   "city",
+   "selfie"
+  ],
+  "priya-p7": [
+   "food",
+   "family",
+   "cooking"
+  ],
+  "priya-p8": [
+   "outdoors",
+   "nature",
+   "coffee"
+  ],
+  "priya-p9": [
+   "work"
+  ],
+  "priya-r1": [
+   "work",
+   "travel",
+   "outdoors"
+  ],
+  "priya-s1": [
+   "work"
+  ],
+  "priya-s2": [
+   "outdoors",
+   "city"
+  ],
+  "priya-s3": [
+   "food",
+   "film"
+  ],
+  "rafi-p1": [
+   "cooking",
+   "family",
+   "food"
+  ],
+  "rafi-p2": [
+   "music",
+   "tech"
+  ],
+  "rafi-p3": [
+   "food"
+  ],
+  "rafi-p4": [
+   "cooking",
+   "work"
+  ],
+  "rafi-p5": [
+   "fashion"
+  ],
+  "rafi-p6": [
+   "sports",
+   "fitness"
+  ],
+  "rafi-p7": [
+   "cooking",
+   "food"
+  ],
+  "rafi-p8": [
+   "friends",
+   "food"
+  ],
+  "rafi-p9": [
+   "work",
+   "food"
+  ],
+  "rafi-r1": [
+   "cooking",
+   "comedy"
+  ],
+  "rafi-s1": [
+   "food"
+  ],
+  "rafi-s2": [
+   "selfie",
+   "work"
+  ],
+  "rafi-s3": [
+   "music",
+   "tech"
+  ],
+  "river-p1": [
+   "outdoors",
+   "nature"
+  ],
+  "river-p2": [
+   "art",
+   "home"
+  ],
+  "river-p3": [
+   "art",
+   "books"
+  ],
+  "river-p4": [
+   "gaming"
+  ],
+  "river-p5": [
+   "books",
+   "art"
+  ],
+  "river-p6": [
+   "wellness",
+   "home"
+  ],
+  "river-p7": [
+   "books",
+   "work"
+  ],
+  "river-s1": [
+   "outdoors"
+  ],
+  "river-s2": [
+   "selfie",
+   "wellness"
+  ],
+  "river-s3": [
+   "books"
+  ],
+  "rosa-p1": [
+   "cooking",
+   "family"
+  ],
+  "rosa-p10": [
+   "family",
+   "friends"
+  ],
+  "rosa-p11": [
+   "cooking",
+   "food"
+  ],
+  "rosa-p2": [
+   "family",
+   "home"
+  ],
+  "rosa-p3": [
+   "cooking",
+   "nature"
+  ],
+  "rosa-p4": [
+   "family",
+   "cooking"
+  ],
+  "rosa-p5": [
+   "cooking",
+   "food"
+  ],
+  "rosa-p6": [
+   "nature",
+   "cooking"
+  ],
+  "rosa-p7": [
+   "food",
+   "coffee"
+  ],
+  "rosa-p8": [
+   "celebrations",
+   "food"
+  ],
+  "rosa-p9": [
+   "cooking"
+  ],
+  "rosa-r1": [
+   "cooking"
+  ],
+  "rosa-r2": [
+   "cooking",
+   "nature"
+  ],
+  "rosa-s1": [
+   "cooking",
+   "food"
+  ],
+  "rosa-s2": [
+   "nature",
+   "coffee"
+  ],
+  "rosa-s3": [
+   "film",
+   "home"
+  ],
+  "sam-p1": [
+   "food",
+   "cooking"
+  ],
+  "sam-p2": [
+   "cycling",
+   "family"
+  ],
+  "sam-p3": [
+   "nature",
+   "outdoors"
+  ],
+  "sam-p4": [
+   "cycling",
+   "work"
+  ],
+  "sam-p5": [
+   "music",
+   "friends"
+  ],
+  "sam-p6": [
+   "cycling",
+   "travel"
+  ],
+  "sam-p7": [
+   "food",
+   "cooking"
+  ],
+  "sam-s1": [
+   "cycling"
+  ],
+  "sam-s2": [
+   "nature"
+  ],
+  "sam-s3": [
+   "cooking",
+   "food"
+  ],
+  "sofia-p1": [
+   "nature",
+   "science"
+  ],
+  "sofia-p2": [
+   "study",
+   "coffee",
+   "food"
+  ],
+  "sofia-p3": [
+   "dance",
+   "nightlife",
+   "friends"
+  ],
+  "sofia-p4": [
+   "science",
+   "nature",
+   "outdoors"
+  ],
+  "sofia-p5": [
+   "film",
+   "friends",
+   "food"
+  ],
+  "sofia-p6": [
+   "family",
+   "cooking"
+  ],
+  "sofia-p7": [
+   "beach",
+   "nature",
+   "travel"
+  ],
+  "sofia-p8": [
+   "comedy",
+   "selfie"
+  ],
+  "sofia-p9": [
+   "science",
+   "study"
+  ],
+  "sofia-r1": [
+   "nature",
+   "science",
+   "travel"
+  ],
+  "sofia-s1": [
+   "science",
+   "nature"
+  ],
+  "sofia-s2": [
+   "work",
+   "science",
+   "beach"
+  ],
+  "sofia-s3": [
+   "dance",
+   "fashion"
+  ],
+  "theo-p1": [
+   "travel",
+   "nature"
+  ],
+  "theo-p10": [
+   "pets",
+   "travel"
+  ],
+  "theo-p11": [
+   "travel",
+   "nature"
+  ],
+  "theo-p2": [
+   "food",
+   "travel"
+  ],
+  "theo-p3": [
+   "pets",
+   "travel"
+  ],
+  "theo-p4": [
+   "study",
+   "travel"
+  ],
+  "theo-p5": [
+   "travel"
+  ],
+  "theo-p6": [
+   "food",
+   "travel"
+  ],
+  "theo-p7": [
+   "pets",
+   "travel"
+  ],
+  "theo-p8": [
+   "travel",
+   "city"
+  ],
+  "theo-p9": [
+   "cooking",
+   "travel"
+  ],
+  "theo-r1": [
+   "travel",
+   "pets"
+  ],
+  "theo-r2": [
+   "food",
+   "travel"
+  ],
+  "theo-s1": [
+   "pets",
+   "travel"
+  ],
+  "theo-s2": [
+   "coffee",
+   "food"
+  ],
+  "theo-s3": [
+   "travel"
+  ],
+  "tyler-p1": [
+   "fitness",
+   "sports"
+  ],
+  "tyler-p2": [
+   "food",
+   "cooking",
+   "fitness"
+  ],
+  "tyler-p3": [
+   "outdoors",
+   "fitness",
+   "nature"
+  ],
+  "tyler-p4": [
+   "friends",
+   "fitness",
+   "food"
+  ],
+  "tyler-p5": [
+   "outdoors",
+   "pets",
+   "travel"
+  ],
+  "tyler-p6": [
+   "wellness",
+   "work"
+  ],
+  "tyler-p7": [
+   "pets",
+   "outdoors",
+   "fitness"
+  ],
+  "tyler-p8": [
+   "fitness",
+   "food"
+  ],
+  "tyler-p9": [
+   "family",
+   "celebrations",
+   "food"
+  ],
+  "tyler-r1": [
+   "fitness",
+   "cooking",
+   "pets"
+  ],
+  "tyler-s1": [
+   "fitness"
+  ],
+  "tyler-s2": [
+   "pets",
+   "home"
+  ],
+  "tyler-s3": [
+   "fitness",
+   "outdoors"
+  ],
+  "zara-p1": [
+   "fashion",
+   "selfie"
+  ],
+  "zara-p10": [
+   "food",
+   "friends"
+  ],
+  "zara-p11": [
+   "fashion"
+  ],
+  "zara-p2": [
+   "fashion",
+   "beauty"
+  ],
+  "zara-p3": [
+   "fashion"
+  ],
+  "zara-p4": [
+   "food",
+   "wellness"
+  ],
+  "zara-p5": [
+   "fashion",
+   "city"
+  ],
+  "zara-p6": [
+   "fashion"
+  ],
+  "zara-p7": [
+   "fashion",
+   "celebrations"
+  ],
+  "zara-p8": [
+   "city",
+   "travel"
+  ],
+  "zara-p9": [
+   "fashion"
+  ],
+  "zara-r1": [
+   "fashion"
+  ],
+  "zara-r2": [
+   "fashion",
+   "beauty"
+  ],
+  "zara-s1": [
+   "beauty"
+  ],
+  "zara-s2": [
+   "fashion"
+  ],
+  "zara-s3": [
+   "fashion",
+   "home"
+  ]
+ }
+}

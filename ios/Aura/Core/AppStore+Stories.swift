@@ -41,18 +41,6 @@ extension AppStore {
         return true
     }
 
-    /// Opens a profile highlight in the story viewer.
-    func openHighlight(_ highlight: Highlight, of account: Account) async {
-        do {
-            let stories = try await API.highlight(highlight.id)
-            guard !stories.isEmpty else { return }
-            let tray = StoryTray(author: account, stories: stories, allSeen: true, latestAt: stories.last?.createdAt ?? 0)
-            openStories(trays: [tray])
-        } catch {
-            if !error.isCancellation { showToast(error.localizedDescription) }
-        }
-    }
-
     func closeStories() {
         storyViewer = nil
     }

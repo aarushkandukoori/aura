@@ -8,6 +8,7 @@ import { Link, useLocation, useParams } from 'react-router'
 import { useGoBack, useOpenCreate } from '../../app/navigation'
 import { Button, IconButton, NotFound, Skeleton, VerifiedBadge } from '../../components'
 import { useIsMobile } from '../../lib/hooks'
+import { useProfileView } from '../../lib/track'
 import type { Profile } from '../../lib/types'
 import { Highlights } from './Highlights'
 import { ProfileMenu } from './ProfileActions'
@@ -21,6 +22,7 @@ export function ProfilePage() {
   const phone = useIsMobile()
   const { profile, isMe, error, retry } = useProfile(username)
   const tab = tabFromLocation(pathname, search, isMe)
+  useProfileView(profile && !isMe ? profile.id : null) // a profile visit tells the recommendation algorithm a lot
 
   if (error === 404) return <NotFound />
   if (!profile) {

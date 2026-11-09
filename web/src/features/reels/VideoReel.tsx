@@ -10,10 +10,12 @@ interface VideoReelProps {
   muted: boolean
   /** On screen or next to it: load the video (far-away reels only keep their poster). */
   near: boolean
+  /** Called with the video's length in ms once it is known (for watch-time tracking). */
+  onLength?: (ms: number) => void
 }
 
 /** A video reel: plays on a loop while on screen, muted until you tap to turn the sound on. */
-export function VideoReel({ media, active, playing, muted, near }: VideoReelProps) {
+export function VideoReel({ media, active, playing, muted, near, onLength }: VideoReelProps) {
   const video = useRef<HTMLVideoElement>(null)
   const bar = useRef<HTMLDivElement>(null)
   // Landscape videos are shown whole (letterboxed) instead of cropped to a sliver.
@@ -58,6 +60,10 @@ export function VideoReel({ media, active, playing, muted, near }: VideoReelProp
         loop
         playsInline
         preload={near ? 'auto' : 'none'}
+        onLoadedMetadata={(event) => {
+          const seconds = event.currentTarget.duration
+          if (Number.isFinite(seconds)) onLength?.(seconds * 1000)
+        }}
         className={cx('absolute inset-0 size-full bg-black', landscape ? 'object-contain' : 'object-cover')}
       />
       <ProgressBar barRef={bar} />

@@ -15,14 +15,18 @@ import type {
   Post, Profile, SearchResult, Session, Story, StoryReplyResponse, StoryTray, UploadResponse, ViewersResponse,
 } from '../shared/types.ts'
 
-// The data folder is read when the database module loads, so set it before importing the app.
+// Configuration is read when modules load, so set it before importing the app. These tests run
+// in local mode (no sign-in, one world), even if .env sets up Google sign-in.
 const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aura-test-'))
 process.env.AURA_DATA_DIR = dataDir
 process.env.AURA_PROVIDER = 'offline'
+delete process.env.GOOGLE_CLIENT_ID
+delete process.env.GOOGLE_CLIENT_SECRET
+delete process.env.AURA_DEV_LOGIN
 
 const { createApp } = await import('./app.ts')
 const { TIERS } = await import('./config.ts')
-const { db } = await import('./db/index.ts')
+const { closeAllWorlds } = await import('./db/index.ts')
 const repo = await import('./repo/index.ts')
 const { loadContent } = await import('./seed/content.ts')
 const sim = await import('./sim/index.ts')
@@ -40,7 +44,7 @@ after(() => {
   sim.stop()
   server.closeAllConnections()
   server.close()
-  db.close()
+  closeAllWorlds()
   fs.rmSync(dataDir, { recursive: true, force: true })
 })
 
@@ -83,6 +87,10 @@ test('session works before onboarding, other routes wait for it', async () => {
   assert.equal(session.onboarded, false)
   assert.equal(session.me, null)
   assert.deepEqual(session.badges, { notifications: 0, messages: 0 })
+  // Local mode: no sign-in, so no account, and the sign-in routes are switched off.
+  assert.equal(session.authEnabled, false)
+  assert.equal(session.account, null)
+  assert.equal((await fetch(`${base}/auth/dev`, { method: 'POST' })).status, 404)
 
   const feed = await call('GET', '/feed')
   assert.equal(feed.status, 409)
@@ -112,7 +120,7 @@ test('onboarding builds the world', async () => {
   assert.ok(inbox.conversations.some((conversation) => conversation.title === 'the besties 💌'))
 })
 
-test('the feed pages through followed posts with a suggested post after every 6', async () => {
+test('the ranked feed pages through followed posts with a suggested post after every 4', async () => {
   const posts: Post[] = []
   let cursor: string | null = null
   do {
@@ -127,8 +135,11 @@ test('the feed pages through followed posts with a suggested post after every 6'
   const suggested = posts.filter((post) => post.suggested)
   assert.ok(suggested.length > 0, 'has suggested posts')
   assert.ok(suggested.every((post) => !post.author.iFollow), 'suggestions come from accounts I do not follow')
-  assert.ok(followed.every((post, index) => index === 0 || followed[index - 1].createdAt >= post.createdAt), 'newest first')
-  assert.equal(posts.findIndex((post) => post.suggested), 6, 'first suggestion comes after 6 followed posts')
+  // The order is ranked per user (server/recs, tested in server/recs/*.test.ts), not newest first.
+  assert.equal(posts.findIndex((post) => post.suggested), 4, 'first suggestion comes after 4 followed posts')
+  const lastFollowed = posts.findLastIndex((post) => !post.suggested)
+  assert.ok(posts.slice(0, lastFollowed).every((post, i) => !post.suggested || !posts[i + 1].suggested), 'never two suggestions in a row before the followed posts run out')
+  assert.ok(suggested.every((post) => typeof post.reason === 'string' && post.reason !== ''), 'suggested posts say why')
   castPost = followed.find((post) => post.author.kind === 'cast' && post.kind !== 'reel') as Post
 })
 
@@ -140,7 +151,8 @@ test('upload an image and post it', async () => {
   })
   const upload = (await res.json()) as UploadResponse
   assert.equal(res.status, 200)
-  assert.match(upload.url, /^\/media\/uploads\/.+\.png$/)
+  assert.match(upload.url, /^\/media\/uploads\/.+\.png$/, 'local mode keeps the original upload URLs')
+  assert.ok(fs.existsSync(path.join(dataDir, 'uploads', upload.url.split('/').pop() as string)), 'saved in <dataDir>/uploads')
   assert.deepEqual([upload.type, upload.width, upload.height], ['image', 1080, 1350])
   assert.equal((await fetch(base + upload.url)).status, 200, 'the upload is served')
 

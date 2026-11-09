@@ -16,7 +16,8 @@
     "typecheck": "tsc -p tsconfig.json && tsc -p web/tsconfig.json",
     "test": "node --test --env-file-if-exists=.env \"server/**/*.test.ts\"",
     "gen:cast": "node --env-file-if-exists=.env scripts/gen-cast.ts",
-    "gen:images": "node --env-file-if-exists=.env scripts/gen-images.ts"
+    "gen:images": "node --env-file-if-exists=.env scripts/gen-images.ts",
+    "gen:topics": "node --env-file-if-exists=.env scripts/tag-topics.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",

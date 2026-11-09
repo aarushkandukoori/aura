@@ -2,6 +2,7 @@
  * Every kind of job the simulation schedules, and the function that runs it.
  * A job whose kind isn't listed here fails safely (the scheduler logs it and moves on).
  */
+import { continueNewFriend } from '../onboarding/new-friends.ts'
 import { answerComment, reactToMyComment } from './comments.ts'
 import { nudgeIfIgnored, replyInChat, sendDm, sendGroupLines } from './chats.ts'
 import { commentOnCastPost, creatorNotice, likeCommentBy, likeWave, postComment, reactToNewPost } from './posts.ts'
@@ -35,6 +36,8 @@ export const HANDLERS: Handlers = {
   read_nudge: nudgeIfIgnored,
   // the world on its own
   welcome: welcomeUser,
+  // a friend described at sign-up joining Aura, one step per job (server/onboarding/new-friends.ts)
+  new_friend: (payload: { newFriend: string }) => continueNewFriend(payload.newFriend),
   world_tick: worldTick,
   world_event: worldEvent,
   catch_up: catchUp,
@@ -44,4 +47,4 @@ export const HANDLERS: Handlers = {
  * Jobs timed in real seconds (chats, the world loop). Every other kind runs on sim time and moves
  * closer or further away when the speed setting changes.
  */
-export const REAL_TIME_KINDS = ['chat_reply', 'read_nudge', 'comment_reply', 'welcome', 'world_tick', 'world_event', 'catch_up']
+export const REAL_TIME_KINDS = ['chat_reply', 'read_nudge', 'comment_reply', 'welcome', 'new_friend', 'world_tick', 'world_event', 'catch_up']

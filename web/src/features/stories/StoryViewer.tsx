@@ -4,6 +4,7 @@ import { useEffect, useEffectEvent, useState } from 'react'
 import { cx } from '../../lib/cx'
 import { useEscapeKey } from '../../lib/hooks'
 import { useStore } from '../../lib/store'
+import { useStoryWatch } from '../../lib/track'
 import type { ID, Story } from '../../lib/types'
 import { useHeldFor, usePageVisible } from './hooks'
 import { MyStoryFooter } from './MyStoryFooter'
@@ -53,6 +54,8 @@ export function StoryViewer({ stories: allStories, startIndex, highlight = null,
   const paused = holding || userPaused || busy || !pageVisible || readyId !== story?.id
   const duration = story?.media.type === 'video' && videoLength?.id === story.id ? videoLength.ms : PICTURE_MS
   const chromeHidden = useHeldFor(holding, 250) // hold the story to see it without the header and reply box
+  // Watched or skipped, for the recommendation algorithm (other people's stories only).
+  useStoryWatch(story && story.author.kind !== 'me' ? story.id : null, story?.author.id ?? null)
 
   function goNext() {
     if (current < stories.length - 1) setIndex(current + 1)

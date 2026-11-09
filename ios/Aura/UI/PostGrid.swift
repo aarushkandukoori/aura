@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A 3-column grid of post thumbnails with reel / carousel icons (profiles, explore results, saved, tags).
-/// Tapping opens the post (or the reel player for reels) unless you pass `onSelect`.
+/// Tapping opens the post (or the reel player for reels), zooming out of the tile, unless you pass `onSelect`.
 ///
 ///     PostGrid(posts: posts)
 ///     PostGrid(posts: reels, showsViewCounts: true)
@@ -30,14 +30,34 @@ struct PostGrid: View {
     }
 
     @ViewBuilder private func tile(for post: Post) -> some View {
-        let content = PostTile(post: post, aspect: tileAspect, showsViewCount: showsViewCounts)
         if let onSelect {
-            Button { onSelect(post) } label: { content }
-                .buttonStyle(.plain)
+            Button { onSelect(post) } label: {
+                PostTile(post: post, aspect: tileAspect, showsViewCount: showsViewCounts)
+            }
+            .buttonStyle(.plain)
         } else {
-            NavigationLink(value: post.isReel ? Route.reel(post.id) : Route.post(post.id)) { content }
-                .buttonStyle(.plain)
+            PostTileButton(post: post, aspect: tileAspect, showsViewCount: showsViewCounts)
         }
+    }
+}
+
+/// A tile that opens its post (or reel) on the current tab. The screen zooms out of the tile, the
+/// way Instagram's grids open posts, and shrinks back into it when you go back.
+struct PostTileButton: View {
+    @Environment(AppStore.self) private var store
+    let post: Post
+    var aspect: CGFloat = 3.0 / 4.0
+    var showsViewCount = false
+
+    var body: some View {
+        Button {
+            ZoomSources.tileTapped(post.id)
+            store.navigate(to: post.isReel ? .reel(post.id) : .post(post.id))
+        } label: {
+            PostTile(post: post, aspect: aspect, showsViewCount: showsViewCount)
+                .zoomSource(id: ZoomID.post(post.id))
+        }
+        .buttonStyle(.plain)
     }
 }
 

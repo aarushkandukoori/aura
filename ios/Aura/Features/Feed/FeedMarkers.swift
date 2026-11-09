@@ -74,16 +74,29 @@ struct CaughtUpView: View {
     }
 }
 
-/// The small label above a post from someone you don't follow yet.
+/// The small label above a post from someone you don't follow yet, with why the algorithm picked it
+/// ("Because you like #coffee") under it when the server says.
 struct SuggestedLabel: View {
+    var reason: String? = nil
+
     var body: some View {
-        Label("Suggested for you", systemImage: "sparkles")
-            .font(.footnote.weight(.semibold))
-            .foregroundStyle(Theme.muted)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 14)
-            .padding(.top, 10)
-            .padding(.bottom, 2)
+        VStack(alignment: .leading, spacing: 2) {
+            Label("Suggested for you", systemImage: "sparkles")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(Theme.muted)
+            if let reason {
+                Text(reason)
+                    .font(.caption)
+                    .foregroundStyle(Theme.muted)
+                    .lineLimit(1)
+                    .padding(.leading, 22) // lines up with the label's text, past the sparkles
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 14)
+        .padding(.top, 10)
+        .padding(.bottom, 2)
+        .accessibilityElement(children: .combine)
     }
 }
 

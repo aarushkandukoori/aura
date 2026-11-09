@@ -30,6 +30,10 @@ export default defineConfig({
       },
       '/media': api,
       '/content': api,
+      // Sign-in (Google and the test-only dev login) lives outside /api on the server. The object
+      // form keeps the browser's Host header (the string shorthand would rewrite it), so the
+      // server's same-origin check and Google's return address both see localhost:<web port>.
+      '/auth': { target: api },
     },
   },
   build: {

@@ -14,10 +14,13 @@ struct ReelsView: View {
     @State private var isMuted = true
     /// Reels already counted as viewed during this visit.
     @State private var viewedIds: Set<String> = []
+    /// Set when a grid tile opened this reel: the player zooms out of the tile (and back into it).
+    @State private var zoomID: String?
 
     init(startId: String?) {
         self.startId = startId
         _pager = State(initialValue: PostPager { cursor in try await API.reels(cursor: cursor, start: startId) })
+        _zoomID = State(initialValue: ZoomSources.zoomID(opening: startId))
     }
 
     var body: some View {
@@ -57,6 +60,7 @@ struct ReelsView: View {
             if currentId == nil { currentId = pager.ids.first }
         }
         .onChange(of: currentId) { loadMoreIfNeeded() }
+        .zoomDestination(id: zoomID)
     }
 
     @ViewBuilder private func content(insets: EdgeInsets) -> some View {

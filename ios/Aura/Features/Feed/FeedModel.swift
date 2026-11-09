@@ -11,6 +11,8 @@ final class FeedModel {
     /// Posts the server marked "suggested". Kept here because another screen may reload the same
     /// post into the cache without the flag.
     private(set) var suggestedIds: Set<String> = []
+    /// Why the algorithm suggested a post ("Because you like #coffee"), by post id.
+    private(set) var reasons: [String: String] = [:]
     private(set) var nextCursor: String?
     private(set) var hasLoaded = false
     private(set) var isLoadingMore = false
@@ -27,6 +29,7 @@ final class FeedModel {
             store.remember(page.items)
             ids = []
             suggestedIds = []
+            reasons = [:]
             add(page)
             hasLoaded = true
             errorMessage = nil
@@ -61,6 +64,9 @@ final class FeedModel {
         let known = Set(ids)
         ids += page.items.map(\.id).filter { !known.contains($0) }
         suggestedIds.formUnion(page.items.filter(\.suggested).map(\.id))
+        for post in page.items where post.suggested {
+            if let reason = post.reason?.trimmingCharacters(in: .whitespaces), !reason.isEmpty { reasons[post.id] = reason }
+        }
         nextCursor = page.nextCursor
     }
 

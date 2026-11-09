@@ -7,8 +7,12 @@
  *
  * A job is pending -> running -> done. If its handler throws it gets two more tries a little later,
  * then it is marked failed. A job whose kind has no handler fails right away (nothing crashes).
+ *
+ * Every world has its own jobs table (server/db/index.ts). One timer serves them all: it remembers
+ * when each world's next job is due (nextJobAt) and only opens the worlds that have work, running
+ * their jobs inside that world. A world with nothing due can sit closed on disk.
  */
-import { now, parseJson, q } from '../db/index.ts'
+import { closeWorld, currentWorldId, knownWorldIds, now, parseJson, q, withWorld, worldState } from '../db/index.ts'
 
 /**
  * A job handler. The payload comes back from JSON, so TypeScript can't check it here: each
@@ -35,11 +39,30 @@ const BATCH_SIZE = 40
 /** Finished jobs are kept a day for debugging, then deleted. */
 const KEEP_FINISHED_MS = 24 * 60 * 60 * 1000
 
-/** Add a job that runs `delayMs` from now. Returns its id. */
+/** world id -> when its earliest waiting job is due. Worlds with nothing waiting aren't listed. */
+const nextJobAt = new Map<string, number>()
+
+/** A job in the current world is due at `runAt`: make sure the tick looks at this world by then. */
+function noteJobAt(runAt: number): void {
+  const worldId = currentWorldId()
+  const known = nextJobAt.get(worldId)
+  if (known === undefined || runAt < known) nextJobAt.set(worldId, runAt)
+}
+
+/** Read when the current world's earliest waiting job is due (after jobs ran or moved). */
+function refreshNextJob(): void {
+  const row = q("SELECT MIN(run_at) AS at FROM jobs WHERE state = 'pending'").get() as { at: number | null }
+  if (row.at === null) nextJobAt.delete(currentWorldId())
+  else nextJobAt.set(currentWorldId(), row.at)
+}
+
+/** Add a job to the current world that runs `delayMs` from now. Returns its id. */
 export function schedule(kind: string, delayMs: number, payload: object = {}): number {
   const time = now()
+  const runAt = time + Math.max(0, Math.round(delayMs))
   const result = q('INSERT INTO jobs (run_at, kind, payload, created_at) VALUES (?, ?, ?, ?)')
-    .run(time + Math.max(0, Math.round(delayMs)), kind, JSON.stringify(payload), time)
+    .run(runAt, kind, JSON.stringify(payload), time)
+  noteJobAt(runAt)
   return Number(result.lastInsertRowid)
 }
 
@@ -81,6 +104,7 @@ export function rescalePending(ratio: number, realTimeKinds: readonly string[]):
     if (realTimeKinds.includes(row.kind)) continue
     q('UPDATE jobs SET run_at = ? WHERE id = ?').run(time + Math.round((row.run_at - time) * ratio), row.id)
   }
+  refreshNextJob() // a faster speed moves jobs earlier
 }
 
 /** Is a job of this kind waiting to start? Unlike hasPending, one that is already running doesn't count. */
@@ -96,9 +120,17 @@ export function hasWaiting(kind: string): boolean {
 export function recoverJobs(): void {
   q("UPDATE jobs SET state = 'failed' WHERE state = 'running' AND attempts >= ?").run(MAX_ATTEMPTS)
   q("UPDATE jobs SET state = 'pending' WHERE state = 'running'").run()
+  refreshNextJob()
 }
 
+/** Per world: when its finished jobs were last cleaned out. */
+const lastPurge = worldState(() => ({ at: 0 }))
+
+/** Once an hour per world, delete finished jobs older than a day. */
 function purgeFinishedJobs(): void {
+  const purge = lastPurge()
+  if (now() - purge.at < 60 * 60 * 1000) return
+  purge.at = now()
   q("DELETE FROM jobs WHERE state IN ('done', 'failed') AND run_at < ?").run(now() - KEEP_FINISHED_MS)
 }
 
@@ -124,14 +156,16 @@ async function runJob(job: JobRow, handlers: Handlers): Promise<void> {
       finish(job.id, 'failed')
     } else {
       console.warn(`[sim] job "${job.kind}" (#${job.id}) failed, retrying: ${(error as Error).message}`)
-      q("UPDATE jobs SET state = 'pending', run_at = ? WHERE id = ?").run(now() + attempt * 5_000, job.id)
+      const retryAt = now() + attempt * 5_000
+      q("UPDATE jobs SET state = 'pending', run_at = ? WHERE id = ?").run(retryAt, job.id)
+      noteJobAt(retryAt)
     }
   }
 }
 
 /**
- * Start every job that is due at time `at`. Handlers are not awaited here, so a slow AI call
- * never holds up the tick; the returned promises let tests wait for them.
+ * Start every job of the current world that is due at time `at`. Handlers are not awaited here,
+ * so a slow AI call never holds up the tick; the returned promises let tests wait for them.
  */
 export function runDueJobs(handlers: Handlers, at = now()): Promise<void>[] {
   const due = q("SELECT * FROM jobs WHERE state = 'pending' AND run_at <= ? ORDER BY run_at, id LIMIT ?")
@@ -145,24 +179,42 @@ export function runDueJobs(handlers: Handlers, at = now()): Promise<void>[] {
   return started
 }
 
-let timer: ReturnType<typeof setInterval> | null = null
-let lastPurge = 0
+/** One tick: run the due jobs of every world that has some, each inside its own world. */
+function tick(handlers: Handlers): void {
+  const time = now()
+  for (const [worldId, dueAt] of [...nextJobAt]) {
+    if (dueAt > time) continue
+    withWorld(worldId, () => {
+      try {
+        runDueJobs(handlers, time)
+        purgeFinishedJobs()
+        refreshNextJob()
+      } catch (error) {
+        console.error(`[sim] tick failed in world ${worldId}:`, error)
+        nextJobAt.set(worldId, time + 60_000) // a broken world is tried again in a minute, not every second
+      }
+    })
+  }
+}
 
-/** Start ticking once a second. Safe to call twice. */
+let timer: ReturnType<typeof setInterval> | null = null
+
+/**
+ * Start ticking once a second. Safe to call twice. First every world on disk gets a look: jobs
+ * that were running when the server stopped get another go, and the tick learns when each world's
+ * next job is due. Then each world is closed again until it has something to do.
+ */
 export function startScheduler(handlers: Handlers): void {
   if (timer) return
-  recoverJobs()
-  timer = setInterval(() => {
+  for (const worldId of knownWorldIds()) {
     try {
-      runDueJobs(handlers)
-      if (now() - lastPurge > 60 * 60 * 1000) {
-        lastPurge = now()
-        purgeFinishedJobs()
-      }
+      withWorld(worldId, recoverJobs)
     } catch (error) {
-      console.error('[sim] tick failed:', error)
+      console.error(`[sim] could not open world ${worldId}:`, error)
     }
-  }, TICK_MS)
+    closeWorld(worldId)
+  }
+  timer = setInterval(() => tick(handlers), TICK_MS)
 }
 
 export function stopScheduler(): void {

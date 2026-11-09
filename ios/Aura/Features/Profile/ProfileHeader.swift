@@ -8,7 +8,11 @@ struct ProfileHeader: View {
     /// My aura score (only shown on my own profile).
     var aura: Int?
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var openingChat = false
+    /// "Suggested for you" slides down under the buttons after I follow them (or with the toggle).
+    @State private var showsSuggestions = false
+    @State private var suggestions: [Account] = []
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -25,17 +29,23 @@ struct ProfileHeader: View {
             }
             actions
                 .padding(.top, 2)
+            suggestionsRow
         }
         .padding(.horizontal, 16)
         .padding(.top, 10)
         .padding(.bottom, 16)
+        .onChange(of: store.latest(profile.account).iFollow) { wasFollowing, isFollowing in
+            // Just followed them: suggest a few more people, the way Instagram does.
+            if isFollowing && !wasFollowing && !isMe { Task { await setSuggestions(shown: true) } }
+        }
     }
 
     // MARK: - Picture and counts
 
     private var avatar: some View {
         let account = store.latest(profile.account)
-        return AvatarView(account: profile.account, size: 88, showsStoryRing: true, action: avatarAction(for: account))
+        return AvatarView(account: profile.account, size: 88, showsStoryRing: true,
+                          storyZoomID: StoryZoom.profileID(profile.id), action: avatarAction(for: account))
             .overlay(alignment: .bottomTrailing) {
                 if isMe && !account.hasStory {
                     Button { store.show([], in: .create) } label: {
@@ -52,10 +62,12 @@ struct ProfileHeader: View {
             }
     }
 
-    /// Tapping the picture plays their story when they have one.
+    /// Tapping the picture plays their story when they have one (growing out of the picture).
     private func avatarAction(for account: Account) -> (() -> Void)? {
         guard account.hasStory else { return nil }
-        return { Task { await store.openStories(for: account) } }
+        return {
+            Task { await StoryZoom.shared.open(account, from: StoryZoom.profileID(account.id), store: store) }
+        }
     }
 
     private var stats: some View {
@@ -181,8 +193,41 @@ struct ProfileHeader: View {
                 }
                 .buttonStyle(.aura(.secondary, fullWidth: true))
                 .disabled(openingChat)
+                Button {
+                    Task { await setSuggestions(shown: !showsSuggestions) }
+                } label: {
+                    Image(systemName: showsSuggestions ? "person.badge.plus.fill" : "person.badge.plus")
+                        .contentTransition(.symbolEffect(.replace))
+                }
+                .buttonStyle(.aura(.secondary))
+                .accessibilityLabel(showsSuggestions ? "Hide suggestions" : "Suggested for you")
             }
         }
+    }
+
+    /// "Suggested for you", edge to edge. Its box is clipped, so the row slides down from under the
+    /// buttons while the rest of the profile moves down to make room.
+    private var suggestionsRow: some View {
+        VStack {
+            if showsSuggestions && !suggestions.isEmpty {
+                SuggestedRow(accounts: suggestions) { account in
+                    suggestions.removeAll { $0.id == account.id }
+                }
+                .padding(.top, 6)
+                .transition(reduceMotion ? .opacity : .move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .padding(.horizontal, -16)
+        .clipped()
+    }
+
+    /// Shows or hides "Suggested for you" (loading the people the first time).
+    private func setSuggestions(shown: Bool) async {
+        if shown && suggestions.isEmpty {
+            let people = (try? await API.suggestions()) ?? []
+            suggestions = people.filter { $0.id != profile.id }
+        }
+        withAnimation(Motion.slide.orFade(reduceMotion)) { showsSuggestions = shown }
     }
 
     /// Opens our DM (creating it the first time) and shows the chat.
@@ -238,15 +283,18 @@ struct HighlightsRow: View {
         ScrollView(.horizontal) {
             HStack(alignment: .top, spacing: 16) {
                 ForEach(highlights) { highlight in
+                    let zoomID = StoryZoom.highlightID(highlight.id)
                     Button {
-                        Task { await store.openHighlight(highlight, of: owner) }
+                        Task { await StoryZoom.shared.openHighlight(highlight, of: owner, store: store) }
                     } label: {
                         VStack(spacing: 6) {
                             RemoteImage(path: highlight.cover)
                                 .frame(width: 62, height: 62)
                                 .clipShape(Circle())
                                 .padding(3)
-                                .overlay(Circle().strokeBorder(Theme.seenRing, lineWidth: 1.5))
+                                .overlay(StoryRing(state: .seen, lineWidth: 2.5,
+                                                   isLoading: StoryZoom.shared.loadingID == zoomID))
+                                .storyZoomSource(id: zoomID)
                             Text(highlight.title)
                                 .font(.caption)
                                 .foregroundStyle(Theme.text)

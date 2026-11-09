@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 /// One comment or reply: avatar, name, time, text, "Reply", the author's heart, and a like button
-/// with its count. Long-press for Reply / Copy / Pin / Delete.
+/// with its count. Double-tap to like (the heart pops red); long-press for Reply / Copy / Pin / Delete.
 struct CommentRow: View {
     @Environment(AppStore.self) private var store
     let comment: Comment
@@ -56,6 +56,9 @@ struct CommentRow: View {
         .padding(.vertical, 9)
         .background(Theme.accent.opacity(glowing ? 0.1 : 0))
         .contentShape(Rectangle())
+        .onTapGesture(count: 2) {
+            if !comment.likedByMe { store.toggleCommentLike(comment) }
+        }
         .contextMenu { menuItems }
         .onAppear {
             guard isFresh else { return }
@@ -90,10 +93,8 @@ struct CommentRow: View {
     private var likeButton: some View {
         Button { store.toggleCommentLike(comment) } label: {
             VStack(spacing: 2) {
-                Image(systemName: comment.likedByMe ? "heart.fill" : "heart")
-                    .font(.system(size: 14))
-                    .foregroundStyle(comment.likedByMe ? Theme.like : Theme.muted)
-                    .symbolEffect(.bounce, value: comment.likedByMe)
+                PoppingIcon(symbol: "heart", isOn: comment.likedByMe, size: 14,
+                            onColor: Theme.like, offColor: Theme.muted)
                 if comment.likeCount > 0 {
                     CountText(value: comment.likeCount)
                         .font(.caption2)
@@ -104,7 +105,7 @@ struct CommentRow: View {
             .padding(.top, 6)
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.squash)
         .accessibilityLabel(comment.likedByMe ? "Unlike comment" : "Like comment")
     }
 

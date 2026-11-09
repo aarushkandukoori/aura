@@ -1,6 +1,7 @@
 import Foundation
 
 // The Swift mirror of shared/types.ts (the API contract). Property names match the JSON keys exactly.
+// The sign-in, world plan and tracking shapes are in SignUpModels.swift.
 //
 // Every response type decodes forgivingly (see Decoding.swift): a missing or null field falls back to
 // a sensible default and one broken item in a list is skipped, so a small server change never blanks
@@ -104,6 +105,7 @@ enum ConversationKind: String, Codable {
 
 enum ProviderKind: String, Codable {
     case anthropic
+    case openai
     case claudeCli = "claude-cli"
     case offline
 }
@@ -285,6 +287,8 @@ struct Post: Codable, Identifiable, Hashable {
     var previewComments: [Comment] // up to 2, shown under the post in the feed
     var createdAt: Millis
     var suggested: Bool         // feed only: show a "Suggested for you" label
+    /// Why the algorithm picked it, e.g. "Because you like #coffee" (suggested posts only).
+    var reason: String?
 
     var isReel: Bool { kind == .reel }
 
@@ -422,6 +426,8 @@ struct AuraSettings: Codable, Hashable {
     var speed: Speed
     var model: AiModel
     var provider: ProviderInfo
+    /// The models this server lets people pick (a public server may allow only the cheap one).
+    var models: [AiModel]
 }
 
 struct Badges: Codable, Hashable {
@@ -436,6 +442,10 @@ struct Page<Item: Decodable>: Decodable {
 
 /// GET /api/session - the first call the app makes.
 struct Session: Codable {
+    /// true when the server has sign-in on (each Google account has its own world). false = local mode.
+    var authEnabled: Bool
+    /// The signed-in Google account, or nil (signed out, or local mode).
+    var account: SignedInAccount?
     var onboarded: Bool
     var me: Me?
     var settings: AuraSettings
@@ -461,7 +471,9 @@ struct OnboardingRequest: Codable {
     var pronouns: String
     var interests: [String]     // e.g. ["music", "food", "fitness"]
     var tier: Tier
-    var origin: String          // "college" | "high school" | "work" | "online" | "hometown"
+    var origin: String          // "college" | "high school" | "work" | "online" | "hometown", or a plan's own words
+    /// The plan from POST /api/onboarding/plan when the person described their world (nil = set up by hand).
+    var plan: WorldPlan?
 }
 
 /// Only the fields you set are sent; nil means "leave unchanged".
@@ -794,6 +806,7 @@ extension Post {
         previewComments = c.list(.previewComments)
         createdAt = c.double(.createdAt)
         suggested = c.bool(.suggested)
+        reason = c.value(.reason)
     }
 }
 
@@ -941,7 +954,8 @@ extension ProviderInfo {
 extension AuraSettings {
     /// Used when the server leaves settings out.
     static let fallback = AuraSettings(tier: .rising, speed: .fast, model: .opus,
-                                       provider: ProviderInfo(active: .offline, detail: ""))
+                                       provider: ProviderInfo(active: .offline, detail: ""),
+                                       models: AiModel.allCases)
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
@@ -949,6 +963,9 @@ extension AuraSettings {
         speed = c.value(.speed) ?? .fast
         model = c.value(.model) ?? .opus
         provider = c.value(.provider) ?? AuraSettings.fallback.provider
+        // An older server doesn't send the list: then every model is allowed. Unknown names are skipped.
+        let allowed: [AiModel] = c.list(.models)
+        models = allowed.isEmpty ? AiModel.allCases : allowed
     }
 }
 
@@ -973,6 +990,8 @@ extension Page {
 extension Session {
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        authEnabled = c.bool(.authEnabled)
+        account = c.value(.account)
         onboarded = c.bool(.onboarded)
         me = c.value(.me)
         settings = c.value(.settings) ?? .fallback

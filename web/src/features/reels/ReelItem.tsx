@@ -9,11 +9,13 @@ import { HeartBurst } from '../../components'
 import { api } from '../../lib/api'
 import { useIsMobile } from '../../lib/hooks'
 import { usePost, useStore } from '../../lib/store'
+import { useReelWatch } from '../../lib/track'
 import type { Post } from '../../lib/types'
 import { CommentsSheet } from '../post'
 import { MotionReel } from './MotionReel'
 import { ReelActions } from './ReelActions'
 import { ReelOverlay } from './ReelOverlay'
+import { FRAME_MS } from './useReelClock'
 import { useReelGestures } from './useReelGestures'
 import { VideoReel } from './VideoReel'
 
@@ -38,10 +40,13 @@ export function ReelItem({ post: initial, active, near, muted, onToggleMute }: R
   const [burst, setBurst] = useState(0)
   const [soundFlash, setSoundFlash] = useState(0) // shows the speaker icon after a tap
   const [commentsOpen, setCommentsOpen] = useState(false)
+  const [videoMs, setVideoMs] = useState<number | null>(null) // a video's length, once it has loaded
   const video = post.media.length === 1 && post.media[0].type === 'video' ? post.media[0] : null
   const playing = active && !paused && !holding
 
   useCountView(post.id, active)
+  // Watch time for the recommendation algorithm; one play of a photo reel is its frames end to end.
+  useReelWatch(post.id, active, video ? videoMs : post.media.length * FRAME_MS)
 
   // A reel you scroll away from plays again (unpaused) when you come back.
   useEffect(() => {
@@ -68,7 +73,7 @@ export function ReelItem({ post: initial, active, near, muted, onToggleMute }: R
       <div className="relative h-full w-full overflow-hidden bg-black md:aspect-[9/16] md:w-auto md:max-w-full md:rounded-xl">
         <div className="absolute inset-0 select-none" {...gestures}>
           {video ? (
-            <VideoReel media={video} active={active} playing={playing} muted={muted} near={near} />
+            <VideoReel media={video} active={active} playing={playing} muted={muted} near={near} onLength={setVideoMs} />
           ) : (
             <MotionReel frames={post.media} active={active} playing={playing} near={near} />
           )}

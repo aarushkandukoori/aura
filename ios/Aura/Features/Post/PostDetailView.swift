@@ -10,6 +10,13 @@ struct PostDetailView: View {
     @State private var errorMessage: String?
     @State private var replyingTo: Comment?
     @FocusState private var composerFocused: Bool
+    /// Set when a grid tile opened this post: the page zooms out of the tile (and back into it).
+    @State private var zoomID: String?
+
+    init(postId: String) {
+        self.postId = postId
+        _zoomID = State(initialValue: ZoomSources.zoomID(opening: postId))
+    }
 
     var body: some View {
         Group {
@@ -25,7 +32,9 @@ struct PostDetailView: View {
         }
         .navigationTitle("Post")
         .navigationBarTitleDisplayMode(.inline)
+        .zoomDestination(id: zoomID)
         .task { if store.post(postId) == nil { await load() } }
+        .onAppear { Tracker.shared.open(postId) }
         // Deleted while open (from the ⋯ menu here, or anywhere else): leave the page.
         .onChange(of: store.post(postId) == nil) { wasMissing, isMissing in
             if !wasMissing && isMissing { dismiss() }

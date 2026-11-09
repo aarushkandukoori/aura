@@ -6,32 +6,37 @@
  * jobs do the work later: likes that trickle in, comments, replies, DMs, new followers,
  * characters posting their own content, group chats chatting. AI runs only inside jobs.
  * Hooks also note that the user is around, which keeps the world's own AI events going (world.ts).
+ * Every hook acts on the current world (server/db/index.ts): API routes call them inside the
+ * caller's world, and jobs run inside the world that scheduled them.
  */
 import type { Speed } from '../../shared/types.ts'
 import { SPEEDS } from '../config.ts'
 import { now } from '../db/index.ts'
+import { forgetWorldMemory } from '../recs/index.ts'
 import { randomBetween } from '../repo/random.ts'
 import { clearChatLocks } from './chats.ts'
 import { HANDLERS, REAL_TIME_KINDS } from './handlers.ts'
 import { hasPending, postpone, rescalePending, schedule, startScheduler, stopScheduler } from './scheduler.ts'
 import { chatDelay, currentSpeed, debounceDelay, seenDelay, simDelay } from './time.ts'
-import { noteUserActive, startWorld, stopWorld } from './world.ts'
+import { noteUserActive, restartWorldLoop, startWorld, stopWorld } from './world.ts'
 
-/** The speed the waiting jobs were planned with (to rescale them when it changes). */
-let plannedSpeed: Speed | null = null
-
-/** Start the scheduler loop. Called once by server/index.ts after the HTTP server is listening. */
+/** Start the scheduler loop for every world. Called once by server/index.ts after the HTTP server is listening. */
 export function start(): void {
-  plannedSpeed = currentSpeed()
   startScheduler(HANDLERS)
   startWorld()
 }
 
-/** Stop timers (tests, shutdown, Start over). Safe to call when it never started. */
+/** Stop timers (tests, shutdown). Safe to call when it never started. */
 export function stop(): void {
   stopScheduler()
   stopWorld()
+}
+
+/** Settings > Start over just wiped the current world: forget its chat locks and what the recommender kept in memory, and restart its loop if an app is open. */
+export function onWorldReset(): void {
   clearChatLocks()
+  forgetWorldMemory()
+  restartWorldLoop()
 }
 
 /** The user just finished onboarding: welcome DMs, group chat greetings, first followers. */
@@ -98,10 +103,12 @@ export function onUserReadConversation(conversationId: string): void {
   }
 }
 
-/** Tier, speed or model changed in Settings. A new speed moves the waiting sim-time jobs. */
-export function onSettingsChanged(): void {
+/**
+ * Tier, speed or model changed in Settings. A new speed moves the waiting sim-time jobs, which
+ * were planned with `previousSpeed` (the speed before this change).
+ */
+export function onSettingsChanged(previousSpeed?: Speed): void {
   noteUserActive()
   const speed = currentSpeed()
-  if (plannedSpeed && speed !== plannedSpeed) rescalePending(SPEEDS[speed].factor / SPEEDS[plannedSpeed].factor, REAL_TIME_KINDS)
-  plannedSpeed = speed
+  if (previousSpeed && speed !== previousSpeed) rescalePending(SPEEDS[speed].factor / SPEEDS[previousSpeed].factor, REAL_TIME_KINDS)
 }

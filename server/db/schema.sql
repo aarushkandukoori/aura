@@ -171,3 +171,6 @@ CREATE TABLE IF NOT EXISTS jobs (
   created_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS jobs_due ON jobs(state, run_at);
+
+-- The recommendation algorithm keeps three more tables per world (rec_events, rec_scores, rec_seen).
+-- They are created by server/recs/store.ts with defineTable(), which also makes Start over empty them.

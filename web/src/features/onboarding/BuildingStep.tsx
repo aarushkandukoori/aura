@@ -1,6 +1,7 @@
 /**
- * "Building your world...": shown while POST /api/onboarding creates everyone, then a short
- * "You're all set" before the app opens. Also shows what went wrong if it failed.
+ * "Building your world...": shown while the plan is written (POST /api/onboarding/plan) and while
+ * POST /api/onboarding creates everyone, then a short "You're all set" before the app opens.
+ * Also shows what went wrong if it failed.
  */
 import { Check } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
@@ -23,18 +24,27 @@ interface BuildingStepProps {
   error: string | null
   onRetry: () => void
   onBack: () => void
+  /** Defaults to "Building your world...". */
+  title?: string
+  /** Status lines shown one after another while working. */
+  lines?: string[]
+  /** How long each status line stays (a plan takes longer than the build). */
+  lineMs?: number
+  backLabel?: string
 }
 
-export function BuildingStep({ phase, name, avatar, error, onRetry, onBack }: BuildingStepProps) {
+export function BuildingStep({
+  phase, name, avatar, error, onRetry, onBack, title = 'Building your world...', lines = LINES, lineMs = 1200, backLabel = 'Go back',
+}: BuildingStepProps) {
   const presets = usePresets().slice(0, 5)
   const [line, setLine] = useState(0)
 
-  // A new status line every 1.2 s while the world is being built.
+  // A new status line every so often while working. The last one stays (it says "almost there").
   useEffect(() => {
     if (phase !== 'working') return
-    const timer = window.setInterval(() => setLine((index) => (index + 1) % LINES.length), 1200)
+    const timer = window.setInterval(() => setLine((index) => Math.min(index + 1, lines.length - 1)), lineMs)
     return () => window.clearInterval(timer)
-  }, [phase])
+  }, [phase, lines.length, lineMs])
 
   if (phase === 'error') {
     return (
@@ -47,7 +57,7 @@ export function BuildingStep({ phase, name, avatar, error, onRetry, onBack }: Bu
             Try again
           </Button>
           <Button size="lg" variant="ghost" block onClick={onBack}>
-            Go back
+            {backLabel}
           </Button>
         </div>
       </div>
@@ -114,7 +124,7 @@ export function BuildingStep({ phase, name, avatar, error, onRetry, onBack }: Bu
       </div>
 
       <h1 className="mt-4 text-[26px] font-bold tracking-tight">
-        {phase === 'done' ? `You're all set, ${firstName(name)}!` : 'Building your world...'}
+        {phase === 'done' ? `You're all set${name ? `, ${firstName(name)}` : ''}!` : title}
       </h1>
       <div className="mt-2 h-6 text-[15px] text-muted">
         <AnimatePresence mode="wait" initial={false}>
@@ -125,7 +135,7 @@ export function BuildingStep({ phase, name, avatar, error, onRetry, onBack }: Bu
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2 }}
           >
-            {phase === 'done' ? "Everyone's happy to see you." : LINES[line]}
+            {phase === 'done' ? "Everyone's happy to see you." : lines[Math.min(line, lines.length - 1)]}
           </motion.p>
         </AnimatePresence>
       </div>

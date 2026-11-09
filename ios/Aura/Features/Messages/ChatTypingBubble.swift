@@ -1,8 +1,12 @@
 import SwiftUI
 
-/// "Someone is typing": their avatar and a gray bubble with three bouncing dots.
+/// "Someone is typing": their avatar and a gray bubble with three dots bouncing one after another.
+/// The bubble grows out of the avatar's corner when it appears, like Instagram's.
 struct ChatTypingBubble: View {
     let typers: [Account]
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var appeared = false
 
     var body: some View {
         HStack(alignment: .bottom, spacing: 8) {
@@ -16,15 +20,19 @@ struct ChatTypingBubble: View {
                 .padding(.horizontal, 15)
                 .padding(.vertical, 14)
                 .background(Theme.secondaryFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .scaleEffect(appeared || reduceMotion ? 1 : 0.4, anchor: .bottomLeading)
+                .opacity(appeared ? 1 : 0)
             Spacer(minLength: 0)
         }
         .padding(.top, 10)
+        .onAppear { withAnimation(Motion.pop.orFade(reduceMotion)) { appeared = true } }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(MessagePreview.typingLine(typers, isGroup: typers.count > 1))
     }
 }
 
-/// Three dots rising and brightening one after another, like a wave.
+/// Three dots rising and brightening one after another, then resting for a beat (half of each sine
+/// wave is cut off, so every dot sits still while the others take their turn).
 struct ChatTypingDots: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 

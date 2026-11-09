@@ -4,22 +4,78 @@
  */
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { Speed, Tier } from '../shared/types.ts'
+import type { AiModel, Speed, Tier } from '../shared/types.ts'
 
 export const ROOT = fileURLToPath(new URL('..', import.meta.url))
 
-export const config = {
-  port: Number(process.env.AURA_PORT ?? 8790),
-  /** 127.0.0.1 = only this Mac. Set AURA_HOST=0.0.0.0 to let a phone on your Wi-Fi connect. */
-  host: process.env.AURA_HOST ?? '127.0.0.1',
-  /** Where the database and uploads live. Each test run can point at its own folder. */
-  dataDir: path.resolve(ROOT, process.env.AURA_DATA_DIR ?? 'data'),
-  contentDir: path.join(ROOT, 'content'),
-  webDist: path.join(ROOT, 'dist', 'web'),
+const env = process.env
+
+/** Every model Aura knows, in the order Settings lists them. */
+const ALL_MODELS: AiModel[] = ['opus', 'sonnet', 'haiku']
+
+/** "haiku, sonnet" -> ['sonnet', 'haiku'] (known names only, Settings order). Empty or unknown -> all of them. */
+function modelList(text: string | undefined): AiModel[] {
+  const names = (text ?? '').split(',').map((name) => name.trim().toLowerCase())
+  const picked = ALL_MODELS.filter((model) => names.includes(model))
+  return picked.length > 0 ? picked : ALL_MODELS
 }
 
-export const uploadsDir = path.join(config.dataDir, 'uploads')
-export const dbFile = path.join(config.dataDir, 'aura.db')
+const allowedModels = modelList(env.AURA_ALLOWED_MODELS)
+const wantedModel = (env.AURA_DEFAULT_MODEL ?? 'opus').trim().toLowerCase() as AiModel
+
+/** Google sign-in needs both halves of the OAuth client. */
+const google = env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET
+  ? { clientId: env.GOOGLE_CLIENT_ID, clientSecret: env.GOOGLE_CLIENT_SECRET }
+  : null
+
+/** AURA_PORT wins; hosting platforms (Render, Railway, Fly) tell apps their port in PORT. */
+const port = Number(env.AURA_PORT ?? env.PORT ?? 8790)
+
+/** "https://aura.example.com/" -> "https://aura.example.com". Unset: this machine. A typo stops the server right away. */
+function publicUrlFrom(text: string | undefined): string {
+  const value = (text ?? '').trim()
+  if (!value) return `http://localhost:${port}`
+  const url = URL.parse(value)
+  if (!url || (url.protocol !== 'https:' && url.protocol !== 'http:')) {
+    throw new Error(`AURA_PUBLIC_URL must be a full address like https://aura.example.com (it is "${value}")`)
+  }
+  return url.origin
+}
+
+export const config = {
+  port,
+  /** 127.0.0.1 = only this Mac. Set AURA_HOST=0.0.0.0 to let a phone on your Wi-Fi connect (the Docker image does). */
+  host: env.AURA_HOST ?? '127.0.0.1',
+  /** Where the databases and uploads live. Each test run can point at its own folder. */
+  dataDir: path.resolve(ROOT, env.AURA_DATA_DIR ?? 'data'),
+  contentDir: path.join(ROOT, 'content'),
+  webDist: path.join(ROOT, 'dist', 'web'),
+  /** The address people open, like https://aura.example.com. Google sends people back here after sign-in. */
+  publicUrl: publicUrlFrom(env.AURA_PUBLIC_URL),
+  google,
+  /** Tests only: POST /auth/dev signs anyone in without Google. Never on unless AURA_DEV_LOGIN=1. */
+  devLogin: env.AURA_DEV_LOGIN === '1',
+  /** Biggest photo or video one upload may be. */
+  uploadLimitMb: Number(env.AURA_UPLOAD_LIMIT_MB ?? 150),
+  ai: {
+    /** AI calls at the same time, shared by every world. */
+    concurrency: Number(env.AURA_AI_CONCURRENCY ?? 3),
+    /** AI calls per world per day before its characters fall back to templates. */
+    dailyCap: Number(env.AURA_AI_DAILY_CAP ?? 1500),
+    /** With sign-in on: AI calls per day across every world together. */
+    globalDailyCap: Number(env.AURA_AI_GLOBAL_DAILY_CAP ?? 5000),
+    /** Models people may pick in Settings (a public server may allow only the cheap one). */
+    allowedModels,
+    /** The model a new world starts with. Must be one of the allowed ones. */
+    defaultModel: allowedModels.includes(wantedModel) ? wantedModel : allowedModels[0],
+  },
+}
+
+/**
+ * Sign-in is on when Google is set up (or the test-only dev login is). Then every account gets its
+ * own world. Off = local mode: no sign-in and one world in data/aura.db, like before accounts existed.
+ */
+export const authEnabled = config.google !== null || config.devLogin
 
 /**
  * Popularity tiers. `likes` and the comment counts are per post (a random value in the range).

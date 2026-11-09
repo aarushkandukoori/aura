@@ -32,6 +32,7 @@ struct CommentsSheet: View {
             }
         }
         .background(Theme.background)
+        .onAppear { Tracker.shared.open(postId) }
         .task {
             // Opened from a link or notification: fetch the post so we know whose post it is.
             if store.post(postId) == nil { _ = try? await store.loadPost(postId) }

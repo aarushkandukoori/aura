@@ -119,6 +119,10 @@ extension AppStore {
         let host = url.host(percentEncoded: false) ?? ""
         let rest = url.path(percentEncoded: false).split(separator: "/").map(String.init)
         switch host {
+        case "auth":
+            // Sign-in answers only count inside the sign-in sheet (SignInView). One arriving any other
+            // way could come from another app trying to sign this iPhone into its account, so ignore it.
+            break
         case "profile":
             if let username = rest.first { navigate(to: .profile(username)) }
         case "tag":

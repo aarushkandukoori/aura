@@ -3,8 +3,9 @@ import SwiftUI
 /// One reel filling the screen: the video or moving pictures, who posted it and the caption at the
 /// bottom, and like / comment / share / save on the right.
 ///
-/// Double-tap likes (a heart pops where you tapped). Tapping a video turns the sound on or off;
-/// tapping a picture reel pauses it. Holding pauses either and hides the buttons.
+/// Double-tap likes: a tilted heart pops where you tapped and floats away, like Instagram's. Tapping a
+/// video turns the sound on or off; tapping a picture reel pauses it. Holding pauses either and hides
+/// the buttons.
 struct ReelPage: View {
     @Environment(AppStore.self) private var store
     let post: Post
@@ -17,13 +18,22 @@ struct ReelPage: View {
 
     @State private var isHeld = false
     @State private var pausedByTap = false
-    @State private var hearts = 0
-    @State private var heartSpot = CGPoint.zero
+    @State private var hearts = FloatingHearts()
     @State private var soundTaps = 0
     @State private var captionOpen = false
     @State private var confirmingDelete = false
+    /// A video's length in seconds, once the player knows it.
+    @State private var videoLength: Double?
 
     private var isVideo: Bool { post.media.first?.isVideo ?? false }
+
+    /// How long one play of this reel takes (watching that long counts as watching it to the end).
+    private var playLength: Double? {
+        if isVideo { return videoLength }
+        return post.media.count <= 1
+            ? MotionReelView.singleLoopSeconds
+            : MotionReelView.secondsPerFrame * Double(post.media.count)
+    }
 
     var body: some View {
         let current = store.post(post.id) ?? post
@@ -31,14 +41,12 @@ struct ReelPage: View {
             media(current)
             ReelScrims()
             overlay(current)
-            HeartBurst(trigger: hearts, size: 110)
-                .position(heartSpot)
+            FloatingHeartsLayer(hearts: hearts)
             centerBadge
         }
         .contentShape(Rectangle())
         .onTapGesture(count: 2) { location in
-            heartSpot = location
-            hearts += 1
+            hearts.add(at: location)
             store.like(current.id)
         }
         .onTapGesture {
@@ -59,6 +67,8 @@ struct ReelPage: View {
             try? await Task.sleep(for: .seconds(2))
             if !Task.isCancelled { onViewed() }
         }
+        // Watch time and finishing it teach the algorithm which reels to show next (Core/Tracker.swift).
+        .tracksReelWatch(of: post.id, isActive: isActive, lengthSeconds: playLength)
         .onChange(of: isActive) { _, active in
             if !active {
                 pausedByTap = false
@@ -76,7 +86,7 @@ struct ReelPage: View {
     @ViewBuilder private func media(_ post: Post) -> some View {
         if let video = post.media.first, video.isVideo {
             VideoReelView(media: video, isActive: isActive, isPaused: isHeld, isMuted: isMuted,
-                          progressInset: insets.bottom)
+                          progressInset: insets.bottom) { seconds in videoLength = seconds }
         } else {
             MotionReelView(frames: post.media, isActive: isActive, isPaused: isHeld || pausedByTap,
                            progressInset: insets.bottom)
@@ -138,7 +148,8 @@ private struct ReelInfo: View {
         let author = store.latest(post.author)
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                AvatarView(account: post.author, size: 34, showsStoryRing: true) { openAuthor(author) }
+                AvatarView(account: post.author, size: 34, showsStoryRing: true,
+                           storyZoomID: StoryZoom.reelID(post.id)) { openAuthor(author) }
                 NavigationLink(value: Route.profile(author.username)) {
                     HStack(spacing: 4) {
                         Text(author.username)
@@ -206,10 +217,10 @@ private struct ReelInfo: View {
         return Format.richText(preview) + more
     }
 
-    /// Their story if they have one, otherwise their profile.
+    /// Their story if they have one (growing out of the avatar), otherwise their profile.
     private func openAuthor(_ author: Account) {
         if author.hasStory {
-            Task { await store.openStories(for: author) }
+            Task { await StoryZoom.shared.open(author, from: StoryZoom.reelID(post.id), store: store) }
         } else {
             store.navigate(to: .profile(author.username))
         }
@@ -225,23 +236,28 @@ private struct ReelRail: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            RailButton(systemImage: post.likedByMe ? "heart.fill" : "heart", count: post.likeCount,
-                       tint: post.likedByMe ? Theme.like : .white, label: post.likedByMe ? "Unlike" : "Like") {
+            RailButton(count: post.likeCount, label: post.likedByMe ? "Unlike" : "Like") {
                 store.toggleLike(post.id)
+            } icon: {
+                PoppingIcon(symbol: "heart", isOn: post.likedByMe, size: 27, onColor: Theme.like, offColor: .white)
             }
-            .symbolEffect(.bounce, value: post.likedByMe)
 
-            RailButton(systemImage: "bubble.right", count: post.commentCount, label: "Comments") {
+            RailButton(count: post.commentCount, label: "Comments") {
                 store.showComments(postId: post.id)
+            } icon: {
+                RailIcon(systemImage: "bubble.right")
             }
 
-            RailButton(systemImage: "paperplane", count: post.shareCount, label: "Share") {
+            RailButton(count: post.shareCount, label: "Share") {
                 store.showShareSheet(for: post)
+            } icon: {
+                RailIcon(systemImage: "paperplane")
             }
 
-            RailButton(systemImage: post.savedByMe ? "bookmark.fill" : "bookmark", count: nil,
-                       label: post.savedByMe ? "Remove from saved" : "Save") {
+            RailButton(count: nil, label: post.savedByMe ? "Remove from saved" : "Save") {
                 store.toggleSave(post.id)
+            } icon: {
+                PoppingIcon(symbol: "bookmark", isOn: post.savedByMe, size: 27, onColor: .white, offColor: .white)
             }
 
             Menu {
