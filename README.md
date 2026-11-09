@@ -26,6 +26,14 @@ It comes in two versions that share one server:
 
 ![Aura on iPhone: onboarding, feed, comments, stories, DMs, group chats, reels, profiles, settings](screenshots/iphone.jpg)
 
+Try it at https://aura.tailcd5953.ts.net (sign in with Google; each account gets its own world).
+
+![Sign in with Google, describe your world by talking or typing, a ranked feed that says why a post was suggested, and group chats built from your description](screenshots/web-v2.jpg)
+
+![iPhone: sign in, tell it about your world, review the plan, build it, then the app](screenshots/iphone-v2.jpg)
+
+![iPhone story viewer turning to the next person with a cube transition](screenshots/iphone-story-cube.jpg)
+
 ## Run it
 
 You need Node 22.18+ (built with Node 25) and, for the iPhone app, Xcode 26 with XcodeGen
